@@ -1,0 +1,156 @@
+.block {
+  
+}
+
+.word {
+  text-align: center;
+  min-width: 30%;
+  max-width: 56%;
+  margin: auto;
+  font-size: 20px;
+  border: 1px solid #17177a;
+  background-color: #fdfdfd;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.buttons_group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20%;
+}
+
+.button {
+  width: 95%;
+  height: 70px;
+  background-color: #008cba;
+  border: 1px solid #9595ce;
+  margin: 5px 0px 5px 5px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.button:focus {
+  background-color: #025975;
+}
+
+.correct {
+  background-color: #9bfba8;
+  color: #000;
+}
+
+.wrong {
+  background-color: #fb9b9b;
+  color: #000;
+}
+
+.show_correct {
+  background-color: #fbf59b;
+  color: #000;
+}
+
+.next_button {
+  text-align: center;
+}
+
+.next_button button {
+  padding: 5px 20px 5px 20px;
+  margin-top: 35px;
+  border-radius: 5px;
+  width: 200px;
+  height: 42px;
+  background-color: #ffb876;
+  color: #000;
+}
+
+.next_button button:hover {
+  background-color: #ffa34e;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .check {
+  width: 30%;
+}
+
+.input_word {
+  width: 30%;
+  font-size: 18px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #faf3b1;
+}
+
+.input_word_correct {
+  background-color: #d4ffd4;
+}
+
+.cheer {
+  font-size: 32px;
+  color: #008cba;
+  text-align: center;
+}
+
+.mistake {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.mistake_correct {
+  font-size: xx-large;
+  color: #008cba;
+}
+
+.mistake_wrong {
+  font-style: italic;
+  text-decoration: line-through;
+  color: rgb(255, 112, 112);
+}
+
+.congrats {
+  position: absolute;
+  top: 10%;
+  font-size: 28px;
+  font-style: italic;
+  color: #008cba;
+}
+
+.more_words {
+  padding: 10%;
+  color: #008cba;
+}
+
+.hint_block {
+  min-height: 48px;
+  padding: 10px;
+}
+
+.hint_button {
+  background-color: #9866ca;
+  width: 43px;
+  height: 43px;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.hint_try {
+  color: #c0efff;
+}
+
+.hint_wrong {
+  color: #ffbcac;
+}
+
+.other_block {
+  min-height: 18px;
+  margin: 25px 0 25px 0;
+}
+
+.other span {
+  margin-left: 10px;
+  color: #b4b4b4;
+}

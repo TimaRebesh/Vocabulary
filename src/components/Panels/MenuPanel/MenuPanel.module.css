@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin: 0% auto;
+}
+
+.menu button {
+  width: 400px;
+}
+
+/* .menu button:hover {
+  background-color: #025975;
+  color: white;
+} */
+
+.white {
+    color: #ffff;
+}
+
+
+
+.space {
+  height: 24px;
+}

@@ -1,0 +1,17 @@
+.preloader_block {
+    display: flex;
+}
+
+.preloader_content {
+  margin: 25% auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.go_menu {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
