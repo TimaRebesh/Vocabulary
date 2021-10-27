@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, Word } from '../../Types';
+import { Configurations, PanelName, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import Header from './Header';
 import WordView from './WordView';
@@ -10,20 +10,20 @@ type VocabularyProps = {
     configuration: Configurations;
     onSave: (v: Word[]) => void;
     saveConfig: (configuration: Configurations, removed: number[]) => void;
+    setPanel: (panelName: PanelName) => void
 }
 
-export default function VocabularyPanel({ vocabulary, configuration, onSave, saveConfig }: VocabularyProps) {
+export default function VocabularyPanel(props: VocabularyProps) {
 
-    const [words, setWords] = useState<Word[]>(vocabulary);
+    const [words, setWords] = useState<Word[]>(props.vocabulary);
     const [originals, setOriginals] = useState<string[]>([]);
-    const [isChanged, setIsChanged] = useState(false);
     const [isASC, setIsASC] = useState<boolean | null>(null);
     const [isNew, setIsNew] = useState(false);
     const [searchTerm, setSearchTerm] = useState('')
     const wordsRef = useRef<HTMLDivElement>(null);
     const [focus, setFocus] = useState<undefined | Object>();
 
-    useEffect(()=> setWords(vocabulary), [vocabulary]);
+    useEffect(() => setWords(props.vocabulary), [props.vocabulary]);
 
     useLayoutEffect(() => {
         if (wordsRef.current)
@@ -55,28 +55,12 @@ export default function VocabularyPanel({ vocabulary, configuration, onSave, sav
 
     useEffect(() => {
         const isElToRemove = words.find(el => el.id === 0);
-        if (isElToRemove) {
+        if (isElToRemove)
             setWords(words.filter(el => el.id !== 0))
-        } else {
+        else
             setOriginals(words.map(i => i.original));
-            checkIfChanged();
-        }
     }, [words])
 
-    const checkIfChanged = () => {
-        if (words.length !== vocabulary.length) {
-            setIsChanged(true);
-        } else {
-            let isSame;
-            for (let w of words) {
-                isSame = vocabulary.find(el => el.id === w.id);
-                if (!isSame)
-                    break;
-            }
-            if (!isSame)
-                setIsChanged(true);
-        }
-    }
 
     const change = (w: Word) => {
         setWords(words.map(el => el.id === w.id ? { ...w, id: getNewID() } : el));
@@ -90,8 +74,8 @@ export default function VocabularyPanel({ vocabulary, configuration, onSave, sav
 
     const save = () => {
         const withoutEmpty = words.filter(e => (e.original && e.translated));
-        onSave(withoutEmpty);
-        setIsChanged(false);
+        props.onSave(withoutEmpty);
+        props.setPanel('menu');
     }
 
     const getNewID = () => new Date().getTime();
@@ -104,10 +88,9 @@ export default function VocabularyPanel({ vocabulary, configuration, onSave, sav
             isASC={isASC} setIsASC={setIsASC}
             focus={focus}
             setNew={(v) => setIsNew(v)}
-            isChanged={isChanged}
             save={save}
-            config={configuration}
-            saveConfig={saveConfig}
+            config={props.configuration}
+            saveConfig={props.saveConfig}
         />
         <div ref={wordsRef} className={s.words_block}>
             {words

@@ -9,7 +9,7 @@ import { MenuButton } from '../../../helpers/ComponentHelpers';
 
 type SettingsProps = {
     configuration: Configurations;
-    onSave: (configuration: Configurations, removed: number[]) => void;
+    onSave: (configuration: Configurations, removed: number[], local?: boolean) => void;
     setPanel: (v: PanelName) => void;
 }
 
@@ -17,20 +17,34 @@ export default function SettingsPanel({ configuration, onSave, setPanel }: Setti
 
     const [config, setConfig] = useState<Configurations>(configuration);
     const removed = useRef<number[]>([]);
+    const [isNeedUpdateLocalConfig, setUpdateLocal] = useState(false);
 
-    const changeConfig = (newConfig: NewConfig[]) => {
+    const changeConfig = (newConfig: NewConfig[], onlyLocal:boolean = false) => {
         let changedConfig = { ...config } as Configurations;
         newConfig.forEach(nc => {
             changedConfig = { ...changedConfig, [nc.name]: nc.value }
         })
         setConfig({ ...changedConfig });
+        if (onlyLocal) 
+            setUpdateLocal(true);
     }
 
-    const save = () => {
-        if (!checkSimilarityOfValues(configuration, config))
-            onSave(config, removed.current);
-        setPanel('menu')
+    const save = (local?:boolean) => {
+        if(local) {
+            onSave(config, removed.current, true);
+            setUpdateLocal(false)
+        }
+        else {
+            if (!checkSimilarityOfValues(configuration, config))
+                onSave(config, removed.current);
+            setPanel('menu');
+        }
     }
+
+    useEffect(()=> {
+        if(isNeedUpdateLocalConfig)
+            save(true)
+    }, [isNeedUpdateLocalConfig])
 
     return (
         <div className={`${s.block} ${s[config.theme]}`}>
@@ -41,7 +55,7 @@ export default function SettingsPanel({ configuration, onSave, setPanel }: Setti
                         { name: 'studyLang', value },
                         { name: 'studyTopic', value: config.vocabularies[value][0]?.id }
                     ])} />
-                <Switcher label='Dark Theme' value={config.theme === 'dark'} onChange={value => changeConfig([{ name: 'theme', value: value ? 'dark' : 'white' }])} />
+                <Switcher label='Dark Theme' value={config.theme === 'dark'} onChange={value => changeConfig([{ name: 'theme', value: value ? 'dark' : 'white' }], true)} />
                 <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
                 <Switcher label='Show hints' value={config.hints} onChange={value => changeConfig([{ name: 'hints', value }])} />
                 <RangeSlider label='Learn all words' value={configuration.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />

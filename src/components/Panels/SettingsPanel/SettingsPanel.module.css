@@ -1,5 +1,17 @@
 .block {
-  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #dfdfdf;
+}
+
+.white {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .settings {
@@ -9,20 +21,10 @@
   width: 80%;
 }
 
-.block {
-  flex: 1 1 auto;
-  display: flex;
-  padding-bottom: 20px;
-}
-
 .block p {
   font-size: 18px;
 }
 
-.dark {
-  background-color: #1e1e1e;
-  color: #dfdfdf;
-}
 
 .left_side {
   width: 50%;

@@ -1,10 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import arrowdown from '../../../assets/images/arrowdown.png';
 import arrowup from '../../../assets/images/arrowup.png';
 import { Configurations, NewConfig, Topic } from '../../Types';
 import s from './VocabularyPanel.module.css';
-import { Spacer } from '../../../helpers/ComponentHelpers';
+import { MenuButton, Spacer } from '../../../helpers/ComponentHelpers';
 import VocabularySelectors from './VocabularySelectors/VocabularySelectors';
+import { ThemeContext } from '../../Main';
 
 type HeaderProps = {
     coutWords: number;
@@ -14,7 +15,6 @@ type HeaderProps = {
     setIsASC: (v: boolean) => void;
     focus: Object | undefined;
     setNew: (v: boolean) => void;
-    isChanged: boolean;
     save: () => void;
     config: Configurations;
     saveConfig: (configuration: Configurations, removed: number[]) => void;
@@ -22,17 +22,17 @@ type HeaderProps = {
 
 export default function Header(props: HeaderProps) {
 
-    
+    const theme = useContext(ThemeContext);
 
     return (
-        <div className={s.header}>
+        <div className={s.header + ' ' + s[theme]}>
+            <MenuButton executor={props.save} />
             <Counter count={props.coutWords} />
             <Search value={props.searchTerm} onChange={(v) => props.setSearchTerm(v)} />
             <Sort isASC={props.isASC} onChange={() => props.setIsASC(!props.isASC)} />
             <AddNewWord focus={props.focus} onChange={() => props.setNew(true)} />
-            <SaveButton isChanged={props.isChanged} onChange={props.save} />
             <Spacer />
-            <VocabularySelectors config={props.config} saveConfig={props.saveConfig}/>
+            <VocabularySelectors config={props.config} saveConfig={props.saveConfig} />
         </div>
     )
 }
@@ -73,8 +73,3 @@ const AddNewWord = (props: { focus: Object | undefined; onChange: () => void; })
 
     return <button ref={addNewButtonRef} className={s.add_new_word} onClick={props.onChange}>Add new word</button>
 }
-
-const SaveButton = (props: { isChanged: boolean, onChange: () => void }) =>
-    <>
-        {props.isChanged && <button className={s.save} onClick={props.onChange}>Save</button>}
-    </>

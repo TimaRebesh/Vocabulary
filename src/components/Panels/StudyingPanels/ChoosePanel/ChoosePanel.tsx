@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useRef, useState, useLayoutEffect, useContext } from 'react';
+import { ThemeContext } from '../../../Main';
 import { Word } from '../../../Types';
-import { checkIsWordNew, setCheer, StudyingWord } from '../StudyingHelpers';
+import { setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
 
 type ChooseProps = {
@@ -17,6 +18,7 @@ export default function ChoosePanel(props: ChooseProps) {
     const [chosenID, setChosenID] = useState(0);
     const buttonsGroupRef = useRef<HTMLDivElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
+    const theme = useContext(ThemeContext);
 
     useEffect(() => {
         const callback = (e: any) => {
@@ -83,7 +85,7 @@ export default function ChoosePanel(props: ChooseProps) {
         <StudyingWord mode={props.mode} studyWord={props.studyWord} />
         <div ref={buttonsGroupRef} className={s.buttons_group} onKeyDown={keyDown}>
             {props.optionalWords.map((o, order) =>
-                <button className={buttonStatus(o.id)}
+                <button className={`button ${buttonStatus(o.id)}`}
                     key={o.id}
                     id={order.toString()}
                     onClick={() => check(o.id)}
@@ -91,11 +93,9 @@ export default function ChoosePanel(props: ChooseProps) {
                     style={{ pointerEvents: chosenID > 0 ? 'none' : 'auto' }}
                 >{props.mode === 'original' ? o['translated'] : o['original']}</button>)
             }
-        </div>
-        {chosenID > 0 &&
-            <div className={s.next_button}>
-                <button ref={nextButtonRef} onClick={next}>Next</button>
+            <div className={`${s.next_button} ${s[theme]}`}>
+                {chosenID > 0 && <button className={s.next} ref={nextButtonRef} onClick={next}>Next</button>}
             </div>
-        }
+        </div>
     </>
 }

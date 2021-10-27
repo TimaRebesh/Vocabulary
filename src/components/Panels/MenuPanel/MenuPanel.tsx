@@ -13,15 +13,15 @@ export default function MenuPanel({ setPanel }: MenuPanelProps) {
     const theme = useContext(ThemeContext);
     return (
         <div className={defineClass(s.menu, s[theme])}>
-            <button onClick={() => setPanel('repeat')}>Repeat</button>
+            <button className='button' onClick={() => setPanel('repeat')}>Repeat</button>
             <div className={s.space}></div>
-            <button onClick={() => setPanel('studyNew')}>Study <span style={{ fontStyle: 'italic', color: '#ffa093' }}>NEW</span> only</button>
+            <button className='button' onClick={() => setPanel('studyNew')}>Study <span style={{ fontStyle: 'italic', color: '#ffa093' }}>NEW</span> only</button>
             <div className={s.space}></div>
-            <button onClick={() => setPanel('studyAll')}>Study all</button>
+            <button className='button' onClick={() => setPanel('studyAll')}>Study all</button>
             <div className={s.space}></div>
-            <button onClick={() => setPanel('vocabulary')}>My vocabulary</button>
+            <button className='button' onClick={() => setPanel('vocabulary')}>My vocabulary</button>
             <div className={s.space}></div>
-            <button onClick={() => setPanel('settings')}>Settings</button>
+            <button className='button' onClick={() => setPanel('settings')}>Settings</button>
         </div>
     )
 }

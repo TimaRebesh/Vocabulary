@@ -15,3 +15,18 @@
   top: 10px;
   left: 15px;
 }
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  padding: 0 2px 0 2px;
+  background-color: #181818;
+  z-index: 2;
+}
+
+.tooltip_dark {
+  color: #414339;
+  background-color: #d6d6d6;
+}

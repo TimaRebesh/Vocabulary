@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { ThemeContext } from '../../../Main';
 import { Word } from '../../../Types';
 import { checkIsWordNew, setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
@@ -42,6 +43,7 @@ function WritingView({ studyWord, onChange, isHint }: WritingViewProps) {
 
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
+    const theme = useContext(ThemeContext);
 
     useEffect(() => {
         inputRef.current?.focus();
@@ -58,7 +60,7 @@ function WritingView({ studyWord, onChange, isHint }: WritingViewProps) {
 
     return <>
         <StudyingWord mode={'translated'} studyWord={studyWord} />
-        <div className={s.center}>
+        <div className={s.center + ' ' + s[theme]}>
             <input
                 ref={inputRef}
                 type='text'
@@ -71,7 +73,7 @@ function WritingView({ studyWord, onChange, isHint }: WritingViewProps) {
         </div>
         <Hint isHint={isHint} studyWord={studyWord} value={value} setValue={setValue} />
         <div className={s.center}>
-            <button className={s.check} onClick={check}>Check</button>
+            <button className={`button ${s.check}`} onClick={check}>Check</button>
         </div>
     </>
 }
@@ -106,13 +108,13 @@ function ResultView({ currentWord, result, next }: ResultViesProps) {
                 </>
             }
         </div>
-        <div className={s.next_button}>
+       
             <button
+                className={'button '}
                 ref={nextButtonRef}
                 onClick={next}
                 onKeyDown={e => ['Enter'].includes(e.key) && click()}
             >Next</button>
-        </div>
     </div>
 }
 

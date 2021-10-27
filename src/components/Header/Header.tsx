@@ -51,9 +51,7 @@ export default function Header({ activePanel, setPanel, vocabularyName }: Header
     }
 
     return <div className={`${s.header} ${s[theme]}`}>
-        <div className={s.left_side}>
-            {/* {activePanel !== 'menu' && <button onClick={() => setPanel('menu')}>Menu</button>} */}
-        </div>
+        <div className={s.left_side}></div>
         <div className={s.center}>
             <p>{getLabel()}</p>
             {countdown > 0 &&

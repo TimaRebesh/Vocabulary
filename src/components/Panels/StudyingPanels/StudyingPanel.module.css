@@ -1,48 +1,58 @@
 .block {
-  
 }
 
 .word {
-  text-align: center;
-  min-width: 30%;
-  max-width: 56%;
+  min-width: 100px;
+  width: 380px;
   margin: auto;
   font-size: 20px;
   border: 1px solid #17177a;
   background-color: #fdfdfd;
   border-radius: 5px;
-  display: inline-block;
-  padding: 0 10px;
+  padding: 13px 10px;
+  line-height: 30px;
+}
+
+.word_dark{
+  color: #d6d6d6;
+  border: 1px solid #1f1f1f;
+  background-color: #383838;
 }
 
 .buttons_group {
   display: flex;
   flex-direction: column;
-  margin: 0 20%;
+  margin: auto;
+  position: relative;
 }
 
 .button {
-  width: 95%;
+  display: block;
+  width: 420px;
   height: 70px;
-  background-color: #008cba;
-  border: 1px solid #9595ce;
-  margin: 5px 0px 5px 5px;
-  border-radius: 5px;
-  font-size: 18px;
+  margin: 5px auto;
 }
 
 .button:focus {
   background-color: #025975;
 }
 
+.button:focus-visible {
+  outline: none;
+}
+
+.correct,
+.wrong {
+  border: 1px solid #b3b0b0;
+  color: #000;
+}
+
 .correct {
   background-color: #9bfba8;
-  color: #000;
 }
 
 .wrong {
   background-color: #fb9b9b;
-  color: #000;
 }
 
 .show_correct {
@@ -52,20 +62,30 @@
 
 .next_button {
   text-align: center;
+  height: 42px;
+  margin-top: 20px;
 }
 
-.next_button button {
-  padding: 5px 20px 5px 20px;
-  margin-top: 35px;
+.next_button .next {
+  /* padding: 5px 20px 5px 20px;
+  margin-top: 35px; */
   border-radius: 5px;
   width: 200px;
   height: 42px;
   background-color: #ffb876;
   color: #000;
+  border: 1px solid;
+  outline: none;
 }
 
-.next_button button:hover {
+.next_button .next:hover {
   background-color: #ffa34e;
+}
+
+.dark .next {
+  background-color: #bd7f45;
+  color: #d6d6d6;
+  border: none;
 }
 
 .center {
@@ -77,16 +97,28 @@
 }
 
 .input_word {
-  width: 30%;
+  width: 380px;
   font-size: 18px;
   padding: 12px 20px;
   box-sizing: border-box;
   border-radius: 4px;
   background-color: #faf3b1;
+  border: 1px solid;
+  outline: none;
 }
 
 .input_word_correct {
   background-color: #d4ffd4;
+}
+
+.dark .input_word {
+  background-color: #68563a;
+  color: white;
+  border: none;
+}
+
+.dark .input_word_correct {
+  background-color: #466246;
 }
 
 .cheer {
@@ -134,6 +166,7 @@
   width: 43px;
   height: 43px;
   padding: 4px;
+  border: none;
   border-radius: 50%;
 }
 
@@ -153,4 +186,12 @@
 .other span {
   margin-left: 10px;
   color: #b4b4b4;
+}
+
+.other_block_dark .other {
+  color: #636363;
+}
+
+.finished_dark {
+  color: #d6d6d6;
 }

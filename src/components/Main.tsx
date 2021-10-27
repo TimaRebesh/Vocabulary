@@ -1,11 +1,10 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import Header from './Header/Header';
 import MenuPanel from './Panels/MenuPanel/MenuPanel';
 import SettingsPanel from './Panels/SettingsPanel/SettingsPanel';
 import { Configurations, PanelName, Word } from './Types';
 import s from './Main.module.css';
 import { Api } from '../utils/Api';
-import { Preloader } from '../helpers/ComponentHelpers';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
@@ -13,6 +12,7 @@ import { EventBus } from '../utils/EentBus';
 import { forPracticeMinWords } from './Panels/StudyingPanels/StudyingHelpers';
 import MessagePanel from './Panels/MessagePanel/MessagePanel';
 import { getVocabularyName } from '../helpers/fucntionsHelp';
+import { Preloader } from '../helpers/ComponentHelpers';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
 export const ThemeContext = React.createContext('white');
 
@@ -26,6 +26,7 @@ export default function Main() {
     const [config, setConfig] = useState<Configurations>();
     const [vocabulary, setVocabulary] = useState<Word[]>();
     const [activePanelName, setActivePanelName] = useState<PanelName>('menu');
+    const updatedLocalConfig = useRef(false);
 
     useEffect(() => {
         window.eventBus = new EventBus();
@@ -39,20 +40,23 @@ export default function Main() {
 
 
     useEffect(() => {
-        if (config) {
-            setTimeout(() => {
+        if (config && !updatedLocalConfig.current) {
                 Api.getVocabulary(config.studyTopic)
                     .then(r => setVocabulary(r as Word[]))
                     .catch(e => console.log(e))
-            }, 500)
         }
+        updatedLocalConfig.current = false;
     }, [config])
 
     const setPanel = (panelName: PanelName) => {
         setActivePanelName(panelName);
     }
 
-    const saveConfig = (config: Configurations, removed: number[]) => {
+    const saveConfig = (config: Configurations, removed: number[], local: boolean = false) => {
+        if (local) {
+            setConfig(config);
+            updatedLocalConfig.current = true;
+        } else 
         Api.saveConfig(config, removed)
             .then(r => setConfig(r as Configurations))
             .catch(e => console.log(e))
@@ -78,15 +82,16 @@ export default function Main() {
                 case 'menu':
                     return <MenuPanel setPanel={setPanel} />;
                 case 'repeat':
-                    return <RepeatPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel}/>;
+                    return <RepeatPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'studyNew':
-                    return <StudyingNewPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel}/>;
+                    return <StudyingNewPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'vocabulary':
                     return <Suspense fallback={<Preloader />}>
-                        <VocabularyPanel configuration={config} vocabulary={vocabulary} onSave={saveVocabulary} saveConfig={saveConfig} />
+                        <VocabularyPanel configuration={config} vocabulary={vocabulary} onSave={saveVocabulary}
+                            saveConfig={saveConfig} setPanel={setPanel} />
                     </Suspense>
                 case 'settings':
-                    return <SettingsPanel configuration={config} onSave={saveConfig} setPanel={setPanel}/>
+                    return <SettingsPanel configuration={config} onSave={saveConfig} setPanel={setPanel} />
                 case 'addNew':
                     return <AddNewPanel />
                 default: return null;
@@ -95,7 +100,7 @@ export default function Main() {
     }
 
     return (
-        <div className={`${s.main} ${config && s[config.theme]}`}>
+        <div className={`${s.main} ${config && config.theme}`}>
             {config && vocabulary
                 ? <ThemeContext.Provider value={config.theme}>
                     <Header activePanel={activePanelName} setPanel={setPanel} vocabularyName={getVocabularyName(config)} />

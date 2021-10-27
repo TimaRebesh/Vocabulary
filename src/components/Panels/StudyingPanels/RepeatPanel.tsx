@@ -4,7 +4,7 @@ import ChoosePanel from './ChoosePanel/ChoosePanel';
 import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { checkSimilarityOfValues, deepCopy, getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
-import { checkIsWordNew, forPracticeMinWords } from './StudyingHelpers';
+import { checkIsWordNew, FinishedView, forPracticeMinWords } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import { MenuButton } from '../../../helpers/ComponentHelpers';
 
@@ -159,12 +159,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
         saveProgress();
     }
 
-    const finishedView = () => <div>
-        <p>Practice is finished</p>
-        <button onClick={again}>
-            <p>Try again</p>
-        </button>
-    </div>
+    
 
     const notEnoughView = () => <div className={s.more_words}>
         <p>You should have more than 3 words</p>
@@ -177,7 +172,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
         if (dataSet.length < forPracticeMinWords)
             return notEnoughView();
         else if (countdown.current === 0)
-            return finishedView();
+            return <FinishedView onClick={again}/>;
         else if (studiedWord)
             return mode !== 'writed'
                 ? <ChoosePanel studyWord={studiedWord} optionalWords={oneIterationWords} mode={mode}

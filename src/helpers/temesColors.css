@@ -9,3 +9,20 @@
 .dark_text {
     color: #d6d6d6;
 }
+
+.aroundtext {
+    background-color: #414339
+}
+
+.aroundtext2 {
+    background-color: #414339
+
+}
+
+.acive {
+    background-color: #f3a859;
+}
+
+.active:hover {
+    background-color: #ffc68a;
+}

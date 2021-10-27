@@ -11,6 +11,10 @@
   background-color: #2c3940;
 }
 
+.dark {
+  background-color: #181818;
+}
+
 .search {
   height: 36px;
   width: 200px;
@@ -18,6 +22,16 @@
   font-size: 18px;
   padding: 0 10px;
   border: 2px solid #2c3940;
+}
+
+.dark .search {
+  background-color: #414339;
+  color: #d6d6d6;
+  border: 1px solid #2c3940;
+}
+
+.dark .search:focus {
+  border: 1px solid #d6d6d6;
 }
 
 .search:focus {
@@ -52,11 +66,21 @@
   line-height: 6px;
   background-color: #9bfba8;
   color: #000;
-  border: 1px solid #9595ce;
+  width: 160px;
+  border: none;
+  border-radius: 5px;
 }
 
 .add_new_word:hover {
   background-color: #249e34;
+}
+
+.dark .add_new_word {
+  background-color: #f3a859;
+}
+
+.dark .add_new_word:hover {
+  background-color: #ffc68a;
 }
 
 .item {
@@ -89,17 +113,26 @@
   position: relative;
 }
 
-.word input:focus-visible {
+.editor {
+  position: "relative";
+}
+
+.editor input:focus-visible {
   border: 1px solid #dfdfdf;
   border-radius: 6px;
   font-size: 20px;
 }
 
-.word input::placeholder {
+.editor_dark input:focus-visible {
+  outline: none;
+  font-size: 20px;
+}
+
+.editor input::placeholder {
   color: #e2e2e2;
 }
 
-.word p {
+.editor p {
   margin: 0;
   font-weight: 600;
   font-size: 20px;
@@ -109,6 +142,12 @@
   padding: 0 6px;
   cursor: pointer;
   min-height: 25px;
+}
+
+.editor_dark p {
+  background-color: #383838;
+  border: none;
+  font-weight: 300;
 }
 
 .original {
@@ -122,6 +161,11 @@
 .original:hover,
 .translated:hover {
   background-color: #e7e7e7;
+}
+
+.editor_dark .original:hover,
+.editor_dark .translated:hover {
+  background-color: #c3c3c3;
 }
 
 .notification {
@@ -150,16 +194,38 @@
 }
 
 .remove_control {
-  cursor: pointer;
-  margin-left: 34px;
-  height: 22px;
-  opacity: 0.3;
+  width: 50px;
+  float: right;
+  padding-top: 3px;
 }
 
-.remove_control:hover {
-  opacity: 1;
-  height: 27px;
-  transition: height 400ms;
+
+.remove_button {
+  cursor: pointer;
+  opacity: 0.3;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  float: right;
+}
+
+.remove_button:hover {
+  background-color: #1e1e1e;
+  color: #ffff;
+}
+
+.remove_button div {
+  padding-right: 1px;
+}
+
+.remove_control_dark .remove_button {
+  border: 1px solid #ffff;
+}
+
+.remove_control_dark .remove_button:hover {
+  opacity: 0.7;
 }
 
 .remove {
@@ -171,7 +237,6 @@
   height: 23px;
   cursor: pointer;
 }
-
 
 .others_block {
   display: flex;

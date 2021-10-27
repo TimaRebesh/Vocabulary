@@ -1,4 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { ThemeContext } from '../../Main';
 import { Word } from '../../Types';
 import Others from './Others';
 import s from './VocabularyPanel.module.css';
@@ -108,6 +109,7 @@ function Editor(props: EditorProps) {
     const [notification, setNotification] = useState<null | string>(null);
     const existFrase = 'this word has already exist';
     const emptyFrase = 'value can not be empty';
+    const theme = useContext(ThemeContext);
 
     useLayoutEffect(() => {
         if (props.focus)
@@ -134,7 +136,7 @@ function Editor(props: EditorProps) {
     const onBlur = () => props.blur(value);
 
     return <>
-        <div style={{ position: 'relative' }}>
+        <div className={s.editor + ' ' + s['editor_' + theme]}>
             {props.focus
                 ? <input
                     ref={inputRef}

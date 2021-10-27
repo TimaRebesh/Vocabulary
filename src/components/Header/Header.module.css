@@ -57,6 +57,10 @@
   font-weight: bold;
 }
 
+.dark .congrats {
+  color: #bd7f45;;
+}
+
 .counter {
   border: 1px solid #6a6a6a;
   border-radius: 50%;
