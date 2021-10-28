@@ -2,19 +2,15 @@ import React from 'react';
 import s from './MessagePanel.module.css';
 
 type MessagePanelProps = {
-    firstMes?: string;
-    secondMes?: string;
+    legend?: string;
+    messages: (string | JSX.Element)[];
 }
 
-export default function MessagePanel({ firstMes, secondMes }: MessagePanelProps) {
-
+export default function MessagePanel({ messages, legend }: MessagePanelProps) {
     return (
-        <div className={s.more_words}>
-            <p>You should have more than 3 NEW words</p>
-            {firstMes
-                ? <span>{firstMes}</span>
-                : <span>Please add new words in <h3>"My Vocabulary"</h3></span>
-            }
+        <div className={s.block_message}>
+            {legend && <h2>{legend}</h2>}
+            {messages.map(message => <div>{message}</div>)}
         </div>
     )
 }

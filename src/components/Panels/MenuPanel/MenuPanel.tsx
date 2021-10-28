@@ -17,8 +17,6 @@ export default function MenuPanel({ setPanel }: MenuPanelProps) {
             <div className={s.space}></div>
             <button className='button' onClick={() => setPanel('studyNew')}>Study <span style={{ fontStyle: 'italic', color: '#ffa093' }}>NEW</span> only</button>
             <div className={s.space}></div>
-            <button className='button' onClick={() => setPanel('studyAll')}>Study all</button>
-            <div className={s.space}></div>
             <button className='button' onClick={() => setPanel('vocabulary')}>My vocabulary</button>
             <div className={s.space}></div>
             <button className='button' onClick={() => setPanel('settings')}>Settings</button>

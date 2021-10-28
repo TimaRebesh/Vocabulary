@@ -1,24 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Configurations, PanelName, Repeated, Word } from '../../Types';
+import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
 import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { deepCopy, getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
-import { checkIsWordNew, FinishedView } from './StudyingHelpers';
+import { checkIsWordNew, defineMode, defineOptionalSet, FinishedView, hideCongrats } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import MessagePanel from '../MessagePanel/MessagePanel';
-import { MenuButton } from '../../../helpers/ComponentHelpers';
+import { MenuButton, Preloader } from '../../../helpers/ComponentHelpers';
 
 type WordState = {
     id: number;
     repeated: number;
-}
-
-type StudyingPanelProps = {
-    config: Configurations;
-    vocabulary: Word[];
-    onSave: (value: Word[]) => void;
-    setPanel: (panelName: PanelName) => void
 }
 
 const mockWord = {
@@ -34,11 +27,10 @@ const mockWord = {
     lastRepeat: 1,
 }
 
-
 export default function StudyingNewPanel(props: StudyingPanelProps) {
 
     const [dataSet, setDataSet] = useState<Word[]>([]);
-    const [studiedOrder, setStudiedOrder] = useState(100);
+    const [studiedOrder, setStudiedOrder] = useState(1000);
     const [studiedWord, setStudiedWord] = useState<Word>();
     const [oneIterationWords, setOneIterationWords] = useState<Word[]>([]);
     const [mode, setMode] = useState('');
@@ -59,7 +51,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
             props.onSave(data);
         }
         setIsStadyFinished(false);
-        setDataSet([]); 
+        setDataSet([]);
     }
 
     useEffect(() => {
@@ -72,7 +64,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
     }, [props.vocabulary])
 
     useEffect(() => {
-        if (studiedOrder < 100 && dataSet.length > 0)
+        if (studiedOrder < 1000 && dataSet.length > 0)
             defineWords();
     }, [studiedOrder])
 
@@ -98,10 +90,10 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         }
         setStudiedWord(deepCopy(dataSet[order]));
 
-        const mode = defineMode(dataSet[order]);
+        const mode = defineMode(dataSet[order], props.config.modeWrite);
         setMode(mode);
 
-        const optionalSet = defineOptionalSet(order);
+        const optionalSet = defineOptionalSet(order, props.vocabulary, dataSet);
         setOneIterationWords(optionalSet);
     }
 
@@ -112,7 +104,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
             const isWordSuitable = checkIsWordSuitable(order);
             if (count === dataSet.length && !isWordSuitable) {
                 setIsStadyFinished(true);
-                order = 100;
+                order = 1000;
                 break;
             }
             if (isWordSuitable) {
@@ -130,26 +122,6 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         const isStillNew = checkIsWordNew(currentWord);
         const isRepeatedTimeNotFinished = (repeatWatcher.current.find(w => w.id === currentWord.id) as WordState).repeated < 3;
         return isStillNew && isRepeatedTimeNotFinished;
-    }
-
-    const defineMode = (word: Word) => {
-        let mode: Repeated | string;
-        const { original, translated, writed } = word.repeated;
-        mode = original >= translated ? 'translated' : 'original';
-        if (props.config.modeWrite) {
-            if (mode === 'translated' && translated > writed)
-                mode = 'writed';
-        }
-        return mode;
-    }
-
-    const defineOptionalSet = (position: number) => {
-        let words: Word[] = [];
-        const withoutStudyWordOrderSet = props.vocabulary.filter((i) => i.id !== dataSet[position].id);   // removed word by studyOrder
-        const shuffled = shuffle(withoutStudyWordOrderSet);                                         // mixing
-        words = shuffled.slice(0, 3);                                                               // cut
-        words.push(dataSet[position]);                                                              // added word by studyOrder like first element
-        return shuffle(words);
     }
 
     const update = (isCorrectAnswer: boolean) => {
@@ -177,25 +149,22 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         }
     }
 
-    const hideCongrats = () => window.eventBus.notify('nextWord');
-
-
     const getPanel = () => {
         if (dataSet.length === 0)
-            return <MessagePanel firstMes={'You learned all words'}/>
+            return <MessagePanel legend={'You learned all words'} messages={[<span>Please add new words in <h3>"My vocabulary"</h3></span>]} />;
         else if (isStudyFinished)
-            return <FinishedView onClick={saveProgress}/>;
+            return <FinishedView onClick={saveProgress} />;
         else if (studiedWord)
             return mode !== 'writed'
                 ? <ChoosePanel studyWord={studiedWord} optionalWords={oneIterationWords} mode={mode}
-                    onSave={update} noNewNumber={maxNumberDefiningNew} onlyNew />
+                    onSave={update} noNewNumber={maxNumberDefiningNew} />
                 : <WritingPanel studyWord={studiedWord} onSave={update} isHint={props.config.hints} />
         else
-            return null;
+            return <Preloader />;
     }
 
     return <div className={s.block}>
-        <MenuButton executor={save}/>
+        <MenuButton executor={save} />
         {getPanel()}
     </div>
 }

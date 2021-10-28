@@ -1,4 +1,4 @@
-export type PanelName = 'menu' | 'repeat' | 'studyAll' | 'studyNew' | 'vocabulary' | 'settings' | 'addNew';
+export type PanelName = 'menu' | 'repeat' | 'studyNew' | 'vocabulary' | 'settings' | 'addNew';
 
 export type Repeated = {
     translated: number;
@@ -18,7 +18,7 @@ export type Word = {
 export type Topic = {
     id: number;
     name: string;
-} 
+}
 
 export type Vocabulary = {
     [name: string]: Topic[];
@@ -41,3 +41,10 @@ export type NewConfig = {
 }
 
 export type Theme = 'white' | 'dark';
+
+export type StudyingPanelProps = {
+    config: Configurations;
+    vocabulary: Word[];
+    onSave: (value: Word[]) => void;
+    setPanel: (panelName: PanelName) => void;
+}

@@ -9,8 +9,6 @@ import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
 import { EventBus } from '../utils/EentBus';
-import { forPracticeMinWords } from './Panels/StudyingPanels/StudyingHelpers';
-import MessagePanel from './Panels/MessagePanel/MessagePanel';
 import { getVocabularyName } from '../helpers/fucntionsHelp';
 import { Preloader } from '../helpers/ComponentHelpers';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
@@ -76,8 +74,6 @@ export default function Main() {
 
     const shoosePanel = () => {
         if (config && vocabulary) {
-            if (['repeat', 'studyNew', 'studyAll'].includes(activePanelName) && vocabulary.length < forPracticeMinWords)
-                return <MessagePanel />
             switch (activePanelName) {
                 case 'menu':
                     return <MenuPanel setPanel={setPanel} />;

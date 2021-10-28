@@ -42,9 +42,8 @@ export default function Header({ activePanel, setPanel, vocabularyName }: Header
         switch (activePanel) {
             case ('menu'): return 'Menu';
             case ('settings'): return 'Settings';
-            case ('studyAll'): return 'Studying';
-            case ('studyNew'): return 'Study new words';
             case ('repeat'): return 'Repeat';
+            case ('studyNew'): return 'Study new words';
             case ('vocabulary'): return 'My vocabulary';
             default: return '---';
         }

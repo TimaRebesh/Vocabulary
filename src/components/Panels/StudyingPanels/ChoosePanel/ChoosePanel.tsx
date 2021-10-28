@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useLayoutEffect, useContext } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import { ThemeContext } from '../../../Main';
 import { Word } from '../../../Types';
 import { setCheer, StudyingWord } from '../StudyingHelpers';
@@ -10,7 +10,6 @@ type ChooseProps = {
     mode: string;
     onSave: (isCorrect: boolean) => void;
     noNewNumber: number;
-    onlyNew?: boolean;
 }
 
 export default function ChoosePanel(props: ChooseProps) {
