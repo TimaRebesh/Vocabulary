@@ -21,16 +21,14 @@ export default function WordView(props: WordViewProps) {
     return (
         <div className={s.item}>
             <ProgressBar progress={props.word} />
-            <div className={s.info}>
-                <EditView
-                    word={props.word}
-                    onSave={props.onSave}
-                    originals={props.originals}
-                    remove={() => props.remove(props.word)}
-                    focus={props.isNew && props.index === 0}
-                    passFocus={props.passFocus}
-                />
-            </div>
+            <EditView
+                word={props.word}
+                onSave={props.onSave}
+                originals={props.originals}
+                remove={() => props.remove(props.word)}
+                focus={props.isNew && props.index === 0}
+                passFocus={props.passFocus}
+            />
             <RemoveButton onClick={() => props.remove(props.word)} />
         </div>
     )
@@ -49,7 +47,7 @@ function ProgressBar(props: ProgressBarProps) {
                 <div key={el} className={`${s.progress_item} ${progressStatus >= el + 1 ? s.progress_positive : ''}`}>
                 </div>
             ).reverse()}
-            <Tooltip text={`progress is ${progressStatus}`} theme={theme} />
+            <Tooltip text={`progress: ${progressStatus}`} theme={theme} />
         </div>
     )
 }

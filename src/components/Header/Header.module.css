@@ -71,6 +71,7 @@
   position: absolute;
   top: 15px;
   left: 64%;
+  text-align: center;
 }
 
 .counter_value {

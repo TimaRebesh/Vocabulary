@@ -49,11 +49,3 @@ export function StudyingWord(props: { mode: string, studyWord: Word }) {
         </div>
     </>
 }
-
-export function FinishedView(props: { onClick: () => void }) {
-    const theme = useContext(ThemeContext);
-    return <div className={s['finished_' + theme]}>
-        <p>Practice is finished</p>
-        <button className='button' onClick={props.onClick}>Try again</button>
-    </div>
-}

@@ -2,15 +2,17 @@ import React from 'react';
 import s from './MessagePanel.module.css';
 
 type MessagePanelProps = {
-    legend?: string;
     messages: (string | JSX.Element)[];
+    legend?: string;
+    children?: JSX.Element;
 }
 
-export default function MessagePanel({ messages, legend }: MessagePanelProps) {
+export default function MessagePanel({ messages, legend, children }: MessagePanelProps) {
     return (
         <div className={s.block_message}>
             {legend && <h2>{legend}</h2>}
-            {messages.map(message => <div>{message}</div>)}
+            {messages.map((message, ind) => <div key={ind}>{message}</div>)}
+            {children}
         </div>
     )
 }

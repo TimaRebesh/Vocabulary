@@ -44,7 +44,7 @@ export default function EditView(props: EditViewProps) {
 
     const blur = (indx: number, value: string) => {
         const pos = indx ? 'translated' : 'original';
-        props.onSave({ ...props.word, original: editors[0].value, translated: editors[1].value, [pos]: value });
+        props.onSave({ ...props.word, original: editors[0].value.trim(), translated: editors[1].value.trim(), [pos]: value.trim() });
     }
 
     const keyDown = (indx: number, key: string, value: string) => {
@@ -67,7 +67,7 @@ export default function EditView(props: EditViewProps) {
 
     const saveOthers = (others: string[]) => props.onSave({ ...props.word, anothers: others });
 
-    return <>
+    return <div className={s.info}>
         <div className={s.word}>
             {editors.map((ed, index) =>
                 <Editor
@@ -85,7 +85,7 @@ export default function EditView(props: EditViewProps) {
             )}
         </div>
         <Others others={props.word.anothers} onSave={saveOthers} />
-    </>
+    </div>
 }
 
 type EditorProps = {

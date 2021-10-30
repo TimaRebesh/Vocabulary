@@ -22,8 +22,13 @@
   top: 0px;
   left: 20px;
   padding: 0 2px 0 2px;
-  background-color: #181818;
   z-index: 2;
+  opacity: 1;
+}
+
+.tooltip_white {
+  color: #ffffff;
+  background-color: #808080;
 }
 
 .tooltip_dark {

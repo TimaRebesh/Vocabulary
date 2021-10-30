@@ -4,7 +4,7 @@ import ChoosePanel from './ChoosePanel/ChoosePanel';
 import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { checkSimilarityOfValues, deepCopy, shuffle } from '../../../helpers/fucntionsHelp';
-import { checkIsWordNew, defineMode, defineOptionalSet, FinishedView, forPracticeMinWords, hideCongrats } from './StudyingHelpers';
+import { checkIsWordNew, defineMode, defineOptionalSet, forPracticeMinWords, hideCongrats } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import { MenuButton, Preloader } from '../../../helpers/ComponentHelpers';
 import MessagePanel from '../MessagePanel/MessagePanel';
@@ -26,7 +26,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     const countdown = useRef<number>(1000);
     const maxCount = 4;
 
-    
+
     const save = () => {
         saveProgress();
         sendCountdown(0);
@@ -51,9 +51,9 @@ export default function RepeatPanel(props: StudyingPanelProps) {
 
     const formatVoc = () => {
         let filteredByNotNew = props.vocabulary.filter(w => !checkIsWordNew(w))
-        filteredByNotNew.sort((a,b) => a.lastRepeat - b.lastRepeat);
+        filteredByNotNew.sort((a, b) => a.lastRepeat - b.lastRepeat);
 
-        if (filteredByNotNew.length > props.config.limitAll) 
+        if (filteredByNotNew.length > props.config.limitAll)
             filteredByNotNew = filteredByNotNew.slice(0, props.config.limitAll);
 
         const shuffledData = shuffle(filteredByNotNew);
@@ -134,9 +134,11 @@ export default function RepeatPanel(props: StudyingPanelProps) {
 
     const getPanel = () => {
         if (dataSet.length < forPracticeMinWords)
-            return  <MessagePanel legend={'You should have more than 3 learned words'} messages={[<>Please stady words in <h3>"Stady New only"</h3></>]} />;
+            return <MessagePanel legend={'You should have more than 3 learned words'} messages={[<>Please stady words in <h3>"Stady New only"</h3></>]} />;
         else if (countdown.current === 0)
-            return <FinishedView onClick={again}/>;
+            return <MessagePanel messages={[<p>Practice is finished</p>]}>
+                <button className='button' onClick={again}>Try again</button>
+            </MessagePanel>
         else if (studiedWord)
             return mode !== 'writed'
                 ? <ChoosePanel studyWord={studiedWord} optionalWords={oneIterationWords} mode={mode}
@@ -147,7 +149,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     }
 
     return <div className={s.block}>
-        <MenuButton executor={save}/>
+        <MenuButton executor={save} />
         {getPanel()}
     </div>
 }

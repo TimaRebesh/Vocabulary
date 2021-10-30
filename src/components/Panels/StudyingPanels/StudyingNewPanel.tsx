@@ -4,7 +4,7 @@ import ChoosePanel from './ChoosePanel/ChoosePanel';
 import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { deepCopy, getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
-import { checkIsWordNew, defineMode, defineOptionalSet, FinishedView, hideCongrats } from './StudyingHelpers';
+import { checkIsWordNew, defineMode, defineOptionalSet, hideCongrats } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import MessagePanel from '../MessagePanel/MessagePanel';
 import { MenuButton, Preloader } from '../../../helpers/ComponentHelpers';
@@ -153,7 +153,9 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         if (dataSet.length === 0)
             return <MessagePanel legend={'You learned all words'} messages={[<span>Please add new words in <h3>"My vocabulary"</h3></span>]} />;
         else if (isStudyFinished)
-            return <FinishedView onClick={saveProgress} />;
+            return <MessagePanel messages={[<p>Study is finished</p>]}>
+                <button className='button' onClick={saveProgress}>Try again</button>
+            </MessagePanel>
         else if (studiedWord)
             return mode !== 'writed'
                 ? <ChoosePanel studyWord={studiedWord} optionalWords={oneIterationWords} mode={mode}
