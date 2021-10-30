@@ -16,7 +16,7 @@ export default function VocabularySelectors(props: VocSelectorsProps) {
 
     const allTopics = props.config.vocabularies[props.config.studyLang];
     const studyTopic = allTopics.find(t => t.id === props.config.studyTopic) as Topic;
-    
+
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...props.config } as Configurations;
@@ -144,21 +144,9 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
                     <img src={arrowdown} alt='open' />
                 </div>
             </div>
-            {isOpen &&
-                <div className={s.list_popup}>
-                    <div className={s.list_item_create} onClick={createNew}>+ create new</div>
-                    <div className={s.list_items_block}>
-                        {props.topics.map(topic =>
-                            <div key={topic.id} className={s.list_item}>
-                                <div className={s.list_name}
-                                    onClick={_ => switchStudy(topic.id)}>{topic.name}
-                                </div>
-                                <img src={remove} alt='remove' className={s.remove} onClick={_ => removeItem(topic)} />
-                            </div>
-                        )}
-                    </div>
-                </div>
-            }
+            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={removeItem}>
+                {() => <div className={s.list_item_create} onClick={createNew}>+ create new</div>}
+            </SelectorPopup>
         </div>
     </div>
 }
@@ -202,14 +190,39 @@ function LanguageSelector(props: LanguageSelectorProps) {
                         <img src={arrowdown} alt='open' />
                     </div>
                 </div>
-                {isOpen &&
-                    <div className={s.list_popup}>
-                        {languageNames.map((name, index) =>
-                            <div key={name + index} className={s.list_item} onClick={_ => switchLang(index)}>{name}</div>
-                        )}
-                    </div>
-                }
+                <SelectorPopup isOpen={isOpen} choose={switchLang} items={languageNames.map((ln, ind) => ({ id: ind, name: ln }))} />
             </div>
         </div>
     )
+}
+
+type SelectorPopupProps = {
+    isOpen: boolean;
+    items: Topic[];
+    choose: (v: number) => void;
+    children?: () => JSX.Element;
+    onRemove?: (v: Topic) => void;
+}
+
+function SelectorPopup(props: SelectorPopupProps) {
+    return <>
+        {props.isOpen &&
+            <div className={s.list_popup}>
+                {props.children && props.children()}
+                <div className={s.list_items_block}>
+                    {props.items.map(item =>
+                        <div key={item.id} className={s.list_item}>
+                            <div className={s.list_name} onClick={_ => props.choose(item.id)}>
+                                {item.name}
+                            </div>
+                            {props.onRemove &&
+                                <img src={remove} alt='remove' className={s.remove}
+                                    onClick={_ => props.onRemove && props.onRemove(item)} />
+                            }
+                        </div>
+                    )}
+                </div>
+            </div>
+        }
+    </>
 }

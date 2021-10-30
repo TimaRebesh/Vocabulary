@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
-import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { deepCopy, getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
 import { checkIsWordNew, defineMode, defineOptionalSet, hideCongrats } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import MessagePanel from '../MessagePanel/MessagePanel';
-import { MenuButton, Preloader } from '../../../helpers/ComponentHelpers';
+import { Preloader } from '../../../helpers/ComponentHelpers';
+import { StudyingPanel } from './StudyingPanel';
 
 type WordState = {
     id: number;
@@ -165,8 +165,5 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
             return <Preloader />;
     }
 
-    return <div className={s.block}>
-        <MenuButton executor={save} />
-        {getPanel()}
-    </div>
+    return <StudyingPanel getPanel={getPanel} onSave={save} />
 }

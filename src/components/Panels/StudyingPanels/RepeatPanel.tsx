@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
-import s from './StudyingPanel.module.css';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { checkSimilarityOfValues, deepCopy, shuffle } from '../../../helpers/fucntionsHelp';
 import { checkIsWordNew, defineMode, defineOptionalSet, forPracticeMinWords, hideCongrats } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
-import { MenuButton, Preloader } from '../../../helpers/ComponentHelpers';
+import { Preloader } from '../../../helpers/ComponentHelpers';
 import MessagePanel from '../MessagePanel/MessagePanel';
+import { StudyingPanel } from './StudyingPanel';
 
 type Mistake = {
     order: number,
@@ -148,8 +148,5 @@ export default function RepeatPanel(props: StudyingPanelProps) {
             return <Preloader />;
     }
 
-    return <div className={s.block}>
-        <MenuButton executor={save} />
-        {getPanel()}
-    </div>
+    return <StudyingPanel getPanel={getPanel} onSave={save} />
 }

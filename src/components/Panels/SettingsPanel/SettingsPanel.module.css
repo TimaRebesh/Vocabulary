@@ -25,7 +25,6 @@
   font-size: 18px;
 }
 
-
 .left_side {
   width: 50%;
   text-align: right;
@@ -35,7 +34,8 @@
   width: 50%;
 }
 
-.vocabulary_selector, .language_selector {
+.vocabulary_selector,
+.language_selector {
   position: relative;
 }
 
@@ -79,7 +79,10 @@
   z-index: 2;
   background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -khtml-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
 }
 
 .list_items_block {
@@ -99,7 +102,7 @@
 }
 
 .list_item_create {
-  background-color: #008cba; 
+  background-color: #008cba;
   color: #fff;
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
   padding: 5px;
@@ -109,11 +112,11 @@
 .list_item_create:hover {
   padding: 5px;
   cursor: pointer;
-  background-color: #015774; 
+  background-color: #015774;
 }
 
 .list_item:hover {
-  background-color: #008cba; 
+  background-color: #008cba;
   color: #fff;
 }
 
@@ -152,7 +155,7 @@
   padding: 5px;
   border-radius: 13px;
   color: #ffff;
-  background-color: #008cba; 
+  background-color: #008cba;
 }
 
 .space {
@@ -207,14 +210,14 @@
 }
 
 .dark .slider:before {
-  background-color: #c89a68
+  background-color: #c89a68;
 }
 
 input:checked + .slider {
   background-color: #008cba;
 }
 
-.dark input:checked + .slider{
+.dark input:checked + .slider {
   background-color: #4a4a4a;
 }
 
@@ -248,7 +251,7 @@ input:checked + .slider:before {
   color: #494949;
 }
 
-.dark .box_minmax{
+.dark .box_minmax {
   color: #e2e2e2;
 }
 

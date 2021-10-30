@@ -64,7 +64,6 @@
 .list_item {
   display: flex;
   color: #008cba;
-  padding: 5px;
   cursor: pointer;
 }
 
@@ -75,9 +74,12 @@
 .list_item_create {
   background-color: #008cba;
   color: #fff;
-  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
   padding: 5px;
   cursor: pointer;
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
+  -khtml-box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%);
 }
 
 .list_item_create:hover {
@@ -93,10 +95,12 @@
 
 .list_name {
   flex: 1 1 auto;
+  padding: 5px;
 }
 
 .remove {
   height: 17px;
+  padding: 5px;
   opacity: 0.3;
 }
 
