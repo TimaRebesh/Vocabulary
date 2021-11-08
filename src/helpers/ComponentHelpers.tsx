@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import ReactDOM from 'react-dom';
 import preloader from '../assets/images/preloader.gif';
 import s from './Helpers.module.css';
+import { ThemeContext } from '../components/Main';
 
 export function Preloader({ info }: { info?: string }) {
     return <div className={s.preloader_block}>
@@ -21,18 +23,18 @@ export function MenuButton({ executor }: { executor: () => void }) {
 
 type TooltipProps = {
     text: string | number;
-    theme: string;
 }
 
-export function Tooltip({ text, theme }: TooltipProps) {
+export function Tooltip({ text }: TooltipProps) {
 
     const [isFocus, setIsFocus] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
+    const theme = useContext(ThemeContext);
     const timeout = useRef<number>(0);
 
     useEffect(() => {
         let parent: any = null;
-        const mouseEnter = () => timeout.current = window.setTimeout(()=> setIsFocus(true), 500);
+        const mouseEnter = () => timeout.current = window.setTimeout(() => setIsFocus(true), 500);
         const mouseLeave = () => {
             window.clearTimeout(timeout.current);
             setIsFocus(false);
@@ -65,4 +67,46 @@ export function Tooltip({ text, theme }: TooltipProps) {
             </div>
         }
     </div>
+}
+
+const modalRoot = document.getElementById('modal-root') as HTMLElement;
+
+type ModalProps = {
+    isShown: boolean;
+    children: JSX.Element;
+}
+
+export const Modal = (props: ModalProps) =>
+    ReactDOM.createPortal(
+        props.isShown &&
+        <div className={s.modal_background}>
+            {props.children}
+        </div>,
+        modalRoot);
+
+
+type QuestionControlProps = {
+    show: boolean;
+    hide: () => void;
+    text: string;
+    onYes: () => void;
+}
+
+export function QuestionControl(props: QuestionControlProps) {
+    const theme = useContext(ThemeContext);
+
+    return <Modal isShown={props.show}>
+        <div className={s.modal + ' ' + s[theme]}>
+            <div className={s.modal_header}>
+                <div className={s.modal_close} onClick={props.hide}>&times;</div>
+            </div>
+            <div className={s.modal_content}>
+                <div className={s.modal_text + ' ' + s[theme]}>{props.text}</div>
+                <div className={s.modal_buttons}>
+                    <button className='button' onClick={props.onYes}>Yes</button>
+                    <button className='button' onClick={props.hide}>No</button>
+                </div>
+            </div>
+        </div>
+    </Modal>
 }

@@ -211,10 +211,6 @@
   color: #ffff;
 }
 
-.remove_button div {
-  padding-right: 1px;
-}
-
 .remove_control_dark .remove_button {
   border: 1px solid #ffff;
 }
@@ -322,4 +318,123 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.edit_button {
+  height: 26px;
+  padding: 11px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.edit_button:hover {
+  opacity: 0.5;
+}
+
+.ve_modal {
+  background-color: #fefefe;
+  margin: 15% auto;
+  width: 260px;
+  border-radius: 10px;
+}
+
+.ve_header {
+  height: 40px;
+  position: relative;
+  background-color: #008cba;
+  color: white;
+  border-bottom: 1px solid #292929;
+  border-radius: 10px 10px 0 0;
+}
+
+.ve_header p {
+  padding: 12px;
+}
+
+.dark {
+  background-color: #181818;
+}
+
+.ve_close {
+  position: absolute;
+  right: 9px;
+  bottom: 4px;
+  color: #2f2f2f;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.ve_close:hover,
+.ve_close:focus {
+  color: #e6e6e6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ve_content {
+  padding: 26px;
+}
+
+.ve_content input {
+  width: 200px;
+  max-height: 27px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: Segoe UI, Arial Unicode MS, Arial, sans-serif;
+  outline: none;
+  padding: 2px;
+}
+
+.ve_content input:focus-visible {
+  border: 1px solid #999999;
+}
+
+.excel_button {
+  color: #000000;
+  background-color: #ffffff;
+  height: 14px;
+  width: 172px;
+  padding: 7px 15px;
+  position: relative;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border: 1px solid #008cba;
+}
+
+.excel_button:hover {
+  background-color: #008cba;
+  color: #fff;
+}
+
+.excel_button img {
+  position: absolute;
+  left: 26px;
+  top: 6px;
+}
+
+.import_info {
+  height: 40px;
+  padding: 10px 0;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.not_valid {
+  color: #d10303;
+}
+
+.ve_buttons {
+  text-align: center;
+}
+
+.ve_buttons button {
+  height: 30px;
+  width: 80px;
+  padding: 5px 20px;
+  font-size: 14px;
 }

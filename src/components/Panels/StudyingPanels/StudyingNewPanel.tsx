@@ -149,12 +149,18 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         }
     }
 
+    const again = () => {
+        setStudiedOrder(0);
+        setOneIterationWords([]);
+        saveProgress();
+    }
+
     const getPanel = () => {
         if (dataSet.length === 0)
             return <MessagePanel legend={'You learned all words'} messages={[<span>Please add new words in <h3>"My vocabulary"</h3></span>]} />;
         else if (isStudyFinished)
             return <MessagePanel messages={[<p>Study is finished</p>]}>
-                <button className='button' onClick={saveProgress}>Try again</button>
+                <button className='button' onClick={again}>Try again</button>
             </MessagePanel>
         else if (studiedWord)
             return mode !== 'writed'

@@ -9,7 +9,7 @@ export const Api = {
                 resolve(dataConfigurations)
             }
             const data = localStorage.getItem('config') as string;
-            resolve(JSON.parse(data));
+            resolve(JSON.parse(data) as Configurations);
 
         });
     },
@@ -27,20 +27,18 @@ export const Api = {
         }
         return new Promise((resolve, reject) => {
             const data = localStorage.getItem(studyTopic.toString()) as string;
-            resolve(JSON.parse(data));
+            resolve(JSON.parse(data) as Word[]);
         });
     },
 
     saveConfig(config: Configurations, removed: number[]) {
-        console.log(config)
         if (removed.length) 
             removed.forEach(r => localStorage.removeItem(r.toString()))
         
         return new Promise((resolve, reject) => {
             localStorage.setItem('config', JSON.stringify(config));
             const data = localStorage.getItem('config') as string;
-            resolve(JSON.parse(data));
-            console.log(JSON.parse(data))
+            resolve(JSON.parse(data) as Configurations);
         })
     },
 
@@ -48,7 +46,7 @@ export const Api = {
         return new Promise((resolve, reject) => {
             localStorage.setItem(studyTopicID.toString(), JSON.stringify(value))
             const data = localStorage.getItem(studyTopicID.toString()) as string;
-            resolve(JSON.parse(data));
+            resolve(JSON.parse(data) as Word[]);
         })
     }
 }

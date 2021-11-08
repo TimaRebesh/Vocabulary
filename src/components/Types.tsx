@@ -48,3 +48,8 @@ export type StudyingPanelProps = {
     onSave: (value: Word[]) => void;
     setPanel: (panelName: PanelName) => void;
 }
+
+export type VocMutation = {
+    name: string;
+    vocWords: Word[] | null;
+}

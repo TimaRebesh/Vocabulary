@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useContext, useLayoutEffect, useRef } from 'react';
 import arrowdown from '../../../assets/images/arrowdown.png';
 import arrowup from '../../../assets/images/arrowup.png';
-import { Configurations, NewConfig, Topic } from '../../Types';
+import { Configurations, VocMutation, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import { MenuButton, Spacer } from '../../../helpers/ComponentHelpers';
 import VocabularySelectors from './VocabularySelectors/VocabularySelectors';
 import { ThemeContext } from '../../Main';
+import VocabularyEditor from './VocabularyEditor';
 
 type HeaderProps = {
     coutWords: number;
@@ -16,8 +17,10 @@ type HeaderProps = {
     focus: Object | undefined;
     setNew: (v: boolean) => void;
     save: () => void;
+    voc: Word[];
     config: Configurations;
     saveConfig: (configuration: Configurations, removed: number[]) => void;
+    saveConfigAndVoc: (val: VocMutation) => void;
 }
 
 export default function Header(props: HeaderProps) {
@@ -32,6 +35,7 @@ export default function Header(props: HeaderProps) {
             <Sort isASC={props.isASC} onChange={() => props.setIsASC(!props.isASC)} />
             <AddNewWord focus={props.focus} onChange={() => props.setNew(true)} />
             <Spacer />
+            <VocabularyEditor config={props.config} voc={props.voc} saveConfigAndVoc={props.saveConfigAndVoc} />
             <VocabularySelectors config={props.config} saveConfig={props.saveConfig} />
         </div>
     )

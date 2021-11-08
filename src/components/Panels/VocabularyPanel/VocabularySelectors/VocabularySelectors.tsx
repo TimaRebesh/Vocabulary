@@ -3,13 +3,11 @@ import { Configurations, NewConfig, Topic } from '../../../Types';
 import s from './VocabularySelectors.module.css';
 import remove from '../../../../assets/images/close-icon.png';
 import arrowdown from '../../../../assets/images/arrowdown.png';
+import { QuestionControl } from '../../../../helpers/ComponentHelpers';
 
 type VocSelectorsProps = {
     config: Configurations;
     saveConfig: (newConfig: Configurations, removed: number[]) => void;
-    // cnangeTopic: (newConfig: any) => void;
-    // changeAllVoc: (value: Topic, remove?: boolean) => void;
-
 }
 
 export default function VocabularySelectors(props: VocSelectorsProps) {
@@ -67,6 +65,7 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isNew, setIsNew] = useState(false);
+    const [isRemoveTopic, setIsRemoveTopic] = useState<Topic | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const blockRef = useRef<HTMLDivElement>(null);
 
@@ -104,7 +103,10 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
 
     const removeNew = (e: React.FocusEvent<HTMLInputElement>) => setIsNew(false);
 
-    const removeItem = (topic: Topic) => props.changeAllVoc(topic, true);
+    const removeItem = () => {
+        isRemoveTopic && props.changeAllVoc(isRemoveTopic, true);
+        setIsRemoveTopic(null);
+    }
 
     const getStadyingName = () => props.studyingTopic?.name ?? 'you have no one';
 
@@ -114,7 +116,6 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
     }
 
     const selectorKeyDown = (e: React.KeyboardEvent) => {
-        console.log('keydows')
         if (e.key === 'Escape')
             setIsNew(false);
     }
@@ -144,10 +145,11 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
                     <img src={arrowdown} alt='open' />
                 </div>
             </div>
-            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={removeItem}>
+            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={(topic)=> setIsRemoveTopic(topic)}>
                 {() => <div className={s.list_item_create} onClick={createNew}>+ create new</div>}
             </SelectorPopup>
         </div>
+        <QuestionControl show={isRemoveTopic !== null} hide={()=> setIsRemoveTopic(null)} text='Do you realy want to remove this vocabulary?' onYes={removeItem}/>
     </div>
 }
 

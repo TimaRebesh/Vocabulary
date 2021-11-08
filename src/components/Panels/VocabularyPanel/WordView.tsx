@@ -40,14 +40,13 @@ type ProgressBarProps = {
 
 function ProgressBar(props: ProgressBarProps) {
     const progressStatus = props.progress.repeated.original + props.progress.repeated.translated + props.progress.repeated.writed;
-    const theme = useContext(ThemeContext);
     return (
         <div className={s.progress}>
             {Array.from(Array(maxNumberDefiningNew).keys()).map(el =>
                 <div key={el} className={`${s.progress_item} ${progressStatus >= el + 1 ? s.progress_positive : ''}`}>
                 </div>
             ).reverse()}
-            <Tooltip text={`progress: ${progressStatus}`} theme={theme} />
+            <Tooltip text={`progress: ${progressStatus}`} />
         </div>
     )
 }
@@ -57,8 +56,8 @@ function RemoveButton(props: { onClick: () => void }) {
     return (
         <div className={s.remove_control + ' ' + s['remove_control_' + theme]} >
             <div className={s.remove_button} onClick={props.onClick}>
-                <div>x</div>
-                <Tooltip text={'remove'} theme={theme} />
+                <div>&times;</div>
+                <Tooltip text='remove' />
             </div>
         </div>
     )

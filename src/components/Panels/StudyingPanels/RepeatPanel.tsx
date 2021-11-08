@@ -26,7 +26,6 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     const countdown = useRef<number>(1000);
     const maxCount = 4;
 
-
     const save = () => {
         saveProgress();
         sendCountdown(0);

@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, PanelName, Word } from '../../Types';
+import { Configurations, PanelName, VocMutation, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import Header from './Header';
 import WordView from './WordView';
@@ -10,7 +10,8 @@ type VocabularyProps = {
     configuration: Configurations;
     onSave: (v: Word[]) => void;
     saveConfig: (configuration: Configurations, removed: number[]) => void;
-    setPanel: (panelName: PanelName) => void
+    setPanel: (panelName: PanelName) => void;
+    saveConfigAndVoc: (val: VocMutation) => void;
 }
 
 export default function VocabularyPanel(props: VocabularyProps) {
@@ -89,8 +90,10 @@ export default function VocabularyPanel(props: VocabularyProps) {
             focus={focus}
             setNew={(v) => setIsNew(v)}
             save={save}
+            voc={props.vocabulary}
             config={props.configuration}
             saveConfig={props.saveConfig}
+            saveConfigAndVoc={props.saveConfigAndVoc}
         />
         <div ref={wordsRef} className={s.words_block}>
             {words
