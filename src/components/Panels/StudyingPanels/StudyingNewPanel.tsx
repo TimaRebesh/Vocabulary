@@ -36,6 +36,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
     const [mode, setMode] = useState('');
     const repeatWatcher = useRef<WordState[]>([]);
     const [isStudyFinished, setIsStadyFinished] = useState(false);
+    const isStart = useRef(true);
 
     const save = () => {
         saveProgress();
@@ -61,6 +62,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
         repeatWatcher.current = formatedVoc.map(word => ({ id: word.id, repeated: 0 }));
         setStudiedOrder(0);
         setDataSet(formatedVoc);
+        isStart.current = false;
     }, [props.vocabulary])
 
     useEffect(() => {
@@ -156,6 +158,8 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
     }
 
     const getPanel = () => {
+        if (isStart.current)
+            return <div></div>
         if (dataSet.length === 0)
             return <MessagePanel legend={'You learned all words'} messages={[<span>Please add new words in <h3>"My vocabulary"</h3></span>]} />;
         else if (isStudyFinished)

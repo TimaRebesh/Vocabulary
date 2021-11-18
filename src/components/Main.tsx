@@ -109,14 +109,16 @@ export default function Main() {
     return (
         <div className={`${s.main} ${config && config.theme}`}>
             {config && vocabulary
-                ? <ThemeContext.Provider value={config.theme}>
+                ? 
+                <ThemeContext.Provider value={config.theme}>
                     <Header activePanel={activePanelName} setPanel={setPanel} vocabularyName={getVocabularyName(config)} />
                     <div className={s.panel}>
                         <div className={shooseClass()}>{shoosePanel()}</div>
                     </div>
                     <div className={s.footer}></div>
                 </ThemeContext.Provider>
-                : <Preloader />
+                : 
+                <Preloader />
             }
         </div>
     )

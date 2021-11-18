@@ -24,7 +24,9 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     const [mistakes, setMistakes] = useState<Mistake[]>([]);
     const [isMistakeTime, setIsMistakeTime] = useState(false);
     const countdown = useRef<number>(1000);
+    const isStart = useRef(true);
     const maxCount = 4;
+
 
     const save = () => {
         saveProgress();
@@ -46,6 +48,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
         const formatedVoc = formatVoc();
         setDataSet(formatedVoc);
         countdown.current = (formatedVoc.length > props.config.limitAll) ? props.config.limitAll : formatedVoc.length;
+        isStart.current = false;
     }, [props.vocabulary])
 
     const formatVoc = () => {
@@ -132,6 +135,8 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     }
 
     const getPanel = () => {
+        if (isStart.current)
+            return <div></div>
         if (dataSet.length < forPracticeMinWords)
             return <MessagePanel legend={'You should have more than 3 learned words'} messages={[<>Please stady words in <h3>"Stady New only"</h3></>]} />;
         else if (countdown.current === 0)
