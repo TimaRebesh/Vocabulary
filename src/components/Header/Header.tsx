@@ -17,22 +17,22 @@ export default function Header({ activePanel, setPanel, vocabularyName }: Header
     const getCheer = () => cheer[Math.floor(Math.random() * cheer.length)];
     const theme = useContext(ThemeContext);
 
-    useEffect(() => {
-        const executorStydied = () => setIsShowCongrats('you learned this word');
-        const executorNextWord = () => setIsShowCongrats('');
-        const executorCheer = () => setIsShowCongrats(getCheer());
-        const executorCountdown = (count: number) => setCountdown(count);
-        const unregisterStydied = window.eventBus.register({ name: 'stydied', executor: executorStydied });
-        const unregisterNextWord = window.eventBus.register({ name: 'nextWord', executor: executorNextWord });
-        const unregisterCheer = window.eventBus.register({ name: 'cheer', executor: executorCheer });
-        const unregisterCountdown = window.eventBus.register({ name: 'countdown', executor: executorCountdown })
-        return () => {
-            unregisterStydied();
-            unregisterNextWord();
-            unregisterCheer();
-            unregisterCountdown();
-        }
-    }, [])
+    // useEffect(() => {
+    //     const executorStydied = () => setIsShowCongrats('you learned this word');
+    //     const executorNextWord = () => setIsShowCongrats('');
+    //     const executorCheer = () => setIsShowCongrats(getCheer());
+    //     const executorCountdown = (count: number) => setCountdown(count);
+    //     const unregisterStydied = window.eventBus.register({ name: 'stydied', executor: executorStydied });
+    //     const unregisterNextWord = window.eventBus.register({ name: 'nextWord', executor: executorNextWord });
+    //     const unregisterCheer = window.eventBus.register({ name: 'cheer', executor: executorCheer });
+    //     const unregisterCountdown = window.eventBus.register({ name: 'countdown', executor: executorCountdown })
+    //     return () => {
+    //         unregisterStydied();
+    //         unregisterNextWord();
+    //         unregisterCheer();
+    //         unregisterCountdown();
+    //     }
+    // }, [])
 
     useEffect(() => {
         setIsShowCongrats('');

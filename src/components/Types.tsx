@@ -26,6 +26,7 @@ export type Vocabulary = {
 
 export type Configurations = {
     studyLang: string;
+    studyID: number,
     vocabularies: Vocabulary;
     studyTopic: number;
     modeWrite: boolean;

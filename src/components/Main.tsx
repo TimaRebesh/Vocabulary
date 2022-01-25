@@ -11,6 +11,8 @@ import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
 import { EventBus } from '../utils/EentBus';
 import { deepCopy, getVocabularyName } from '../helpers/fucntionsHelp';
 import { Preloader } from '../helpers/ComponentHelpers';
+import { useGetConfigQuery, useUpdateConfigMutation } from '../API/configApi';
+import { useLazyGetVocabularyQuery } from '../API/vocabularyApi';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
 export const ThemeContext = React.createContext('white');
 
@@ -21,26 +23,16 @@ declare global {
 
 export default function Main() {
 
-    const [config, setConfig] = useState<Configurations>();
-    const [vocabulary, setVocabulary] = useState<Word[]>();
+    const { data: config = undefined } = useGetConfigQuery({});
+    const [ trigger , { data: vocabulary = undefined }]= useLazyGetVocabularyQuery();
+    const [updateConfig, updateConfigStatus] = useUpdateConfigMutation();
+    const [v, setVocabulary] = useState<Word[]>();
     const [activePanelName, setActivePanelName] = useState<PanelName>('menu');
 
-    useEffect(() => {
-        window.eventBus = new EventBus();
-        setTimeout(() => {
-            Api.getConfig()
-                .then(r => setConfig(r as Configurations))
-                .catch(e => console.log(e))
-
-        }, 500)
-    }, [])
-
-
-    useEffect(() => {
+    console.log(vocabulary)
+    useEffect(()=> {
         if (config) {
-            Api.getVocabulary(config.studyTopic)
-                .then(r => setVocabulary(r as Word[]))
-                .catch(e => console.log(e))
+            trigger(config.studyID)
         }
     }, [config])
 
@@ -48,10 +40,13 @@ export default function Main() {
         setActivePanelName(panelName);
     }
 
-    const saveConfig = (config: Configurations, removed: number[]) =>
-        Api.saveConfig(config, removed)
-            .then(r => setConfig(r as Configurations))
-            .catch(e => console.log(e))
+    const saveConfig = (config: Configurations, removed: number[]) => {
+        // Api.saveConfig(config, removed)
+        //     .then(r => setConfig(r as Configurations))
+        //     .catch(e => console.log(e))
+        console.log(config)
+        updateConfig(config)
+    }
 
 
     const saveVocabulary = (value: Word[]) =>
@@ -61,7 +56,7 @@ export default function Main() {
 
     const saveConfigAndVoc = async (value: VocMutation) => {
         let updatedConf: Configurations | null = null;
-        let updatedVoc:Word[] | null = null;
+        let updatedVoc: Word[] | null = null;
         if (value.name && config) {
             const newConf = deepCopy(config) as Configurations;
             const newVocTopics = newConf.vocabularies[newConf.studyLang].map((topic) =>
@@ -69,10 +64,10 @@ export default function Main() {
             newConf.vocabularies[newConf.studyLang] = newVocTopics;
             updatedConf = await Api.saveConfig(newConf, []) as Configurations;
         }
-        if (value.vocWords) 
+        if (value.vocWords)
             updatedVoc = await Api.saveVocabulary(value.vocWords, config?.studyTopic as number) as Word[];
-        if (updatedConf)
-            setConfig(updatedConf);
+        // if (updatedConf)
+        //     setConfig(updatedConf);
         if (updatedVoc)
             setVocabulary(updatedVoc);
     }
@@ -109,7 +104,7 @@ export default function Main() {
     return (
         <div className={`${s.main} ${config && config.theme}`}>
             {config && vocabulary
-                ? 
+                ?
                 <ThemeContext.Provider value={config.theme}>
                     <Header activePanel={activePanelName} setPanel={setPanel} vocabularyName={getVocabularyName(config)} />
                     <div className={s.panel}>
@@ -117,7 +112,7 @@ export default function Main() {
                     </div>
                     <div className={s.footer}></div>
                 </ThemeContext.Provider>
-                : 
+                :
                 <Preloader />
             }
         </div>

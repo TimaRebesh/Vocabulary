@@ -7,6 +7,7 @@ export const dataConfigurations: Configurations = {
         'Russian': [{ id: 300, name: 'Алфавит' }],
     },
     studyLang: 'English',
+    studyID: 100,
     studyTopic: 100,
     hints: true,
     modeWrite: true,
