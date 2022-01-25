@@ -1,0 +1,24 @@
+{
+    "comments": [
+        {
+            "id": 2,
+            "text": "est natus enim nihil"
+        },
+        {
+            "id": 3,
+            "text": "quia molesa"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Leanne Graham",
+            "email": "Sincere@april.biz"
+        },
+        {
+            "id": 2,
+            "name": "Dima",
+            "email": "Sincere@april.biz"
+        }
+    ]
+}
