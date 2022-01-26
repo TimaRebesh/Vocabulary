@@ -18,10 +18,19 @@ const configApi = createApi({
                 body: config
             }),
             invalidatesTags: result => ['config']
+        }),
+        changeTopic: builer.mutation({
+            query: (id:number) => 
+            ({
+                url: 'configuration',
+                method: 'PATCH',
+                body: {studyID: id}
+            }),
+            invalidatesTags: result => ['config']
         })
     })
 })
 
-export const { useGetConfigQuery, useUpdateConfigMutation } = configApi;
+export const { useGetConfigQuery, useUpdateConfigMutation, useChangeTopicMutation } = configApi;
 
 export default configApi;

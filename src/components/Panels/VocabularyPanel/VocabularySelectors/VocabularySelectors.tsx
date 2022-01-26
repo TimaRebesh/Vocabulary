@@ -4,6 +4,9 @@ import s from './VocabularySelectors.module.css';
 import remove from '../../../../assets/images/close-icon.png';
 import arrowdown from '../../../../assets/images/arrowdown.png';
 import { QuestionControl } from '../../../../helpers/ComponentHelpers';
+import { useChangeTopicMutation } from '../../../../API/configApi';
+import { useAppSelector } from '../../../../hooks/redux';
+import { config } from 'process';
 
 type VocSelectorsProps = {
     config: Configurations;
@@ -11,10 +14,6 @@ type VocSelectorsProps = {
 }
 
 export default function VocabularySelectors(props: VocSelectorsProps) {
-
-    const allTopics = props.config.vocabularies[props.config.studyLang];
-    const studyTopic = allTopics.find(t => t.id === props.config.studyTopic) as Topic;
-
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...props.config } as Configurations;
@@ -25,32 +24,34 @@ export default function VocabularySelectors(props: VocSelectorsProps) {
     }
 
     const changeVocabularies = (topic: Topic, remove?: boolean) => {
-        const config = props.config;
-        let currentTopics = [...config.vocabularies[config.studyLang]];
-        let removed = [];
-        if (remove) {
-            currentTopics = currentTopics.filter(t => t.id !== topic.id);
-            removed.push(topic.id);
-            if (topic.id === config.studyTopic)
-                config.studyTopic = currentTopics[0].id;
-        } else {
-            currentTopics.unshift(topic);
-        }
-        props.config.vocabularies[config.studyLang] = currentTopics;
-        props.saveConfig({ ...config }, removed);
+        // const config = props.config;
+        // let currentTopics = [...config.vocabularies[config.studyLang]];
+        // let removed = [];
+        // if (remove) {
+        //     currentTopics = currentTopics.filter(t => t.id !== topic.id);
+        //     removed.push(topic.id);
+        //     if (topic.id === config.studyTopic)
+        //         config.studyTopic = currentTopics[0].id;
+        // } else {
+        //     currentTopics.unshift(topic);
+        // }
+        // props.config.vocabularies[config.studyLang] = currentTopics;
+        // props.saveConfig({ ...config }, removed);
+    }
+
+    const [change] = useChangeTopicMutation();
+
+    const changeTopic = (v: number) => {
+        change(v)
     }
 
     return <div className={s.selectors_group}>
-        <VocabularySelector studyingTopic={studyTopic}
-            topics={allTopics}
-            cnangeTopic={value => changeConfig([{ name: 'studyTopic', value }])}
+        <VocabularySelector studyingTopic={props.config.vocabularies.find(v => v.id === props.config.studyID) as Topic}
+            topics={props.config.vocabularies}
+            // cnangeTopic={value => changeConfig([{ name: 'studyTopic', value }])}
+            cnangeTopic={value => changeTopic(value)}
             changeAllVoc={changeVocabularies}
         />
-        <LanguageSelector shosen={props.config.studyLang}
-            onChange={value => changeConfig([
-                { name: 'studyLang', value },
-                { name: 'studyTopic', value: props.config.vocabularies[value][0]?.id ?? 0 }
-            ])} />
     </div>
 }
 
@@ -122,7 +123,6 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
 
     useLayoutEffect(() => {
         if (isOpen) {
-            console.log('[fdfsf')
             blockRef.current?.focus()
         }
     }, [isOpen])
@@ -145,57 +145,12 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
                     <img src={arrowdown} alt='open' />
                 </div>
             </div>
-            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={(topic)=> setIsRemoveTopic(topic)}>
+            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={(topic) => setIsRemoveTopic(topic)}>
                 {() => <div className={s.list_item_create} onClick={createNew}>+ create new</div>}
             </SelectorPopup>
         </div>
-        <QuestionControl show={isRemoveTopic !== null} hide={()=> setIsRemoveTopic(null)} text='Do you realy want to remove this vocabulary?' onYes={removeItem}/>
+        <QuestionControl show={isRemoveTopic !== null} hide={() => setIsRemoveTopic(null)} text='Do you realy want to remove this vocabulary?' onYes={removeItem} />
     </div>
-}
-
-type LanguageSelectorProps = {
-    shosen: string;
-    onChange: (value: string) => void;
-}
-
-function LanguageSelector(props: LanguageSelectorProps) {
-
-    const [shosenLang, setChosenLang] = useState(props.shosen);
-    const [isOpen, setIsOpen] = useState(false);
-    const blockRef = useRef<HTMLDivElement>(null);
-    const languageNames = ['English', 'Polish', 'Russian'];
-
-    useEffect(() => {
-        const callback = (e: MouseEvent) => {
-            if (!blockRef.current?.contains(e.target as HTMLDivElement))
-                setIsOpen(false)
-        }
-        window.addEventListener('click', callback);
-        return () => {
-            window.removeEventListener('click', callback);
-        }
-    }, [])
-
-    const switchLang = (index: number) => {
-        props.onChange(languageNames[index]);
-        setChosenLang(languageNames[index]);
-        setIsOpen(false);
-    }
-
-    return (
-        <div className={s.selector_block}>
-            <div className={s.legend}>Change learingn lenguage</div>
-            <div ref={blockRef} className={s.language_selector}>
-                <div className={s.selector} onClick={() => setIsOpen(!isOpen)}>
-                    <div className={s.chosen} onClick={() => setIsOpen(!isOpen)}>{shosenLang}</div>
-                    <div className={s.open_button} onClick={() => setIsOpen(!isOpen)}>
-                        <img src={arrowdown} alt='open' />
-                    </div>
-                </div>
-                <SelectorPopup isOpen={isOpen} choose={switchLang} items={languageNames.map((ln, ind) => ({ id: ind, name: ln }))} />
-            </div>
-        </div>
-    )
 }
 
 type SelectorPopupProps = {

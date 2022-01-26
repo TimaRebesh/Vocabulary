@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState, useContext } from 'react';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { changeCheer } from '../../../../store/reducers/cheerSlice';
 import { ThemeContext } from '../../../Main';
 import { Word } from '../../../Types';
 import { setCheer, StudyingWord } from '../StudyingHelpers';
@@ -14,6 +16,7 @@ type ChooseProps = {
 
 export default function ChoosePanel(props: ChooseProps) {
 
+    const dispatch = useAppDispatch();
     const [chosenID, setChosenID] = useState(0);
     const buttonsGroupRef = useRef<HTMLDivElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
@@ -52,10 +55,13 @@ export default function ChoosePanel(props: ChooseProps) {
         return s.button
     }
 
+    const applyCheer = (key:string) => {
+        dispatch(changeCheer(key))
+    }
+
     const check = (id: number) => {
         setChosenID(id);
-        if (id === props.studyWord.id)
-            setCheer(props.studyWord);
+        (id === props.studyWord.id) && applyCheer(setCheer(props.studyWord));
     }
 
     const next = () => {

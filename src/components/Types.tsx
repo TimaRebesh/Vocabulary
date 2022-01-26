@@ -1,4 +1,5 @@
-export type PanelName = 'menu' | 'repeat' | 'studyNew' | 'vocabulary' | 'settings' | 'addNew';
+export type PanelName = string;
+// 'menu' | 'repeat' | 'studyNew' | 'vocabulary' | 'settings' | 'addNew';
 
 export type Repeated = {
     translated: number;
@@ -21,14 +22,14 @@ export type Topic = {
 }
 
 export type Vocabulary = {
-    [name: string]: Topic[];
+    id: number;
+    name: string;
+    vocabulary: Word[];
 }
 
 export type Configurations = {
-    studyLang: string;
     studyID: number,
-    vocabularies: Vocabulary;
-    studyTopic: number;
+    vocabularies: Topic[];
     modeWrite: boolean;
     hints: boolean;
     limitAll: number;      // how many all words proctice in one session

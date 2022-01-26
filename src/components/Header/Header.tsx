@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import s from './Header.module.css';
 import { PanelName } from '../Types';
 import { ThemeContext } from '../Main';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { changeCheer } from '../../store/reducers/cheerSlice';
 
 type HeaderProps = {
     activePanel: PanelName;
@@ -11,31 +13,14 @@ type HeaderProps = {
 
 export default function Header({ activePanel, setPanel, vocabularyName }: HeaderProps) {
 
-    const [isShowCongrats, setIsShowCongrats] = useState('');
-    const [countdown, setCountdown] = useState(0);
-    const cheer = ['good job', 'well done', 'excellent', 'very good', 'perferct', 'congrats'];
-    const getCheer = () => cheer[Math.floor(Math.random() * cheer.length)];
+    const { countdown } = useAppSelector(state => state.countdown);
+    const { cheer } = useAppSelector(state => state.cheer);
+    const dispatch = useAppDispatch();
+    
     const theme = useContext(ThemeContext);
 
-    // useEffect(() => {
-    //     const executorStydied = () => setIsShowCongrats('you learned this word');
-    //     const executorNextWord = () => setIsShowCongrats('');
-    //     const executorCheer = () => setIsShowCongrats(getCheer());
-    //     const executorCountdown = (count: number) => setCountdown(count);
-    //     const unregisterStydied = window.eventBus.register({ name: 'stydied', executor: executorStydied });
-    //     const unregisterNextWord = window.eventBus.register({ name: 'nextWord', executor: executorNextWord });
-    //     const unregisterCheer = window.eventBus.register({ name: 'cheer', executor: executorCheer });
-    //     const unregisterCountdown = window.eventBus.register({ name: 'countdown', executor: executorCountdown })
-    //     return () => {
-    //         unregisterStydied();
-    //         unregisterNextWord();
-    //         unregisterCheer();
-    //         unregisterCountdown();
-    //     }
-    // }, [])
-
     useEffect(() => {
-        setIsShowCongrats('');
+        dispatch(changeCheer(''));
     }, [activePanel])
 
     const getLabel = () => {
@@ -57,7 +42,7 @@ export default function Header({ activePanel, setPanel, vocabularyName }: Header
                 <div className={s.counter}>
                     <div className={s.counter_value}>{countdown}</div>
                 </div>}
-            {isShowCongrats && <div className={s.congrats}>{isShowCongrats}</div>}
+            {cheer && <div className={s.congrats}>{cheer}</div>}
         </div>
         <div className={s.right_side}>
             <div className={s.vocabulary_name}>'{vocabularyName}'</div>

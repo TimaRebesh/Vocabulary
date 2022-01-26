@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { changeCheer } from '../../../../store/reducers/cheerSlice';
 import { ThemeContext } from '../../../Main';
 import { Word } from '../../../Types';
-import { checkIsWordNew, setCheer, StudyingWord } from '../StudyingHelpers';
+import { hideCongrats, setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
 
 type WritingProps = {
@@ -85,17 +87,22 @@ type ResultViesProps = {
 }
 
 function ResultView({ currentWord, result, next }: ResultViesProps) {
+
+    const dispatch = useAppDispatch();
     const nextButtonRef = useRef<HTMLButtonElement>(null);
+
+    const applyCheer = (key:string) => {
+        dispatch(changeCheer(key))
+    }
 
     useEffect(() => {
         nextButtonRef.current?.focus();
-        if (currentWord.original === result)
-            setCheer(currentWord)
+        currentWord.original === result && applyCheer(setCheer(currentWord));
     }, [result])
 
     const click = () => {
         next();
-        window.eventBus.notify('nextWord');
+        applyCheer(hideCongrats())
     }
 
     return <div>

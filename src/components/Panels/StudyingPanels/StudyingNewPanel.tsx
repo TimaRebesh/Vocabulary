@@ -3,7 +3,7 @@ import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
 import WritingPanel from './WritingPanel/WritingPanel';
 import { deepCopy, getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
-import { checkIsWordNew, defineMode, defineOptionalSet, hideCongrats } from './StudyingHelpers';
+import { checkIsWordNew, defineMode, defineOptionalSet } from './StudyingHelpers';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import MessagePanel from '../MessagePanel/MessagePanel';
 import { Preloader } from '../../../helpers/ComponentHelpers';
@@ -84,7 +84,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
     }
 
     const defineWords = () => {
-        hideCongrats();
+        // hideCongrats();
         let order = defineOrder();
         if (order !== studiedOrder) {
             setStudiedOrder(order);

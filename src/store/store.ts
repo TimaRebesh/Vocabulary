@@ -1,9 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import configApi from "../API/configApi";
 import vocabularyApi from "../API/vocabularyApi";
+import panelsReducer from './reducers/panelsSlice';
+import countdownReducer from './reducers/countdownSlice';
+import cheerReducer from './reducers/cheerSlice';
 
 
 export const rootReducer = combineReducers({
+    panels: panelsReducer,
+    countdown: countdownReducer,
+    cheer: cheerReducer,
     [configApi.reducerPath]: configApi.reducer,
     [vocabularyApi.reducerPath]: vocabularyApi.reducer,
 })

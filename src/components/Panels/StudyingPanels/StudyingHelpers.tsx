@@ -31,10 +31,10 @@ export const defineOptionalSet = (position: number, vocabulary: Word[], dataSet:
 
 export const setCheer = (currentWord: Word) => {
     const progress = getWordProgress(currentWord) + 1;
-    progress === maxNumberDefiningNew ? window.eventBus.notify('stydied') : window.eventBus.notify('cheer');
+    return progress === maxNumberDefiningNew ? 'stydied' : 'cheer';
 }
 
-export const hideCongrats = () => window.eventBus.notify('nextWord');
+export const hideCongrats = () => 'nextWord';
 
 export function StudyingWord(props: { mode: string, studyWord: Word }) {
     const theme = useContext(ThemeContext);
