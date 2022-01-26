@@ -3001,6 +3001,24 @@
           }
         }
       ]
+    },
+    {
+      "name": "test",
+      "vocabulary": [
+        {
+          "id": 1643219285556,
+          "original": "ddfd",
+          "translated": "fdfdf",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        }
+      ],
+      "id": 301
     }
   ],
   "configuration": {
@@ -3016,14 +3034,17 @@
       {
         "id": 300,
         "name": "CEM"
+      },
+      {
+        "id": 301,
+        "name": "test"
       }
     ],
-    "studyID": 300,
-    "hints": true,
-    "modeWrite": true,
+    "studyID": 301,
+    "hints": false,
+    "modeWrite": false,
     "limitAll": 30,
     "limitNew": 8,
-    "theme": "white",
-    "studyTopic": 100
+    "theme": "white"
   }
 }

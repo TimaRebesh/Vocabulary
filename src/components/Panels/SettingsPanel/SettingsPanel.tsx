@@ -1,22 +1,20 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, NewConfig, PanelName, Topic } from '../../Types';
+import React, { useContext, useLayoutEffect, useRef, useState } from 'react';
+import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
-import arrowdown from '../../../../src/assets/images/arrowdown.png';
-import remove from '../../../../src/assets/images/close-icon.png';
 import { ThemeContext } from '../../Main';
-import { checkSimilarityOfValues } from '../../../helpers/fucntionsHelp';
 import { MenuButton } from '../../../helpers/ComponentHelpers';
+import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
+import { useAppDispatch } from '../../../hooks/redux';
+import { changePanel } from '../../../store/reducers/panelsSlice';
 
-type SettingsProps = {
-    configuration: Configurations;
-    onSave: (configuration: Configurations, removed: number[], local?: boolean) => void;
-    setPanel: (v: PanelName) => void;
-}
 
-export default function SettingsPanel({ configuration, onSave, setPanel }: SettingsProps) {
+export default function SettingsPanel() {
 
-    const [config, setConfig] = useState<Configurations>(configuration);
-    const removed = useRef<number[]>([]);
+    const { data } = useGetConfigQuery({});
+    const [config, setConfig] = useState<Configurations>(data as Configurations);
+    const dispatch = useAppDispatch();
+    const [changeTheme, changeThemeStatus] = useChangeThemeMutation();
+    const [changeConfiguration, changeConfigThemeStatus] = useUpdateConfigMutation();
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...config } as Configurations;
@@ -27,20 +25,25 @@ export default function SettingsPanel({ configuration, onSave, setPanel }: Setti
     }
 
     const save = () => {
-        if (!checkSimilarityOfValues(configuration, config))
-            onSave(config, removed.current);
-        setPanel('menu');
+        changeConfiguration(config);
+        dispatch(changePanel('menu'))
+    }
+
+    const switchTheme = (value: boolean) => {
+        const theme = value ? 'dark' : 'white';
+        changeConfig([{ name: 'theme', value: theme }]);
+        changeTheme(theme);
     }
 
     return (
         <div className={`${s.block} ${s[config.theme]}`}>
             <MenuButton executor={save} />
             <div className={s.settings}>
-                <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={value => changeConfig([{ name: 'theme', value: value ? 'dark' : 'white' }])} />
+                <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
                 <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
                 <Switcher label='Show hints' value={config.hints} onChange={value => changeConfig([{ name: 'hints', value }])} />
-                <RangeSlider label='Learn all words' value={configuration.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
-                <RangeSlider label='Learn new words' value={configuration.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
+                <RangeSlider label='Learn all words' value={config.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
+                <RangeSlider label='Learn new words' value={config.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
             </div>
         </div >
     )
@@ -133,3 +136,7 @@ function RangeSlider({ value, limit, onChange, label }: RangeSliderProps) {
     </SplitPanel>
 
 }
+function updateConfig(config: Configurations) {
+    throw new Error('Function not implemented.');
+}
+

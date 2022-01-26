@@ -1,30 +1,27 @@
 import { useContext, useEffect } from 'react';
 import s from './Header.module.css';
-import { PanelName } from '../Types';
 import { ThemeContext } from '../Main';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { changeCheer } from '../../store/reducers/cheerSlice';
 
 type HeaderProps = {
-    activePanel: PanelName;
-    setPanel: (panelName: PanelName) => void;
+    theme: string;
     vocabularyName: string;
 }
 
-export default function Header({ activePanel, setPanel, vocabularyName }: HeaderProps) {
+export default function Header({ theme, vocabularyName }: HeaderProps) {
 
+    const { activePanelName } = useAppSelector(state => state.panels);
     const { countdown } = useAppSelector(state => state.countdown);
     const { cheer } = useAppSelector(state => state.cheer);
     const dispatch = useAppDispatch();
-    
-    const theme = useContext(ThemeContext);
 
     useEffect(() => {
         dispatch(changeCheer(''));
-    }, [activePanel])
+    }, [activePanelName])
 
     const getLabel = () => {
-        switch (activePanel) {
+        switch (activePanelName) {
             case ('menu'): return 'Menu';
             case ('settings'): return 'Settings';
             case ('repeat'): return 'Repeat';

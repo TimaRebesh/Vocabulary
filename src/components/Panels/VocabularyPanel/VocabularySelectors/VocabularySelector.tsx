@@ -1,74 +1,24 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, NewConfig, Topic } from '../../../Types';
+import { Configurations, Topic } from '../../../Types';
 import s from './VocabularySelectors.module.css';
 import remove from '../../../../assets/images/close-icon.png';
 import arrowdown from '../../../../assets/images/arrowdown.png';
 import { QuestionControl } from '../../../../helpers/ComponentHelpers';
-import { useChangeTopicMutation } from '../../../../API/configApi';
-import { useAppSelector } from '../../../../hooks/redux';
-import { config } from 'process';
+import { useChangeTopicMutation, useGetConfigQuery, useUpdateVocsInConfigMutation } from '../../../../API/configApi';
+import { useCreateVocabularyMutation, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
 
-type VocSelectorsProps = {
-    config: Configurations;
-    saveConfig: (newConfig: Configurations, removed: number[]) => void;
-}
+export default function VocabularySelector() {
 
-export default function VocabularySelectors(props: VocSelectorsProps) {
-
-    const changeConfig = (newConfig: NewConfig[]) => {
-        let changedConfig = { ...props.config } as Configurations;
-        newConfig.forEach(nc => {
-            changedConfig = { ...changedConfig, [nc.name]: nc.value }
-        })
-        props.saveConfig({ ...changedConfig }, []);
-    }
-
-    const changeVocabularies = (topic: Topic, remove?: boolean) => {
-        // const config = props.config;
-        // let currentTopics = [...config.vocabularies[config.studyLang]];
-        // let removed = [];
-        // if (remove) {
-        //     currentTopics = currentTopics.filter(t => t.id !== topic.id);
-        //     removed.push(topic.id);
-        //     if (topic.id === config.studyTopic)
-        //         config.studyTopic = currentTopics[0].id;
-        // } else {
-        //     currentTopics.unshift(topic);
-        // }
-        // props.config.vocabularies[config.studyLang] = currentTopics;
-        // props.saveConfig({ ...config }, removed);
-    }
-
-    const [change] = useChangeTopicMutation();
-
-    const changeTopic = (v: number) => {
-        change(v)
-    }
-
-    return <div className={s.selectors_group}>
-        <VocabularySelector studyingTopic={props.config.vocabularies.find(v => v.id === props.config.studyID) as Topic}
-            topics={props.config.vocabularies}
-            // cnangeTopic={value => changeConfig([{ name: 'studyTopic', value }])}
-            cnangeTopic={value => changeTopic(value)}
-            changeAllVoc={changeVocabularies}
-        />
-    </div>
-}
-
-type VocabularySelectorProps = {
-    topics: Topic[];
-    studyingTopic: Topic;
-    cnangeTopic: (value: number) => void;
-    changeAllVoc: (value: Topic, remove?: boolean) => void;
-}
-
-const VocabularySelector = (props: VocabularySelectorProps) => {
-
+    const { data, isSuccess } = useGetConfigQuery({});
+    const config = data as Configurations;
     const [isOpen, setIsOpen] = useState(false);
     const [isNew, setIsNew] = useState(false);
     const [isRemoveTopic, setIsRemoveTopic] = useState<Topic | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const blockRef = useRef<HTMLDivElement>(null);
+    const [createNewVoc, createNewVocStatus] = useCreateVocabularyMutation();
+    const [updateVocInConfig, updateVocInConfigStatus] = useUpdateVocsInConfigMutation();
+    const [removeVoc, removeVocStatus] = useRemoveVocabularyMutation();
 
     useLayoutEffect(() => {
         inputRef.current?.focus();
@@ -85,8 +35,10 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
         }
     }, [])
 
-    const switchStudy = (id: number) => {
-        props.cnangeTopic(id)
+    const [change] = useChangeTopicMutation();
+
+    const switchStudy = async (id: number) => {
+        await change(id).unwrap;
         setIsOpen(false);
     }
 
@@ -95,21 +47,34 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
         setIsOpen(false);
     }
 
-    const saveNew = () => {
+    const saveNew = async () => {
         if (inputRef.current && inputRef.current.value) {
-            const newTopic = { id: new Date().getTime(), name: inputRef.current.value }
-            props.changeAllVoc(newTopic);
+            const response = await createNewVoc(inputRef.current.value) as { data: { id: number, name: string } };
+            const { id, name } = response.data
+            await updateVocInConfig([
+                ...config.vocabularies,
+                { id, name }
+            ]).unwrap;
         }
     }
 
     const removeNew = (e: React.FocusEvent<HTMLInputElement>) => setIsNew(false);
 
-    const removeItem = () => {
-        isRemoveTopic && props.changeAllVoc(isRemoveTopic, true);
-        setIsRemoveTopic(null);
+    const [changeTopic, changeTopicState] = useChangeTopicMutation();
+
+    const removeItem = async () => {
+        if (isRemoveTopic && config.vocabularies.length > 1) {
+            if (isRemoveTopic.id === config.studyID) {
+                await changeTopic(isRemoveTopic.id === config.vocabularies[0].id ? config.vocabularies[1].id : config.vocabularies[0].id).unwrap;
+            }
+            await removeVoc(isRemoveTopic.id).unwrap;
+            const updatedVocs = config.vocabularies.filter(v => v.id !== isRemoveTopic.id);
+            await updateVocInConfig(updatedVocs).unwrap;
+            setIsRemoveTopic(null);
+        }
     }
 
-    const getStadyingName = () => props.studyingTopic?.name ?? 'you have no one';
+    const getStadyingName = () => config.vocabularies.find(v => v.id === config.studyID)?.name ?? 'you have no one';
 
     const creatorKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Escape')
@@ -145,11 +110,14 @@ const VocabularySelector = (props: VocabularySelectorProps) => {
                     <img src={arrowdown} alt='open' />
                 </div>
             </div>
-            <SelectorPopup isOpen={isOpen} items={props.topics} choose={switchStudy} onRemove={(topic) => setIsRemoveTopic(topic)}>
+            <SelectorPopup isOpen={isOpen} items={config.vocabularies} choose={switchStudy} onRemove={(topic) => setIsRemoveTopic(topic)}>
                 {() => <div className={s.list_item_create} onClick={createNew}>+ create new</div>}
             </SelectorPopup>
         </div>
-        <QuestionControl show={isRemoveTopic !== null} hide={() => setIsRemoveTopic(null)} text='Do you realy want to remove this vocabulary?' onYes={removeItem} />
+        <QuestionControl
+            show={isRemoveTopic !== null}
+            hide={() => setIsRemoveTopic(null)}
+            text={`Do you realy want to remove '${isRemoveTopic?.name}' vocabulary?`} onYes={removeItem} />
     </div>
 }
 

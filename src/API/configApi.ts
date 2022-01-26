@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Configurations } from '../components/Types';
+import { Configurations, Topic } from '../components/Types';
 
 const configApi = createApi({
     reducerPath: 'configApi',
@@ -20,17 +20,41 @@ const configApi = createApi({
             invalidatesTags: result => ['config']
         }),
         changeTopic: builer.mutation({
-            query: (id:number) => 
+            query: (id: number) =>
             ({
                 url: 'configuration',
                 method: 'PATCH',
-                body: {studyID: id}
+                body: { studyID: id }
             }),
             invalidatesTags: result => ['config']
-        })
+        }),
+        changeTheme: builer.mutation({
+            query: (color: string) =>
+            ({
+                url: 'configuration',
+                method: 'PATCH',
+                body: { theme: color }
+            }),
+            invalidatesTags: result => ['config']
+        }),
+        updateVocsInConfig: builer.mutation({
+            query: (vocabularies: Topic[]) =>
+            ({
+                url: 'configuration',
+                method: 'PATCH',
+                body: { vocabularies }
+            }),
+            invalidatesTags: result => ['config']
+        }),
     })
 })
 
-export const { useGetConfigQuery, useUpdateConfigMutation, useChangeTopicMutation } = configApi;
+export const {
+    useGetConfigQuery,
+    useUpdateConfigMutation,
+    useChangeTopicMutation,
+    useChangeThemeMutation,
+    useUpdateVocsInConfigMutation
+} = configApi;
 
 export default configApi;

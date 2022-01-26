@@ -42,16 +42,17 @@ export default function VocabularyPanel(props: VocabularyProps) {
 
     useEffect(() => {
         if (isNew) {
-            words.unshift({
+            const newWord = {
                 id: getNewID(),
                 original: '',
                 translated: '',
                 anothers: [],
                 lastRepeat: 1,
                 repeated: { translated: 0, original: 0, writed: 0, }
-            })
-        }
-        setWords([...words]);
+            }
+            setWords([newWord, ...words])
+        } else
+            setWords([...words]);
     }, [isNew])
 
     useEffect(() => {

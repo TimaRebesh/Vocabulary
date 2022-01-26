@@ -95,7 +95,7 @@ export default function Main() {
                             saveConfig={saveConfig} setPanel={setPanel} saveConfigAndVoc={saveConfigAndVoc} />
                     </Suspense>
                 case 'settings':
-                    return <SettingsPanel configuration={config} onSave={saveConfig} setPanel={setPanel} />
+                    return <SettingsPanel />
                 case 'addNew':
                     return <AddNewPanel />
                 default: return null;
@@ -108,7 +108,7 @@ export default function Main() {
             {config && vocabulary
                 ?
                 <ThemeContext.Provider value={config.theme}>
-                    <Header activePanel={activePanelName} setPanel={setPanel} vocabularyName={vocabulary.name ?? '- - -'} />
+                    <Header theme={config.theme} vocabularyName={vocabulary.name ?? '- - -'} />
                     <div className={s.panel}>
                         <div className={shooseClass()}>{shoosePanel()}</div>
                     </div>
