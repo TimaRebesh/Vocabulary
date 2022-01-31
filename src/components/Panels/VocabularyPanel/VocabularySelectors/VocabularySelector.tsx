@@ -7,7 +7,7 @@ import { QuestionControl } from '../../../../helpers/ComponentHelpers';
 import { useChangeTopicMutation, useGetConfigQuery, useUpdateVocsInConfigMutation } from '../../../../API/configApi';
 import { useCreateVocabularyMutation, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
 import { useAppDispatch } from '../../../../hooks/redux';
-import { setSort } from '../../../../store/reducers/vocPanelSlice';
+import { setSearch, setSort } from '../../../../store/reducers/vocPanelSlice';
 
 export default function VocabularySelector() {
 
@@ -29,6 +29,7 @@ export default function VocabularySelector() {
 
     useEffect(() => {
         dispatch(setSort('off'));
+        dispatch(setSearch(''));
     }, [config])
 
     useEffect(() => {

@@ -18,10 +18,10 @@ type VocabularyProps = {
 export default function VocabularyPanel(props: VocabularyProps) {
 
     const { sort } = useAppSelector(state => state.vocPanel);
+    const { search } = useAppSelector(state => state.vocPanel);
     const [words, setWords] = useState<Word[]>(props.vocabulary);
     const [originals, setOriginals] = useState<string[]>([]);
     const [isNew, setIsNew] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('')
     const wordsRef = useRef<HTMLDivElement>(null);
     const [focus, setFocus] = useState<undefined | Object>();
 
@@ -85,11 +85,13 @@ export default function VocabularyPanel(props: VocabularyProps) {
 
     const getNewID = () => new Date().getTime();
 
+    const filteredWords = search ?
+        words.filter(val => val.original.toLowerCase().includes(search.toLowerCase()))
+        : words;
+
     return <>
         <Header
             coutWords={words.length}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
             focus={focus}
             setNew={(v) => setIsNew(v)}
             save={save}
@@ -99,13 +101,7 @@ export default function VocabularyPanel(props: VocabularyProps) {
             saveConfigAndVoc={props.saveConfigAndVoc}
         />
         <div ref={wordsRef} className={s.words_block}>
-            {words
-                .filter(val => {
-                    if (!searchTerm)
-                        return val;
-                    else if (val.original.toLowerCase().includes(searchTerm.toLowerCase()))
-                        return val;
-                })
+            {filteredWords
                 .map((word: Word, index) =>
                     <WordView
                         key={word.original + index}

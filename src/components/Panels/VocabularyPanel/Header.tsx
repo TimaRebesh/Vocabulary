@@ -8,12 +8,10 @@ import VocabularySelector from './VocabularySelectors/VocabularySelector';
 import { ThemeContext } from '../../Main';
 import VocabularyEditor from './VocabularyEditor';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { setSort } from '../../../store/reducers/vocPanelSlice';
+import { setSearch, setSort } from '../../../store/reducers/vocPanelSlice';
 
 type HeaderProps = {
     coutWords: number;
-    searchTerm: string;
-    setSearchTerm: (v: string) => void;
     focus: Object | undefined;
     setNew: (v: boolean) => void;
     save: () => void;
@@ -32,7 +30,7 @@ export default function Header(props: HeaderProps) {
         <div className={s.header + ' ' + s[theme]}>
             <MenuButton executor={props.save} />
             <Counter count={props.coutWords} />
-            <Search value={props.searchTerm} onChange={(v) => props.setSearchTerm(v)} />
+            <Search />
             <Sort />
             <AddNewWord focus={props.focus} onChange={() => props.setNew(true)} />
             <Spacer />
@@ -47,9 +45,15 @@ const Counter = ({ count }: { count: number }) =>
         <div className={s.counter_value}>{count}</div>
     </div>
 
-const Search = ({ value, onChange }: { value: string; onChange: (v: string) => void }) =>
-    <input type='text' placeholder='Search...' className={s.search}
-        value={value} onChange={e => onChange(e.target.value)} />
+const Search = () => {
+
+    const { search } = useAppSelector(state => state.vocPanel);
+    const dispatch = useAppDispatch();
+
+    return <input type='text' placeholder='Search...' className={s.search}
+        value={search} onChange={e => dispatch(setSearch(e.target.value))} />
+}
+
 
 const Sort = () => {
 
@@ -58,7 +62,7 @@ const Sort = () => {
 
     const getSortLabel = () => sort === 'off' ? 'SORT' : (sort === 'asc' ? 'ASC' : 'DESC')
 
-    const chageSort = () =>  dispatch(setSort(sort === 'off' ? 'asc' : (sort === 'asc' ? 'desc' : 'off')))
+    const chageSort = () => dispatch(setSort(sort === 'off' ? 'asc' : (sort === 'asc' ? 'desc' : 'off')))
 
     const getLegendClass = () => sort !== 'off' ? s.sort_legend : '';
 

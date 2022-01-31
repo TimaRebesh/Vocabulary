@@ -15,7 +15,7 @@ export const vocPanelSlice = createSlice({
     initialState,
     reducers: {
         setSearch: (state, action) => {
-          state.search = action.payload
+          state.search = action.payload;
         },
         setSort: (state, action: PayloadAction<'off' | 'asc' | 'desc'>) => {
           state.sort = action.payload;
