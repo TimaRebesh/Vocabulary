@@ -1,17 +1,17 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import * as XLSX from "xlsx"; // npm install xlsx
 import s from './VocabularyPanel.module.css';
 import edit from '../../../assets/images/edit_list.png'
 import { Modal } from '../../../helpers/ComponentHelpers';
 import { ThemeContext } from '../../Main';
-import { Configurations, VocMutation, Word } from '../../Types';
+import { Configurations, Vocabulary, VocMutation, Word } from '../../Types';
 import { getVocabularyName, getWordProgress } from '../../../helpers/fucntionsHelp';
 import Excel from '../../../assets/images/excel.png';
+import { useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
+import { useUpdateVocabularyMutation, useUpdateVocabularyNameMutation } from '../../../API/vocabularyApi';
 
 type VocabularyEditorProps = {
-    config: Configurations;
     voc: Word[];
-    saveConfigAndVoc: (val: VocMutation) => void;
 }
 
 export default function VocabularyEditor(props: VocabularyEditorProps) {
@@ -22,52 +22,78 @@ export default function VocabularyEditor(props: VocabularyEditorProps) {
         <img src={edit} className={s.edit_button} onClick={_ => setShowPopup(true)}></img>
         {isShowPopup &&
             <VocEditorModal
-                vocName={getVocabularyName(props.config)}
                 voc={props.voc}
                 show={isShowPopup}
-                hide={() => setShowPopup(false)}
-                onSave={props.saveConfigAndVoc} />
+                hide={() => setShowPopup(false)} />
         }
     </>
 }
 
 type VocEditorModalProps = {
-    vocName: string;
     voc: Word[];
     show: boolean;
     hide: () => void;
-    onSave: (v: VocMutation) => void;
 }
 
 export function VocEditorModal(props: VocEditorModalProps) {
 
-    const theme = useContext(ThemeContext);
-    const [inputVal, setInputVal] = useState(props.vocName);
+    const config = useGetConfigQuery({}).data as Configurations;
+    const [updateConfig] = useUpdateConfigMutation();
+    const [updateName] = useUpdateVocabularyNameMutation();
+    const [updateVocabulary] = useUpdateVocabularyMutation();
+    const vocName = getVocabularyName(config);
+    const [inputVal, setInputVal] = useState(vocName);
     const [importedVoc, setImportedVod] = useState<Word[]>([]);
 
-    const save = () => {
-        const vocMutation: VocMutation = {
-            name: '',
-            vocWords: null,
+    const save = async () => {
+        const vocID = config.studyID;
+        const isImportedVoc = importedVoc.length > 0;
+        try {
+            if (isImportedVoc) {
+                const updatedVoc = {
+                    id: vocID,
+                    name: inputVal,
+                    vocabulary: importedVoc
+                }
+                await updateVocabulary({
+                    id: vocID,
+                    data: updatedVoc
+                })
+            }
+            if (inputVal !== vocName) {
+                await updateConfig({
+                    ...config,
+                    vocabularies: config.vocabularies.map(topic => {
+                        return topic.id === vocID ?
+                            {
+                                id: topic.id,
+                                name: inputVal
+                            }
+                            : topic
+                    })
+                })
+                if (!isImportedVoc)
+                    await updateName({
+                        id: vocID,
+                        name: inputVal
+                    })
+            }
+            props.hide();
+        } catch (e) {
+
         }
-        if (inputVal !== props.vocName)
-            vocMutation.name = inputVal;
-        if (importedVoc.length > 0)
-            vocMutation.vocWords = importedVoc;
-        props.onSave(vocMutation);
-        props.hide();
     }
 
     return <Modal isShown={props.show}>
-        <div className={s.ve_modal + ' ' + s[theme]}>
+        <div className={s.ve_modal + ' ' + s[config.theme]}>
             <div className={s.ve_header}>
-                <p>{props.vocName} vocabulary</p>
+                <p>{vocName} vocabulary</p>
                 <div className={s.ve_close} onClick={props.hide}>&times;</div>
             </div>
             <div className={s.ve_content}>
                 <div>Edit name</div>
                 <input type='text' value={inputVal} onChange={e => setInputVal(e.target.value)} />
-                <ExportToExcel voc={props.voc} vocName={props.vocName} />
+                <ExportToExcel voc={props.voc} vocName={vocName} />
                 <ImportFromExcel setData={(voc: Word[]) => setImportedVod(voc)} />
                 <div className={s.ve_buttons}>
                     <button className='button' onClick={save}>Apply</button>

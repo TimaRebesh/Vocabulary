@@ -8,7 +8,6 @@ import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
 import { EventBus } from '../utils/EentBus';
-import { deepCopy, getVocabularyName } from '../helpers/fucntionsHelp';
 import { Preloader } from '../helpers/ComponentHelpers';
 import { useGetConfigQuery, useUpdateConfigMutation } from '../API/configApi';
 import { useLazyGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
@@ -52,26 +51,8 @@ export default function Main() {
         const voc = vocabulary as Vocabulary;
         updateVocabulary({
             id: voc.id,
-            data: { ...voc, vocabulary: data}
+            data: { ...voc, vocabulary: data }
         })
-    }
-
-    const saveConfigAndVoc = async (value: VocMutation) => {
-        // let updatedConf: Configurations | null = null;
-        // let updatedVoc: Word[] | null = null;
-        // if (value.name && config) {
-        //     const newConf = deepCopy(config) as Configurations;
-        //     const newVocTopics = newConf.vocabularies[newConf.studyLang].map((topic) =>
-        //         topic.id === newConf.studyTopic ? { ...topic, name: value.name } : topic);
-        //     newConf.vocabularies[newConf.studyLang] = newVocTopics;
-        //     updatedConf = await Api.saveConfig(newConf, []) as Configurations;
-        // }
-        // if (value.vocWords)
-        //     updatedVoc = await Api.saveVocabulary(value.vocWords, config?.studyTopic as number) as Word[];
-        // if (updatedConf)
-        //     setConfig(updatedConf);
-        // if (updatedVoc)
-        //     setVocabulary(updatedVoc);
     }
 
     const shooseClass = () => {
@@ -91,8 +72,7 @@ export default function Main() {
                     return <StudyingNewPanel config={config} vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'vocabulary':
                     return <Suspense fallback={<Preloader />}>
-                        <VocabularyPanel configuration={config} vocabulary={vocabulary.vocabulary} onSave={saveVocabulary}
-                            saveConfig={saveConfig} setPanel={setPanel} saveConfigAndVoc={saveConfigAndVoc} />
+                        <VocabularyPanel vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />
                     </Suspense>
                 case 'settings':
                     return <SettingsPanel />

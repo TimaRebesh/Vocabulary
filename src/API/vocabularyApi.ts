@@ -40,6 +40,14 @@ const vocabularyApi = createApi({
                 method: 'DELETE',
             })
         }),
+        updateVocabularyName: builder.mutation({
+            query: ({ id, name }: { id: number, name: string }) =>
+            ({
+                url: 'vocabularies/' + id,
+                method: 'PATCH',
+                body: { name }
+            })
+        })
     })
 })
 
@@ -48,7 +56,8 @@ export const {
     useLazyGetVocabularyQuery,
     useUpdateVocabularyMutation,
     useCreateVocabularyMutation,
-    useRemoveVocabularyMutation
+    useRemoveVocabularyMutation,
+    useUpdateVocabularyNameMutation
 } = vocabularyApi;
 
 export default vocabularyApi;

@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, PanelName, VocMutation, Word } from '../../Types';
+import { PanelName, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import Header from './Header';
 import WordView from './WordView';
@@ -8,11 +8,8 @@ import { useAppSelector } from '../../../hooks/redux';
 
 type VocabularyProps = {
     vocabulary: Word[];
-    configuration: Configurations;
     onSave: (v: Word[]) => void;
-    saveConfig: (configuration: Configurations, removed: number[]) => void;
     setPanel: (panelName: PanelName) => void;
-    saveConfigAndVoc: (val: VocMutation) => void;
 }
 
 export default function VocabularyPanel(props: VocabularyProps) {
@@ -96,10 +93,7 @@ export default function VocabularyPanel(props: VocabularyProps) {
             setNew={(v) => setIsNew(v)}
             save={save}
             voc={props.vocabulary}
-            config={props.configuration}
-            saveConfig={props.saveConfig}
-            saveConfigAndVoc={props.saveConfigAndVoc}
-        />
+         />
         <div ref={wordsRef} className={s.words_block}>
             {filteredWords
                 .map((word: Word, index) =>

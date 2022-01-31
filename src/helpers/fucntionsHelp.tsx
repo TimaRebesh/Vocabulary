@@ -15,8 +15,8 @@ export const getWordProgress = (word: Word) =>
     word.repeated.original + word.repeated.translated + word.repeated.writed;
 
 export const getVocabularyName = (config: Configurations) => {
-    // const topic = config.vocabularies[config.studyLang].find(voc => voc.id === config.studyID) as Topic;
-    return '<empty>'
+    const topic = config.vocabularies.find(voc => voc.id === config.studyID) as Topic;
+    return topic.name ??'<empty>'
 }
 
 export const defineClass = (...names: string[]) => names.reduce((aggr: any, n) => n ? [...aggr, n] : [...aggr], []).join(' ');
