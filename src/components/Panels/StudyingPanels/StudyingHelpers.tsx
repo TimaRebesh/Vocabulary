@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import { useGetConfigQuery } from '../../../API/configApi';
 import { getWordProgress, shuffle } from '../../../helpers/fucntionsHelp';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
-import { ThemeContext } from '../../Main';
-import { Repeated, Word } from '../../Types';
+import { Configurations, Repeated, Word } from '../../Types';
 import s from './StudyingPanel.module.css';
 
 export const forPracticeMinWords = 4;
@@ -37,15 +36,19 @@ export const setCheer = (currentWord: Word) => {
 export const hideCongrats = () => 'nextWord';
 
 export function StudyingWord(props: { mode: string, studyWord: Word }) {
-    const theme = useContext(ThemeContext);
+
+    const config = useGetConfigQuery({}).data as Configurations;
+    const theme = config.theme;
+
     return <>
         <div className={`${s.word} ${s['word_' + theme]}`}>
             <div>{props.mode === 'original' ? props.studyWord.original : props.studyWord.translated}</div>
         </div>
         <div className={`${s.other_block} ${s['other_block_' + theme]}`}>
-            {props.studyWord.anothers.length > 0 && <div className={s.other}>no:
-                {props.studyWord.anothers.map((a, ind, ar) => <span key={a + ind}>{a}{ind !== ar.length - 1 ? ',' : ''}</span>)}
-            </div>}
+            {props.studyWord.anothers.length > 0 && config.hints &&
+                <div className={s.other}>no:
+                    {props.studyWord.anothers.map((a, ind, ar) => <span key={a + ind}>{a}{ind !== ar.length - 1 ? ',' : ''}</span>)}
+                </div>}
         </div>
     </>
 }

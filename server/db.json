@@ -5,18 +5,6 @@
       "name": "IT",
       "vocabulary": [
         {
-          "id": 1643129068637,
-          "original": "dfdfdf",
-          "translated": "dfdfdf",
-          "anothers": [],
-          "lastRepeat": 1,
-          "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
-          }
-        },
-        {
           "id": 1634126559396,
           "original": "a nice user experience",
           "translated": "хороший пользовательский опыт",
@@ -35,10 +23,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1
+          "lastRepeat": 1643278353711
         },
         {
           "id": 1634028713087,
@@ -47,10 +35,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 2
+          "lastRepeat": 1643278248352
         },
         {
           "id": 1631698024405,
@@ -62,9 +50,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 3
+          "lastRepeat": 1643278227340
         },
         {
           "id": 1633334777219,
@@ -73,10 +61,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 4
+          "lastRepeat": 1643278345636
         },
         {
           "id": 1633939987713,
@@ -86,9 +74,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 5
+          "lastRepeat": 1643278274549
         },
         {
           "id": 1631611870247,
@@ -97,10 +85,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 6
+          "lastRepeat": 1643278385158
         },
         {
           "id": 1634217428444,
@@ -123,10 +111,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 8
+          "lastRepeat": 1643278370500
         },
         {
           "id": 1631697793582,
@@ -135,10 +123,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 9
+          "lastRepeat": 1643278243857
         },
         {
           "id": 1634029478509,
@@ -147,10 +135,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 10
+          "lastRepeat": 1643278366822
         },
         {
           "id": 1634292709215,
@@ -159,10 +147,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 11
+          "lastRepeat": 1643278377233
         },
         {
           "id": 106,
@@ -171,10 +159,10 @@
           "translated": "организовать",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 12
+          "lastRepeat": 1643278394034
         },
         {
           "id": 1631694840876,
@@ -184,9 +172,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 13
+          "lastRepeat": 1643278215740
         },
         {
           "id": 1634197817621,
@@ -209,10 +197,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 15
+          "lastRepeat": 1643278209456
         },
         {
           "id": 1634216720884,
@@ -233,10 +221,10 @@
           "translated": "вне",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 17
+          "lastRepeat": 1643278363066
         },
         {
           "id": 203,
@@ -246,9 +234,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 18
+          "lastRepeat": 1643278397287
         },
         {
           "id": 1634027105934,
@@ -256,11 +244,11 @@
           "translated": "размытый",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 19
+          "lastRepeat": 1643278250884
         },
         {
           "id": 1631694121586,
@@ -271,10 +259,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 20
+          "lastRepeat": 1643278267097
         },
         {
           "id": 1634117881402,
@@ -283,10 +271,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 21
+          "lastRepeat": 1643278324718
         },
         {
           "id": 1633334859330,
@@ -298,9 +286,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 22
+          "lastRepeat": 1643278237275
         },
         {
           "id": 1633335005592,
@@ -312,9 +300,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 23
+          "lastRepeat": 1643278223516
         },
         {
           "id": 1631694807196,
@@ -323,10 +311,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 24
+          "lastRepeat": 1643278336617
         },
         {
           "id": 211,
@@ -335,10 +323,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 25
+          "lastRepeat": 1643278232764
         },
         {
           "id": 1632396742886,
@@ -348,9 +336,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 26
+          "lastRepeat": 1643278308945
         },
         {
           "id": 1634198069968,
@@ -371,10 +359,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 28
+          "lastRepeat": 1643278277097
         },
         {
           "id": 1634217021528,
@@ -394,11 +382,11 @@
           "translated": "уравляемый компонент",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 30
+          "lastRepeat": 1643278388107
         },
         {
           "id": 1631694243289,
@@ -410,10 +398,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 31
+          "lastRepeat": 1643278330756
         },
         {
           "id": 1631697958187,
@@ -422,10 +410,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 32
+          "lastRepeat": 1643278259653
         },
         {
           "id": 1634216572503,
@@ -458,10 +446,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 35
+          "lastRepeat": 1643278282569
         },
         {
           "id": 1634216767860,
@@ -482,10 +470,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 37
+          "lastRepeat": 1643278314217
         },
         {
           "id": 110,
@@ -494,10 +482,10 @@
           "translated": "разъединять",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 38
+          "lastRepeat": 1643278255523
         },
         {
           "id": 1633939973954,
@@ -507,9 +495,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 39
+          "lastRepeat": 1643362217966
         },
         {
           "id": 108,
@@ -518,10 +506,10 @@
           "translated": "потомок",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 40
+          "lastRepeat": 1643362206099
         },
         {
           "id": 200,
@@ -531,9 +519,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 41
+          "lastRepeat": 1643362237504
         },
         {
           "id": 1634216961835,
@@ -557,9 +545,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 43
+          "lastRepeat": 1643362600900
         },
         {
           "id": 1634215449596,
@@ -579,11 +567,11 @@
           "translated": "резко улучшать",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 45
+          "lastRepeat": 1643362561843
         },
         {
           "id": 1634217334142,
@@ -605,11 +593,11 @@
           "translated": "динамический импорт",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 47
+          "lastRepeat": 1643362221708
         },
         {
           "id": 1633940423957,
@@ -618,10 +606,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 48
+          "lastRepeat": 1643362569544
         },
         {
           "id": 1634217034850,
@@ -643,9 +631,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 50
+          "lastRepeat": 1643362635717
         },
         {
           "id": 1633940406102,
@@ -656,10 +644,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 51
+          "lastRepeat": 1643362404745
         },
         {
           "id": 1634216535799,
@@ -681,9 +669,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 53
+          "lastRepeat": 1643362583593
         },
         {
           "id": 1634198084148,
@@ -694,10 +682,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 54
+          "lastRepeat": 1643362480858
         },
         {
           "id": 1634126018640,
@@ -705,11 +693,11 @@
           "translated": "предохранители",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 55
+          "lastRepeat": 1643362362388
         },
         {
           "id": 1634217496756,
@@ -741,11 +729,11 @@
           "translated": "резерв",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 58
+          "lastRepeat": 1643362439864
         },
         {
           "id": 1634216053469,
@@ -766,10 +754,10 @@
           "translated": "решетка",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 60
+          "lastRepeat": 1643362486946
         },
         {
           "id": 1634216795380,
@@ -791,9 +779,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 62
+          "lastRepeat": 1643362354172
         },
         {
           "id": 1634377990856,
@@ -801,11 +789,11 @@
           "translated": "всплытие, поднятие",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 63
+          "lastRepeat": 1643362490534
         },
         {
           "id": 1633334799778,
@@ -815,9 +803,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 64
+          "lastRepeat": 1643362622046
         },
         {
           "id": 1634217115968,
@@ -851,9 +839,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 67
+          "lastRepeat": 1643362573790
         },
         {
           "id": 1634214631541,
@@ -874,10 +862,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 69
+          "lastRepeat": 1643362332293
         },
         {
           "id": 1633939922041,
@@ -889,9 +877,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 70
+          "lastRepeat": 1643362565676
         },
         {
           "id": 1634217094321,
@@ -939,9 +927,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 74
+          "lastRepeat": 1643362577816
         },
         {
           "id": 1634217198487,
@@ -963,9 +951,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 76
+          "lastRepeat": 1643362228680
         },
         {
           "id": 1631694829060,
@@ -975,9 +963,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 77
+          "lastRepeat": 1643362504861
         },
         {
           "id": 1634216648214,
@@ -1027,9 +1015,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 81
+          "lastRepeat": 1643362496664
         },
         {
           "id": 212,
@@ -1038,10 +1026,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 82
+          "lastRepeat": 1643362447269
         },
         {
           "id": 1634217456964,
@@ -1062,10 +1050,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 84
+          "lastRepeat": 1643362245331
         },
         {
           "id": 1633334917305,
@@ -1075,9 +1063,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 85
+          "lastRepeat": 1643362535276
         },
         {
           "id": 1634216590390,
@@ -1112,10 +1100,10 @@
           "translated": "вложенный",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 88
+          "lastRepeat": 1643362526430
         },
         {
           "id": 201,
@@ -1124,10 +1112,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 89
+          "lastRepeat": 1643362443092
         },
         {
           "id": 105,
@@ -1137,9 +1125,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 90
+          "lastRepeat": 1643362471978
         },
         {
           "id": 1631698207939,
@@ -1148,10 +1136,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 91
+          "lastRepeat": 1643619103854
         },
         {
           "id": 1634546593463,
@@ -1175,10 +1163,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 93
+          "lastRepeat": 1643619164213
         },
         {
           "id": 1634631656354,
@@ -1201,10 +1189,10 @@
           "translated": "передавать",
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 95
+          "lastRepeat": 1643618863334
         },
         {
           "id": 1631697748071,
@@ -1215,10 +1203,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 96
+          "lastRepeat": 1643619311284
         },
         {
           "id": 1634216839693,
@@ -1240,9 +1228,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 98
+          "lastRepeat": 1643619303478
         },
         {
           "id": 1634216502887,
@@ -1278,9 +1266,9 @@
             "рыкап"
           ],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 1,
+            "original": 1,
+            "writed": 1
           },
           "lastRepeat": 101
         },
@@ -1292,9 +1280,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 102
+          "lastRepeat": 1643619376578
         },
         {
           "id": 202,
@@ -1304,9 +1292,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 103
+          "lastRepeat": 1643618954151
         },
         {
           "id": 1631611991533,
@@ -1318,9 +1306,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 104
+          "lastRepeat": 1643619099938
         },
         {
           "id": 1634294819606,
@@ -1329,10 +1317,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 105
+          "lastRepeat": 1643619280175
         },
         {
           "id": 1631694779797,
@@ -1342,9 +1330,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 106
+          "lastRepeat": 1643619355751
         },
         {
           "id": 1631698047389,
@@ -1356,9 +1344,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 107
+          "lastRepeat": 1643619238294
         },
         {
           "id": 213,
@@ -1368,9 +1356,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 108
+          "lastRepeat": 1643619260682
         },
         {
           "id": 1634305313069,
@@ -1381,10 +1369,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 109
+          "lastRepeat": 1643619213232
         },
         {
           "id": 1631698001644,
@@ -1396,9 +1384,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 110
+          "lastRepeat": 1643619115974
         },
         {
           "id": 1631611860359,
@@ -1408,9 +1396,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 111
+          "lastRepeat": 1643619177651
         },
         {
           "id": 1633335084199,
@@ -1422,9 +1410,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 112
+          "lastRepeat": 1643619330229
         },
         {
           "id": 1632312690498,
@@ -1434,9 +1422,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 113
+          "lastRepeat": 1643619249481
         },
         {
           "id": 1633334971657,
@@ -1446,9 +1434,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 114
+          "lastRepeat": 1643619322682
         },
         {
           "id": 214,
@@ -1458,9 +1446,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 115
+          "lastRepeat": 1643619220012
         },
         {
           "id": 1633939939090,
@@ -1470,9 +1458,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 116
+          "lastRepeat": 1643619393907
         },
         {
           "id": 1634547271781,
@@ -1480,11 +1468,11 @@
           "translated": "указывать",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 117
+          "lastRepeat": 1643619317739
         },
         {
           "id": 1631697917019,
@@ -1494,9 +1482,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 118
+          "lastRepeat": 1643619291013
         },
         {
           "id": 1631697936310,
@@ -1506,9 +1494,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 119
+          "lastRepeat": 1643618870487
         },
         {
           "id": 1634631751825,
@@ -1516,9 +1504,9 @@
           "translated": "последующий",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 1,
+            "original": 1,
+            "writed": 1
           },
           "lastRepeat": 120
         },
@@ -1531,10 +1519,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 121
+          "lastRepeat": 1643619203099
         },
         {
           "id": 1634214222578,
@@ -1542,11 +1530,11 @@
           "translated": "такое использование",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 122
+          "lastRepeat": 1643619242064
         },
         {
           "id": 1631611930606,
@@ -1556,9 +1544,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 123
+          "lastRepeat": 1643619389491
         },
         {
           "id": 1634546294453,
@@ -1566,23 +1554,11 @@
           "translated": "сводка, кратное изложение",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 124
-        },
-        {
-          "id": 1633940450949,
-          "original": "suspense",
-          "translated": "ожидание, неопределенность",
-          "anothers": [],
-          "repeated": {
-            "translated": 4,
-            "original": 4,
-            "writed": 3
-          },
-          "lastRepeat": 125
+          "lastRepeat": 1643619254192
         },
         {
           "id": 1634126033362,
@@ -1593,11 +1569,23 @@
             "сэспэнз"
           ],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 126
+          "lastRepeat": 1643619337316
+        },
+        {
+          "id": 1633940450949,
+          "original": "suspense",
+          "translated": "ожидание, неопределенность",
+          "anothers": [],
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          },
+          "lastRepeat": 1643618961604
         },
         {
           "id": 1634216857900,
@@ -1605,8 +1593,8 @@
           "translated": "шаг",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
+            "translated": 2,
+            "original": 2,
             "writed": 1
           },
           "lastRepeat": 127
@@ -1619,9 +1607,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 128
+          "lastRepeat": 1643618942814
         },
         {
           "id": 1634216746500,
@@ -1629,9 +1617,9 @@
           "translated": "нисходящий",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 2,
+            "original": 2,
+            "writed": 2
           },
           "lastRepeat": 129
         },
@@ -1653,9 +1641,9 @@
           "translated": "размонтировать",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 2,
+            "original": 2,
+            "writed": 2
           },
           "lastRepeat": 131
         },
@@ -1679,9 +1667,9 @@
             "вёрсиз"
           ],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 2,
+            "original": 2,
+            "writed": 2
           },
           "lastRepeat": 133
         },
@@ -1691,9 +1679,9 @@
           "translated": "с помощью, через",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 2,
+            "original": 2,
+            "writed": 2
           },
           "lastRepeat": 134
         },
@@ -2711,17 +2699,41 @@
       "name": "CEM",
       "vocabulary": [
         {
+          "id": 1643285671150,
+          "original": "do not disturb",
+          "translated": "не беспокоить",
+          "anothers": [],
+          "lastRepeat": 1643618110242,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1643273521191,
+          "original": "globally unique identifier",
+          "translated": "глобально уникальный идентификатор",
+          "anothers": [],
+          "lastRepeat": 1643617743666,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
           "id": 1643189674391,
           "original": "agenda",
           "translated": "повестка дня",
           "anothers": [
             "эдженда"
           ],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617776955,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           }
         },
         {
@@ -2729,11 +2741,11 @@
           "original": "kick-off",
           "translated": "старт",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643618241623,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           }
         },
         {
@@ -2741,11 +2753,11 @@
           "original": "virtual desktop infrastructure",
           "translated": "инфраструктура виртуальных рабочих столов",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617440596,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           }
         },
         {
@@ -2753,11 +2765,11 @@
           "original": "prospective",
           "translated": "ожидаемый",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617856990,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           }
         },
         {
@@ -2767,11 +2779,11 @@
           "anothers": [
             "...ц"
           ],
-          "lastRepeat": 1,
+          "lastRepeat": 1643618061841,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           }
         },
         {
@@ -2779,11 +2791,11 @@
           "original": "backlog",
           "translated": "невыполненные заказы",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643618238779,
           "repeated": {
-            "translated": 2,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2791,11 +2803,11 @@
           "original": "objective",
           "translated": "цель, стремление",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617455437,
           "repeated": {
-            "translated": 2,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2805,11 +2817,11 @@
           "anothers": [
             "этсэтура"
           ],
-          "lastRepeat": 1,
+          "lastRepeat": 1643618294478,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2817,11 +2829,11 @@
           "original": "time off",
           "translated": "нерабочее время, выходной",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617616228,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2829,11 +2841,11 @@
           "original": "draft",
           "translated": "черновик",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617674155,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2843,11 +2855,11 @@
           "anothers": [
             "ры"
           ],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617654112,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2855,11 +2867,11 @@
           "original": "lightweight directory access protocol",
           "translated": "Облегченный протокол доступа к каталогам",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1643618225288,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2869,11 +2881,11 @@
           "anothers": [
             "Ажё"
           ],
-          "lastRepeat": 1,
+          "lastRepeat": 1643617421597,
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2881,11 +2893,11 @@
           "original": "credentials",
           "translated": "реквезиты для входа",
           "anothers": [],
-          "lastRepeat": 1643204510348,
+          "lastRepeat": 1643618119437,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2895,11 +2907,11 @@
           "anothers": [
             "ньЮкома"
           ],
-          "lastRepeat": 1643204529336,
+          "lastRepeat": 1643618251566,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2907,11 +2919,11 @@
           "original": "rest",
           "translated": "остальное",
           "anothers": [],
-          "lastRepeat": 1643204515474,
+          "lastRepeat": 1643617711175,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2919,11 +2931,11 @@
           "original": "confluence",
           "translated": "слияние, пересечение",
           "anothers": [],
-          "lastRepeat": 1643204526940,
+          "lastRepeat": 1643618073045,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 4,
+            "original": 4,
+            "writed": 4
           }
         },
         {
@@ -2931,11 +2943,11 @@
           "original": "appropriate",
           "translated": "соответствующий, подходящий",
           "anothers": [],
-          "lastRepeat": 1643204534654,
+          "lastRepeat": 1643618093616,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2943,11 +2955,11 @@
           "original": "virtual machine",
           "translated": "виртуальная машина",
           "anothers": [],
-          "lastRepeat": 1643204518202,
+          "lastRepeat": 1643618304723,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2955,11 +2967,11 @@
           "original": "vendor",
           "translated": "поставщик",
           "anothers": [],
-          "lastRepeat": 1643204504860,
+          "lastRepeat": 1643617449467,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2967,11 +2979,11 @@
           "original": "central engagement management",
           "translated": "цетрализованное уравление взаимодействием",
           "anothers": [],
-          "lastRepeat": 1643204546788,
+          "lastRepeat": 1643617704640,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2979,11 +2991,11 @@
           "original": "onboarding",
           "translated": "адаптация",
           "anothers": [],
-          "lastRepeat": 1643204539216,
+          "lastRepeat": 1643618259555,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2993,10 +3005,10 @@
           "anothers": [
             "экселэрэйт"
           ],
-          "lastRepeat": 1643204554980,
+          "lastRepeat": 1643618105046,
           "repeated": {
-            "translated": 3,
-            "original": 3,
+            "translated": 4,
+            "original": 4,
             "writed": 3
           }
         }
@@ -3006,14 +3018,88 @@
       "name": "test",
       "vocabulary": [
         {
-          "id": 1643219285556,
-          "original": "ddfd",
-          "translated": "fdfdf",
+          "id": 1643277991340,
+          "original": "ab",
+          "translated": "ab",
           "anothers": [],
           "lastRepeat": 1,
           "repeated": {
             "translated": 0,
             "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643277971684,
+          "original": "a",
+          "translated": "a",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643275360445,
+          "original": "16",
+          "translated": "61",
+          "anothers": [],
+          "lastRepeat": 1643276597186,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1643275360443,
+          "original": "15",
+          "translated": "51",
+          "anothers": [],
+          "lastRepeat": 1643276601870,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1643275360442,
+          "original": "14",
+          "translated": "41",
+          "anothers": [],
+          "lastRepeat": 1643277296256,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1643275360441,
+          "original": "13",
+          "translated": "31",
+          "anothers": [],
+          "lastRepeat": 1643277294212,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1643275360447,
+          "original": "12",
+          "translated": "21",
+          "anothers": [
+            "dfddf"
+          ],
+          "lastRepeat": 0,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
             "writed": 0
           }
         }
@@ -3041,8 +3127,8 @@
       }
     ],
     "studyID": 301,
-    "hints": false,
-    "modeWrite": false,
+    "hints": true,
+    "modeWrite": true,
     "limitAll": 30,
     "limitNew": 8,
     "theme": "white"
