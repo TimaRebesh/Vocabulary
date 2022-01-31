@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import { useGetConfigQuery } from '../../../API/configApi';
 import { defineClass } from '../../../helpers/fucntionsHelp';
-import { ThemeContext } from '../../Main';
-import { PanelName } from '../../Types';
+import { Configurations, PanelName } from '../../Types';
 import s from './MenuPanel.module.css';
 
 
@@ -10,7 +9,7 @@ type MenuPanelProps = {
 }
 
 export default function MenuPanel({ setPanel }: MenuPanelProps) {
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
     return (
         <div className={defineClass(s.menu, s[theme])}>
             <button className='button' onClick={() => setPanel('repeat')}>Repeat</button>

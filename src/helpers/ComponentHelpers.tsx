@@ -1,8 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import preloader from '../assets/images/preloader.gif';
 import s from './Helpers.module.css';
 import { ThemeContext } from '../components/Main';
+import { useGetConfigQuery } from '../API/configApi';
+import { Configurations } from '../components/Types';
 
 export function Preloader({ info }: { info?: string }) {
     return <div className={s.preloader_block}>
@@ -29,7 +31,7 @@ export function Tooltip({ text }: TooltipProps) {
 
     const [isFocus, setIsFocus] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
     const timeout = useRef<number>(0);
 
     useEffect(() => {
@@ -93,7 +95,7 @@ type QuestionControlProps = {
 }
 
 export function QuestionControl(props: QuestionControlProps) {
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
 
     return <Modal isShown={props.show}>
         <div className={s.modal + ' ' + s[theme]}>

@@ -1,8 +1,9 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useGetConfigQuery } from '../../../../API/configApi';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { changeCheer } from '../../../../store/reducers/cheerSlice';
 import { ThemeContext } from '../../../Main';
-import { Word } from '../../../Types';
+import { Configurations, Word } from '../../../Types';
 import { hideCongrats, setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
 
@@ -45,7 +46,7 @@ function WritingView({ studyWord, onChange, isHint }: WritingViewProps) {
 
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;;
 
     useEffect(() => {
         inputRef.current?.focus();

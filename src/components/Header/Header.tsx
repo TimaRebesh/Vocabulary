@@ -1,6 +1,5 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import s from './Header.module.css';
-import { ThemeContext } from '../Main';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { changeCheer } from '../../store/reducers/cheerSlice';
 

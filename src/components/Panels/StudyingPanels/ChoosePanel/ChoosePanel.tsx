@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useGetConfigQuery } from '../../../../API/configApi';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { changeCheer } from '../../../../store/reducers/cheerSlice';
-import { ThemeContext } from '../../../Main';
-import { Word } from '../../../Types';
+import { Configurations, Word } from '../../../Types';
 import { setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
 
@@ -20,7 +20,7 @@ export default function ChoosePanel(props: ChooseProps) {
     const [chosenID, setChosenID] = useState(0);
     const buttonsGroupRef = useRef<HTMLDivElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
 
     useEffect(() => {
         const callback = (e: any) => {

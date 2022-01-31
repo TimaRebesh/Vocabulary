@@ -2699,6 +2699,18 @@
       "name": "CEM",
       "vocabulary": [
         {
+          "id": 1643639042414,
+          "original": "impact",
+          "translated": "влиять, воздействовать",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
           "id": 1643285671150,
           "original": "do not disturb",
           "translated": "не беспокоить",
@@ -3015,96 +3027,96 @@
       ]
     },
     {
+      "id": 301,
       "name": "test",
       "vocabulary": [
         {
-          "id": 1643277991340,
+          "id": 1,
           "original": "ab",
           "translated": "ab",
           "anothers": [],
-          "lastRepeat": 1,
           "repeated": {
             "translated": 0,
             "original": 0,
             "writed": 0
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643277971684,
+          "id": 2,
           "original": "a",
           "translated": "a",
           "anothers": [],
-          "lastRepeat": 1,
           "repeated": {
             "translated": 0,
             "original": 0,
             "writed": 0
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643275360445,
+          "id": 3,
           "original": "16",
           "translated": "61",
           "anothers": [],
-          "lastRepeat": 1643276597186,
           "repeated": {
             "translated": 2,
             "original": 2,
             "writed": 2
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643275360443,
+          "id": 4,
           "original": "15",
           "translated": "51",
           "anothers": [],
-          "lastRepeat": 1643276601870,
           "repeated": {
             "translated": 2,
             "original": 2,
             "writed": 2
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643275360442,
+          "id": 5,
           "original": "14",
           "translated": "41",
           "anothers": [],
-          "lastRepeat": 1643277296256,
           "repeated": {
             "translated": 3,
             "original": 2,
             "writed": 2
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643275360441,
+          "id": 6,
           "original": "13",
           "translated": "31",
           "anothers": [],
-          "lastRepeat": 1643277294212,
           "repeated": {
             "translated": 3,
             "original": 2,
             "writed": 2
-          }
+          },
+          "lastRepeat": 1
         },
         {
-          "id": 1643275360447,
+          "id": 7,
           "original": "12",
           "translated": "21",
           "anothers": [
             "dfddf"
           ],
-          "lastRepeat": 0,
           "repeated": {
             "translated": 1,
             "original": 1,
             "writed": 0
-          }
+          },
+          "lastRepeat": 1
         }
-      ],
-      "id": 301
+      ]
     }
   ],
   "configuration": {

@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useGetConfigQuery } from '../../../API/configApi';
 import { ThemeContext } from '../../Main';
-import { Word } from '../../Types';
+import { Configurations, Word } from '../../Types';
 import Others from './Others';
 import s from './VocabularyPanel.module.css';
 
@@ -109,7 +110,7 @@ function Editor(props: EditorProps) {
     const [notification, setNotification] = useState<null | string>(null);
     const existFrase = 'this word has already exist';
     const emptyFrase = 'value can not be empty';
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
 
     useLayoutEffect(() => {
         if (props.focus)

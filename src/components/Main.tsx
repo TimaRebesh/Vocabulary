@@ -1,15 +1,14 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Header from './Header/Header';
 import MenuPanel from './Panels/MenuPanel/MenuPanel';
 import SettingsPanel from './Panels/SettingsPanel/SettingsPanel';
-import { Configurations, PanelName, Vocabulary, VocMutation, Word } from './Types';
+import { PanelName, Vocabulary, Word } from './Types';
 import s from './Main.module.css';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
-import { EventBus } from '../utils/EentBus';
 import { Preloader } from '../helpers/ComponentHelpers';
-import { useGetConfigQuery, useUpdateConfigMutation } from '../API/configApi';
+import { useGetConfigQuery } from '../API/configApi';
 import { useLazyGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { changePanel } from '../store/reducers/panelsSlice';
@@ -17,35 +16,22 @@ const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/Vocabu
 export const ThemeContext = React.createContext('white');
 
 
-declare global {
-    interface Window { eventBus: EventBus; }
-}
-
 export default function Main() {
 
     const { data: config } = useGetConfigQuery({});
-    const [lastStudyID, setLastStudyID] = useState(0);
     const [trigger, { data: vocabulary }] = useLazyGetVocabularyQuery();
-    const [updateConfig, updateConfigStatus] = useUpdateConfigMutation();
     const [updateVocabulary, updateVocabularyStatus] = useUpdateVocabularyMutation();
     const { activePanelName } = useAppSelector(state => state.panels);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         config &&
-            (!vocabulary || lastStudyID !== config.studyID) &&
-            trigger(config.studyID)
+            !vocabulary && trigger(config.studyID)
     }, [config])
 
     const setPanel = (panelName: PanelName) => {
         dispatch(changePanel(panelName));
     }
-
-    const saveConfig = (config: Configurations, removed: number[]) => {
-        updateConfig(config);
-        setLastStudyID(config.studyID);
-    }
-
 
     const saveVocabulary = (data: Word[]) => {
         const voc = vocabulary as Vocabulary;
@@ -87,13 +73,13 @@ export default function Main() {
         <div className={`${s.main} ${config && config.theme}`}>
             {config && vocabulary
                 ?
-                <ThemeContext.Provider value={config.theme}>
+                <>
                     <Header theme={config.theme} vocabularyName={vocabulary.name ?? '- - -'} />
                     <div className={s.panel}>
                         <div className={shooseClass()}>{shoosePanel()}</div>
                     </div>
                     <div className={s.footer}></div>
-                </ThemeContext.Provider>
+                </>
                 :
                 <Preloader />
             }

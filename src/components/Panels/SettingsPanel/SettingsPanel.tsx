@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
 import { ThemeContext } from '../../Main';
@@ -77,7 +77,7 @@ type SwitcherProps = {
 }
 
 function Switcher(props: SwitcherProps) {
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
     return <SplitPanel label={props.label}>
         <label className={s.switch}>
             <input

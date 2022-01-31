@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import EditView from "./EditView";
 import s from './VocabularyPanel.module.css';
-import { Word } from '../../Types';
+import { Configurations, Word } from '../../Types';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
 import { ThemeContext } from '../../Main';
 import { Tooltip } from '../../../helpers/ComponentHelpers';
+import { useGetConfigQuery } from "../../../API/configApi";
 
 type WordViewProps = {
     word: Word;
@@ -52,7 +52,7 @@ function ProgressBar(props: ProgressBarProps) {
 }
 
 function RemoveButton(props: { onClick: () => void }) {
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery({}).data as Configurations).theme;
     return (
         <div className={s.remove_control + ' ' + s['remove_control_' + theme]} >
             <div className={s.remove_button} onClick={props.onClick}>
