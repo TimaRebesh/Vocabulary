@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect, useRef } from 'react';
+import { useContext, useLayoutEffect, useRef } from 'react';
 import arrowdown from '../../../assets/images/arrowdown.png';
 import arrowup from '../../../assets/images/arrowup.png';
 import { Configurations, VocMutation, Word } from '../../Types';
@@ -7,13 +7,13 @@ import { MenuButton, Spacer } from '../../../helpers/ComponentHelpers';
 import VocabularySelector from './VocabularySelectors/VocabularySelector';
 import { ThemeContext } from '../../Main';
 import VocabularyEditor from './VocabularyEditor';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { setSort } from '../../../store/reducers/vocPanelSlice';
 
 type HeaderProps = {
     coutWords: number;
     searchTerm: string;
     setSearchTerm: (v: string) => void;
-    isASC: null | boolean;
-    setIsASC: (v: boolean) => void;
     focus: Object | undefined;
     setNew: (v: boolean) => void;
     save: () => void;
@@ -27,12 +27,13 @@ export default function Header(props: HeaderProps) {
 
     const theme = useContext(ThemeContext);
 
+
     return (
         <div className={s.header + ' ' + s[theme]}>
             <MenuButton executor={props.save} />
             <Counter count={props.coutWords} />
             <Search value={props.searchTerm} onChange={(v) => props.setSearchTerm(v)} />
-            <Sort isASC={props.isASC} onChange={() => props.setIsASC(!props.isASC)} />
+            <Sort />
             <AddNewWord focus={props.focus} onChange={() => props.setNew(true)} />
             <Spacer />
             <VocabularyEditor config={props.config} voc={props.voc} saveConfigAndVoc={props.saveConfigAndVoc} />
@@ -50,21 +51,24 @@ const Search = ({ value, onChange }: { value: string; onChange: (v: string) => v
     <input type='text' placeholder='Search...' className={s.search}
         value={value} onChange={e => onChange(e.target.value)} />
 
-const Sort = (props: { isASC: null | boolean; onChange: () => void }) => {
+const Sort = () => {
 
-    const getSortLabel = () => {
-        if (props.isASC === null)
-            return 'SORT'
-        if (props.isASC)
-            return 'ASC'
-        else
-            return 'DESC'
-    }
+    const { sort } = useAppSelector(state => state.vocPanel);
+    const dispatch = useAppDispatch();
+
+    const getSortLabel = () => sort === 'off' ? 'SORT' : (sort === 'asc' ? 'ASC' : 'DESC')
+
+    const chageSort = () =>  dispatch(setSort(sort === 'off' ? 'asc' : (sort === 'asc' ? 'desc' : 'off')))
+
+    const getLegendClass = () => sort !== 'off' ? s.sort_legend : '';
 
     return (
         <div className={s.sort}>
-            <div>{getSortLabel()}</div>
-            <img src={props.isASC ? arrowdown : arrowup} alt='ASC' onClick={props.onChange} />
+            <div className={getLegendClass()}>{getSortLabel()}</div>
+            <img
+                src={(sort === 'off' || sort === 'asc') ? arrowup : arrowdown}
+                alt='ASC'
+                onClick={chageSort} />
         </div>
     )
 }

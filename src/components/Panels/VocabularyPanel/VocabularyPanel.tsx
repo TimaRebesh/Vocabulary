@@ -1,8 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, PanelName, VocMutation, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import Header from './Header';
 import WordView from './WordView';
+import { useAppSelector } from '../../../hooks/redux';
 
 
 type VocabularyProps = {
@@ -16,9 +17,9 @@ type VocabularyProps = {
 
 export default function VocabularyPanel(props: VocabularyProps) {
 
+    const { sort } = useAppSelector(state => state.vocPanel);
     const [words, setWords] = useState<Word[]>(props.vocabulary);
     const [originals, setOriginals] = useState<string[]>([]);
-    const [isASC, setIsASC] = useState<boolean | null>(null);
     const [isNew, setIsNew] = useState(false);
     const [searchTerm, setSearchTerm] = useState('')
     const wordsRef = useRef<HTMLDivElement>(null);
@@ -32,13 +33,15 @@ export default function VocabularyPanel(props: VocabularyProps) {
     }, [])
 
     useEffect(() => {
-        if (isASC !== null)
-            if (isASC)
-                words.sort((a, b) => a.original > b.original ? 1 : -1);
-            else
-                words.sort((a, b) => a.original > b.original ? -1 : 1);
-        setWords([...words])
-    }, [isASC])
+        const wordsCopy = [...words];
+        if (sort !== 'off') {
+            if (sort === 'asc')
+                wordsCopy.sort((a, b) => a.original > b.original ? 1 : -1);
+            if (sort === 'desc')
+                wordsCopy.sort((a, b) => a.original > b.original ? -1 : 1);
+        }
+        setWords(wordsCopy)
+    }, [sort])
 
     useEffect(() => {
         if (isNew) {
@@ -87,7 +90,6 @@ export default function VocabularyPanel(props: VocabularyProps) {
             coutWords={words.length}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
-            isASC={isASC} setIsASC={setIsASC}
             focus={focus}
             setNew={(v) => setIsNew(v)}
             save={save}
