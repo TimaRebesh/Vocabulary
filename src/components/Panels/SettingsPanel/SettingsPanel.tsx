@@ -1,8 +1,8 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
 import { ThemeContext } from '../../Main';
-import { MenuButton } from '../../../helpers/ComponentHelpers';
+import { MenuButton, SaveButton } from '../../../helpers/ComponentHelpers';
 import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
 import { useAppDispatch } from '../../../hooks/redux';
 import { changePanel } from '../../../store/reducers/panelsSlice';
@@ -15,6 +15,7 @@ export default function SettingsPanel() {
     const dispatch = useAppDispatch();
     const [changeTheme, changeThemeStatus] = useChangeThemeMutation();
     const [changeConfiguration, changeConfigThemeStatus] = useUpdateConfigMutation();
+    const [isChanged, setIsChanged] = useState(false);
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...config } as Configurations;
@@ -22,11 +23,14 @@ export default function SettingsPanel() {
             changedConfig = { ...changedConfig, [nc.name]: nc.value }
         })
         setConfig({ ...changedConfig });
+        setIsChanged(true);
     }
 
-    const save = () => {
-        changeConfiguration(config);
-        dispatch(changePanel('menu'))
+    const goToMenu = () => dispatch(changePanel('menu'));
+
+    const save = async () => {
+        setIsChanged(false);
+        await changeConfiguration(config);
     }
 
     const switchTheme = (value: boolean) => {
@@ -37,7 +41,8 @@ export default function SettingsPanel() {
 
     return (
         <div className={`${s.block} ${s[config.theme]}`}>
-            <MenuButton executor={save} />
+            <MenuButton executor={goToMenu} />
+            {isChanged && <SaveButton executor={save} />}
             <div className={s.settings}>
                 <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
                 <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
@@ -77,7 +82,6 @@ type SwitcherProps = {
 }
 
 function Switcher(props: SwitcherProps) {
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
     return <SplitPanel label={props.label}>
         <label className={s.switch}>
             <input

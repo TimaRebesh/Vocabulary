@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import preloader from '../assets/images/preloader.gif';
 import s from './Helpers.module.css';
-import { ThemeContext } from '../components/Main';
 import { useGetConfigQuery } from '../API/configApi';
 import { Configurations } from '../components/Types';
 
@@ -21,6 +20,10 @@ export function Spacer() {
 
 export function MenuButton({ executor }: { executor: () => void }) {
     return <button className={`button ${s.go_menu}`} onClick={(e) => executor()}>Menu</button>
+}
+
+export function SaveButton({ executor }: { executor: () => void }) {
+    return <button className={`button ${s.save}`} onClick={(e) => executor()}>Save</button>
 }
 
 type TooltipProps = {

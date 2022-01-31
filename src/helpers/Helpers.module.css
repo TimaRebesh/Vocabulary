@@ -16,6 +16,13 @@
   left: 15px;
 }
 
+.save {
+  position: absolute;
+  top: 10px;
+  left: 140px;
+  background-color: #00baa0;
+}
+
 .tooltip {
   display: inline-block;
   position: absolute;
