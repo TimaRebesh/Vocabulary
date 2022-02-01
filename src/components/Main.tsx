@@ -17,15 +17,15 @@ const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/Vocabu
 
 export default function Main() {
 
-    const { data: config } = useGetConfigQuery({});
-    const [trigger, { data: vocabulary }] = useLazyGetVocabularyQuery();
+    const { data: config } = useGetConfigQuery();
+    const [getVoc, { data: vocabulary }] = useLazyGetVocabularyQuery();
     const [updateVocabulary, updateVocabularyStatus] = useUpdateVocabularyMutation();
     const { activePanelName } = useAppSelector(state => state.panels);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         config &&
-            !vocabulary && trigger(config.studyID)
+            !vocabulary && getVoc(config.studyID)
     }, [config])
 
     const setPanel = (panelName: PanelName) => {

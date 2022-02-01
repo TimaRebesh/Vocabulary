@@ -7,8 +7,8 @@ const vocabularyApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
     tagTypes: ['vocabulary'],
     endpoints: (builder) => ({
-        getVocabulary: builder.query<Vocabulary, any>({
-            query: (id: number) => 'vocabularies/' + id,
+        getVocabulary: builder.query<Vocabulary, number>({
+            query: (id) => 'vocabularies/' + id,
             providesTags: result => ['vocabulary']
         }),
         updateVocabulary: builder.mutation({
@@ -56,7 +56,8 @@ export const {
     useUpdateVocabularyMutation,
     useCreateVocabularyMutation,
     useRemoveVocabularyMutation,
-    useUpdateVocabularyNameMutation
+    useUpdateVocabularyNameMutation,
+    
 } = vocabularyApi;
 
 export default vocabularyApi;

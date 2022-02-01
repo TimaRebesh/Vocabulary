@@ -51,7 +51,7 @@ function ProgressBar(props: ProgressBarProps) {
 }
 
 function RemoveButton(props: { onClick: () => void }) {
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
     return (
         <div className={s.remove_control + ' ' + s['remove_control_' + theme]} >
             <div className={s.remove_button} onClick={props.onClick}>

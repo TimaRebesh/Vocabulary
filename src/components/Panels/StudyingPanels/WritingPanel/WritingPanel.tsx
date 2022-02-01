@@ -45,7 +45,7 @@ function WritingView({ studyWord, onChange, isHint }: WritingViewProps) {
 
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;;
+    const theme = (useGetConfigQuery().data as Configurations).theme;;
 
     useEffect(() => {
         inputRef.current?.focus();

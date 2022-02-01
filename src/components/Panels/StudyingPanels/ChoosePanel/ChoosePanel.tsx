@@ -20,7 +20,7 @@ export default function ChoosePanel(props: ChooseProps) {
     const [chosenID, setChosenID] = useState(0);
     const buttonsGroupRef = useRef<HTMLDivElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     useEffect(() => {
         const callback = (e: any) => {

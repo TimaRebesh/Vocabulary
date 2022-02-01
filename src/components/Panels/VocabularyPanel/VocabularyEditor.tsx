@@ -3,7 +3,7 @@ import * as XLSX from "xlsx"; // npm install xlsx
 import s from './VocabularyPanel.module.css';
 import edit from '../../../assets/images/edit_list.png'
 import { Modal } from '../../../helpers/ComponentHelpers';
-import { Configurations, Vocabulary, VocMutation, Word } from '../../Types';
+import { Configurations, Word } from '../../Types';
 import { getVocabularyName, getWordProgress } from '../../../helpers/fucntionsHelp';
 import Excel from '../../../assets/images/excel.png';
 import { useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
@@ -36,7 +36,7 @@ type VocEditorModalProps = {
 
 export function VocEditorModal(props: VocEditorModalProps) {
 
-    const config = useGetConfigQuery({}).data as Configurations;
+    const config = useGetConfigQuery().data as Configurations;
     const [updateConfig] = useUpdateConfigMutation();
     const [updateName] = useUpdateVocabularyNameMutation();
     const [updateVocabulary] = useUpdateVocabularyMutation();

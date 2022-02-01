@@ -20,7 +20,7 @@ type HeaderProps = {
 
 export default function Header(props: HeaderProps) {
 
-    const config = useGetConfigQuery({}).data as Configurations;
+    const config = useGetConfigQuery().data as Configurations;
     const theme = config.theme;
 
     return (

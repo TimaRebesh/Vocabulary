@@ -34,7 +34,7 @@ export function Tooltip({ text }: TooltipProps) {
 
     const [isFocus, setIsFocus] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
     const timeout = useRef<number>(0);
 
     useEffect(() => {
@@ -98,7 +98,7 @@ type QuestionControlProps = {
 }
 
 export function QuestionControl(props: QuestionControlProps) {
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     return <Modal isShown={props.show}>
         <div className={s.modal + ' ' + s[theme]}>

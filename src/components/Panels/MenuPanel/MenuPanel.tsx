@@ -9,7 +9,7 @@ type MenuPanelProps = {
 }
 
 export default function MenuPanel({ setPanel }: MenuPanelProps) {
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
     return (
         <div className={defineClass(s.menu, s[theme])}>
             <button className='button' onClick={() => setPanel('repeat')}>Repeat</button>

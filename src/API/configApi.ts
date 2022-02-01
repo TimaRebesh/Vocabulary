@@ -6,8 +6,8 @@ const configApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
     tagTypes: ['config'],
     endpoints: (builer) => ({
-        getConfig: builer.query<Configurations, any>({
-            query: () => 'configuration',
+        getConfig: builer.query<Configurations, void>({
+            query: (value) => 'configuration',
             providesTags: result => ['config']
         }),
         updateConfig: builer.mutation({

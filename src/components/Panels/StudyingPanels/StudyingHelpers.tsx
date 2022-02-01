@@ -37,7 +37,7 @@ export const hideCongrats = () => 'nextWord';
 
 export function StudyingWord(props: { mode: string, studyWord: Word }) {
 
-    const config = useGetConfigQuery({}).data as Configurations;
+    const config = useGetConfigQuery().data as Configurations;
     const theme = config.theme;
 
     return <>

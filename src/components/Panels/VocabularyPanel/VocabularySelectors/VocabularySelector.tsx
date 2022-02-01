@@ -3,15 +3,15 @@ import { Configurations, Topic } from '../../../Types';
 import s from './VocabularySelectors.module.css';
 import remove from '../../../../assets/images/close-icon.png';
 import arrowdown from '../../../../assets/images/arrowdown.png';
-import { QuestionControl } from '../../../../helpers/ComponentHelpers';
+import { Preloader, QuestionControl } from '../../../../helpers/ComponentHelpers';
 import { useChangeTopicMutation, useGetConfigQuery, useUpdateVocsInConfigMutation } from '../../../../API/configApi';
-import { useCreateVocabularyMutation, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
+import { useCreateVocabularyMutation, useLazyGetVocabularyQuery, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { setSearch, setSort } from '../../../../store/reducers/vocPanelSlice';
 
 export default function VocabularySelector() {
 
-    const { data, isSuccess } = useGetConfigQuery({});
+    const { data, isSuccess } = useGetConfigQuery();
     const config = data as Configurations;
     const [isOpen, setIsOpen] = useState(false);
     const [isNew, setIsNew] = useState(false);
@@ -43,10 +43,10 @@ export default function VocabularySelector() {
         }
     }, [])
 
-    const [change] = useChangeTopicMutation();
+    const [changeTopicRequest] = useChangeTopicMutation();
 
     const switchStudy = async (id: number) => {
-        await change(id).unwrap;
+        await changeTopicRequest(id).unwrap;
         setIsOpen(false);
     }
 
@@ -99,7 +99,6 @@ export default function VocabularySelector() {
             blockRef.current?.focus()
         }
     }, [isOpen])
-
 
     if (isNew)
         return <div className={s.creator_block} onKeyDown={creatorKeyDown} onBlur={removeNew}>

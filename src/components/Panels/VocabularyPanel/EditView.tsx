@@ -109,7 +109,7 @@ function Editor(props: EditorProps) {
     const [notification, setNotification] = useState<null | string>(null);
     const existFrase = 'this word has already exist';
     const emptyFrase = 'value can not be empty';
-    const theme = (useGetConfigQuery({}).data as Configurations).theme;
+    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     useLayoutEffect(() => {
         if (props.focus)

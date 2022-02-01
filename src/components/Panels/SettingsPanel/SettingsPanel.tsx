@@ -9,7 +9,7 @@ import { changePanel } from '../../../store/reducers/panelsSlice';
 
 export default function SettingsPanel() {
 
-    const { data } = useGetConfigQuery({});
+    const { data } = useGetConfigQuery();
     const [config, setConfig] = useState<Configurations>(data as Configurations);
     const dispatch = useAppDispatch();
     const [changeTheme, changeThemeStatus] = useChangeThemeMutation();
