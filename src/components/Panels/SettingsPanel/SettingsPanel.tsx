@@ -1,7 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
-import { ThemeContext } from '../../Main';
 import { MenuButton, SaveButton } from '../../../helpers/ComponentHelpers';
 import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
 import { useAppDispatch } from '../../../hooks/redux';

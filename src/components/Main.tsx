@@ -13,7 +13,6 @@ import { useLazyGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/v
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { changePanel } from '../store/reducers/panelsSlice';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
-export const ThemeContext = React.createContext('white');
 
 
 export default function Main() {

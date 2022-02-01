@@ -3,7 +3,6 @@ import * as XLSX from "xlsx"; // npm install xlsx
 import s from './VocabularyPanel.module.css';
 import edit from '../../../assets/images/edit_list.png'
 import { Modal } from '../../../helpers/ComponentHelpers';
-import { ThemeContext } from '../../Main';
 import { Configurations, Vocabulary, VocMutation, Word } from '../../Types';
 import { getVocabularyName, getWordProgress } from '../../../helpers/fucntionsHelp';
 import Excel from '../../../assets/images/excel.png';

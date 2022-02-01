@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useGetConfigQuery } from '../../../API/configApi';
-import { ThemeContext } from '../../Main';
 import { Configurations, Word } from '../../Types';
 import Others from './Others';
 import s from './VocabularyPanel.module.css';

@@ -2,7 +2,6 @@ import EditView from "./EditView";
 import s from './VocabularyPanel.module.css';
 import { Configurations, Word } from '../../Types';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
-import { ThemeContext } from '../../Main';
 import { Tooltip } from '../../../helpers/ComponentHelpers';
 import { useGetConfigQuery } from "../../../API/configApi";
 

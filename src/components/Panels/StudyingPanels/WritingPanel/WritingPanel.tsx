@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useGetConfigQuery } from '../../../../API/configApi';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { changeCheer } from '../../../../store/reducers/cheerSlice';
-import { ThemeContext } from '../../../Main';
 import { Configurations, Word } from '../../../Types';
 import { hideCongrats, setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
