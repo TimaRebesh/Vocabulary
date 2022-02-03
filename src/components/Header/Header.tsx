@@ -16,7 +16,7 @@ export default function Header({ theme, vocabularyName }: HeaderProps) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(changeCheer(''));
+        cheer && dispatch(changeCheer(''));
     }, [activePanelName])
 
     const getLabel = () => {

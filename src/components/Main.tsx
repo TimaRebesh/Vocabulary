@@ -1,32 +1,45 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Header from './Header/Header';
 import MenuPanel from './Panels/MenuPanel/MenuPanel';
 import SettingsPanel from './Panels/SettingsPanel/SettingsPanel';
-import { PanelName, Vocabulary, Word } from './Types';
+import { Configurations, PanelName, Vocabulary, Word } from './Types';
 import s from './Main.module.css';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
-import { Preloader } from '../helpers/ComponentHelpers';
+import { MenuButton, Preloader } from '../helpers/ComponentHelpers';
 import { useGetConfigQuery } from '../API/configApi';
-import { useLazyGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
+import { useGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { changePanel } from '../store/reducers/panelsSlice';
+import { setErrorMessage } from '../helpers/fucntionsHelp';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
 
 
 export default function Main() {
 
-    const { data: config } = useGetConfigQuery();
-    const [getVoc, { data: vocabulary }] = useLazyGetVocabularyQuery();
-    const [updateVocabulary, updateVocabularyStatus] = useUpdateVocabularyMutation();
+    const { data: config, isFetching: configLoading, error: configError } = useGetConfigQuery();
+    const { data: vocabulary, isFetching: vocLoading, error: vocError } = useGetVocabularyQuery(config?.studyID, {
+        skip: config === undefined
+    });
+    const [updateVocabulary] = useUpdateVocabularyMutation();
     const { activePanelName } = useAppSelector(state => state.panels);
+    const { error } = useAppSelector(state => state.error);
     const dispatch = useAppDispatch();
+    const [isPreloader, setIsPreloader] = useState(false);
 
     useEffect(() => {
-        config &&
-            !vocabulary && getVoc(config.studyID)
-    }, [config])
+        setIsPreloader(configLoading);
+    }, [configLoading])
+
+    useEffect(() => {
+        setIsPreloader(vocLoading);
+    }, [vocLoading])
+
+    useEffect(() => {
+        configError && dispatch(setErrorMessage(configError, 'getConfig'))
+        vocError && dispatch(setErrorMessage(vocError, 'getVocabulary'))
+    }, [vocError, configError])
 
     const setPanel = (panelName: PanelName) => {
         dispatch(changePanel(panelName));
@@ -68,20 +81,28 @@ export default function Main() {
         }
     }
 
+    const getPanel = () => {
+        if (error) {
+            return <>
+                <h4 className={s.error}>{error}</h4>
+                <MenuButton executor={() => { dispatch(setErrorMessage(null)); dispatch(changePanel('menu')) }} />
+            </>
+        }
+        if (config && vocabulary)
+            return <>
+                <div className={s.panel}>
+                    <div className={shooseClass()}>{shoosePanel()}</div>
+                    {isPreloader && <Preloader />}
+                </div>
+                <div className={s.footer}></div>
+            </>
+        return <Preloader />
+    }
+
     return (
         <div className={`${s.main} ${config && config.theme}`}>
-            {config && vocabulary
-                ?
-                <>
-                    <Header theme={config.theme} vocabularyName={vocabulary.name ?? '- - -'} />
-                    <div className={s.panel}>
-                        <div className={shooseClass()}>{shoosePanel()}</div>
-                    </div>
-                    <div className={s.footer}></div>
-                </>
-                :
-                <Preloader />
-            }
+            <Header theme={config?.theme ?? 'white'} vocabularyName={vocabulary?.name ?? '- - -'} />
+            {getPanel()}
         </div>
     )
 }

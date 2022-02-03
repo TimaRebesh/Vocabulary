@@ -6,8 +6,8 @@ const vocabularyApi = createApi({
     reducerPath: 'vocabularyApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
     tagTypes: ['vocabulary'],
-    endpoints: (builder) => ({
-        getVocabulary: builder.query<Vocabulary, number>({
+    endpoints: builder => ({
+        getVocabulary: builder.query<Vocabulary, number | undefined>({
             query: (id) => 'vocabularies/' + id,
             providesTags: result => ['vocabulary']
         }),

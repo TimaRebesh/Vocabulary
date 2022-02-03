@@ -8,7 +8,7 @@ const configApi = createApi({
     endpoints: (builer) => ({
         getConfig: builer.query<Configurations, void>({
             query: (value) => 'configuration',
-            providesTags: result => ['config']
+            providesTags: ['config']
         }),
         updateConfig: builer.mutation({
             query: (config) =>
@@ -17,7 +17,7 @@ const configApi = createApi({
                 method: 'PUT',
                 body: config
             }),
-            invalidatesTags: result => ['config']
+            invalidatesTags: ['config']
         }),
         changeTopic: builer.mutation({
             query: (id: number) =>
@@ -26,16 +26,16 @@ const configApi = createApi({
                 method: 'PATCH',
                 body: { studyID: id }
             }),
-            invalidatesTags: result => ['config']
+            invalidatesTags: ['config'],
         }),
         changeTheme: builer.mutation({
             query: (color: string) =>
             ({
-                url: 'configuration',
+                url: 'configuration ',
                 method: 'PATCH',
                 body: { theme: color }
             }),
-            invalidatesTags: result => ['config']
+            invalidatesTags: ['config']
         }),
         updateVocsInConfig: builer.mutation({
             query: (vocabularies: Topic[]) =>
@@ -44,7 +44,7 @@ const configApi = createApi({
                 method: 'PATCH',
                 body: { vocabularies }
             }),
-            invalidatesTags: result => ['config']
+            invalidatesTags: ['config']
         }),
     })
 })

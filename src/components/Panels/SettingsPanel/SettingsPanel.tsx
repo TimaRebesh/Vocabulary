@@ -1,10 +1,11 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
 import { MenuButton, SaveButton } from '../../../helpers/ComponentHelpers';
 import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
 import { useAppDispatch } from '../../../hooks/redux';
 import { changePanel } from '../../../store/reducers/panelsSlice';
+import { setErrorMessage } from '../../../helpers/fucntionsHelp';
 
 
 export default function SettingsPanel() {
@@ -12,9 +13,13 @@ export default function SettingsPanel() {
     const { data } = useGetConfigQuery();
     const [config, setConfig] = useState<Configurations>(data as Configurations);
     const dispatch = useAppDispatch();
-    const [changeTheme, changeThemeStatus] = useChangeThemeMutation();
-    const [changeConfiguration, changeConfigThemeStatus] = useUpdateConfigMutation();
+    const [changeTheme, { error: themeError }] = useChangeThemeMutation();
+    const [changeConfiguration] = useUpdateConfigMutation();
     const [isChanged, setIsChanged] = useState(false);
+
+    useEffect(() => {
+        dispatch(setErrorMessage(themeError, 'changeTheme'))
+    }, [themeError])
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...config } as Configurations;

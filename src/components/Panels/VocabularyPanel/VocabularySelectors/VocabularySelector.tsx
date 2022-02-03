@@ -3,24 +3,24 @@ import { Configurations, Topic } from '../../../Types';
 import s from './VocabularySelectors.module.css';
 import remove from '../../../../assets/images/close-icon.png';
 import arrowdown from '../../../../assets/images/arrowdown.png';
-import { Preloader, QuestionControl } from '../../../../helpers/ComponentHelpers';
+import { QuestionControl } from '../../../../helpers/ComponentHelpers';
 import { useChangeTopicMutation, useGetConfigQuery, useUpdateVocsInConfigMutation } from '../../../../API/configApi';
-import { useCreateVocabularyMutation, useLazyGetVocabularyQuery, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
+import { useCreateVocabularyMutation, useRemoveVocabularyMutation } from '../../../../API/vocabularyApi';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { setSearch, setSort } from '../../../../store/reducers/vocPanelSlice';
 
 export default function VocabularySelector() {
 
-    const { data, isSuccess } = useGetConfigQuery();
+    const { data } = useGetConfigQuery();
     const config = data as Configurations;
     const [isOpen, setIsOpen] = useState(false);
     const [isNew, setIsNew] = useState(false);
     const [isRemoveTopic, setIsRemoveTopic] = useState<Topic | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const blockRef = useRef<HTMLDivElement>(null);
-    const [createNewVoc, createNewVocStatus] = useCreateVocabularyMutation();
-    const [updateVocInConfig, updateVocInConfigStatus] = useUpdateVocsInConfigMutation();
-    const [removeVoc, removeVocStatus] = useRemoveVocabularyMutation();
+    const [createNewVoc] = useCreateVocabularyMutation();
+    const [updateVocInConfig] = useUpdateVocsInConfigMutation();
+    const [removeVoc] = useRemoveVocabularyMutation();
     const dispatch = useAppDispatch();
 
     useLayoutEffect(() => {
@@ -46,7 +46,9 @@ export default function VocabularySelector() {
     const [changeTopicRequest] = useChangeTopicMutation();
 
     const switchStudy = async (id: number) => {
+        if (config.studyID !== id) {
         await changeTopicRequest(id).unwrap;
+        }
         setIsOpen(false);
     }
 
@@ -68,7 +70,7 @@ export default function VocabularySelector() {
 
     const removeNew = (e: React.FocusEvent<HTMLInputElement>) => setIsNew(false);
 
-    const [changeTopic, changeTopicState] = useChangeTopicMutation();
+    const [changeTopic] = useChangeTopicMutation();
 
     const removeItem = async () => {
         if (isRemoveTopic && config.vocabularies.length > 1) {
