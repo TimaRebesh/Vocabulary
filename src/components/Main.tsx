@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import Header from './Header/Header';
 import MenuPanel from './Panels/MenuPanel/MenuPanel';
 import SettingsPanel from './Panels/SettingsPanel/SettingsPanel';
-import { Configurations, PanelName, Vocabulary, Word } from './Types';
+import { PanelName, Vocabulary, Word } from './Types';
 import s from './Main.module.css';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';

@@ -2725,6 +2725,18 @@
       "name": "CEM",
       "vocabulary": [
         {
+          "id": 1643971237140,
+          "original": "implement",
+          "translated": "воплощать в жизнь",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
           "id": 1643818515895,
           "original": "fetch",
           "translated": "получать",
@@ -3109,6 +3121,18 @@
       "name": "test",
       "vocabulary": [
         {
+          "id": 1643969533338,
+          "original": "aaa",
+          "translated": "aa",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
           "id": 1643722916475,
           "original": "fdfd",
           "translated": "fdfd",
@@ -3133,10 +3157,12 @@
           "lastRepeat": 1
         },
         {
-          "id": 2,
+          "id": 1643969570808,
           "original": "a",
           "translated": "a",
-          "anothers": [],
+          "anothers": [
+            "sdsdsd"
+          ],
           "repeated": {
             "translated": 0,
             "original": 0,

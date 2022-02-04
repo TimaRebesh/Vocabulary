@@ -69,7 +69,7 @@ export default function Others({ others, onSave }: OthersProps) {
                 </div>
             </div>
             : <>
-                <button className={s.edit} onClick={_ => setIsOpen(true)}>Others</button>
+                <button className={s.edit} onClick={_ => setIsOpen(true)}>hints</button>
                 {othersWords.length > 0 && othersWords.map(o => <p className={s.others} key={o}>{o},</p>)}
             </>
         }
