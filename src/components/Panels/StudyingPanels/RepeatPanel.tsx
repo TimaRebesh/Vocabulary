@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
 import WritingPanel from './WritingPanel/WritingPanel';
@@ -8,6 +8,9 @@ import { maxNumberDefiningNew } from '../../../utils/determinant';
 import { Preloader } from '../../../helpers/ComponentHelpers';
 import MessagePanel from '../MessagePanel/MessagePanel';
 import { StudyingPanel } from './StudyingPanel';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { changeCountDown } from '../../../store/reducers/countdownSlice';
+import { changeCheer } from '../../../store/reducers/cheerSlice';
 
 type Mistake = {
     order: number,
@@ -16,6 +19,8 @@ type Mistake = {
 
 export default function RepeatPanel(props: StudyingPanelProps) {
 
+    const { countdown } = useAppSelector(state => state.countdown);
+    const dispatch = useAppDispatch();
     const [dataSet, setDataSet] = useState<Word[]>([]);
     const [studiedOrder, setStudiedOrder] = useState(0);
     const [studiedWord, setStudiedWord] = useState<Word>();
@@ -23,14 +28,13 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     const [mode, setMode] = useState('');
     const [mistakes, setMistakes] = useState<Mistake[]>([]);
     const [isMistakeTime, setIsMistakeTime] = useState(false);
-    const countdown = useRef<number>(1000);
     const isStart = useRef(true);
     const maxCount = 4;
 
 
     const save = () => {
         saveProgress();
-        sendCountdown(0);
+        dispatch(changeCountDown(0))
         props.setPanel('menu')
     }
 
@@ -47,7 +51,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     useEffect(() => {
         const formatedVoc = formatVoc();
         setDataSet(formatedVoc);
-        countdown.current = (formatedVoc.length > props.config.limitAll) ? props.config.limitAll : formatedVoc.length;
+        dispatch(changeCountDown(((formatedVoc.length > props.config.limitAll) ? props.config.limitAll : formatedVoc.length)))
         isStart.current = false;
     }, [props.vocabulary])
 
@@ -65,8 +69,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
     useEffect(() => {
         if (dataSet.length > 0) {
             defineWords();
-            hideCongrats();
-            sendCountdown(countdown.current);
+            dispatch(changeCheer(hideCongrats()));
         }
     }, [dataSet, studiedOrder, mistakes])
 
@@ -105,7 +108,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
             // set order
             setNextWordOrder();
             // use countdown
-            countdown.current = countdown.current - 1;
+            dispatch(changeCountDown(countdown - 1))
             // updating mistakes
             if (mistakes.length) {
                 if (mistakes[0].count === maxCount)
@@ -126,8 +129,6 @@ export default function RepeatPanel(props: StudyingPanelProps) {
             setIsMistakeTime(false);
     }
 
-    const sendCountdown = (count: number) => window.eventBus.notify('countdown', count)
-
     const again = () => {
         setStudiedOrder(0);
         setOneIterationWords([]);
@@ -139,7 +140,7 @@ export default function RepeatPanel(props: StudyingPanelProps) {
             return <div></div>
         if (dataSet.length < forPracticeMinWords)
             return <MessagePanel legend={'You should have more than 3 learned words'} messages={[<>Please stady words in <h3>"Stady New only"</h3></>]} />;
-        else if (countdown.current === 0)
+        else if (countdown === 0)
             return <MessagePanel messages={[<p>Practice is finished</p>]}>
                 <button className='button' onClick={again}>Try again</button>
             </MessagePanel>

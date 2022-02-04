@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import preloader from '../assets/images/preloader.gif';
 import s from './Helpers.module.css';
-import { ThemeContext } from '../components/Main';
+import { useGetConfigQuery } from '../API/configApi';
+import { Configurations, Theme } from '../components/Types';
 
 export function Preloader({ info }: { info?: string }) {
     return <div className={s.preloader_block}>
@@ -21,15 +22,19 @@ export function MenuButton({ executor }: { executor: () => void }) {
     return <button className={`button ${s.go_menu}`} onClick={(e) => executor()}>Menu</button>
 }
 
-type TooltipProps = {
-    text: string | number;
+export function SaveButton({ executor }: { executor: () => void }) {
+    return <button className={`button ${s.save}`} onClick={(e) => executor()}>Save</button>
 }
 
-export function Tooltip({ text }: TooltipProps) {
+type TooltipProps = {
+    text: string | number;
+    theme: Theme;
+}
+
+export function Tooltip({ text, theme }: TooltipProps) {
 
     const [isFocus, setIsFocus] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
-    const theme = useContext(ThemeContext);
     const timeout = useRef<number>(0);
 
     useEffect(() => {
@@ -93,7 +98,7 @@ type QuestionControlProps = {
 }
 
 export function QuestionControl(props: QuestionControlProps) {
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     return <Modal isShown={props.show}>
         <div className={s.modal + ' ' + s[theme]}>

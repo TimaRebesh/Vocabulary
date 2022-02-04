@@ -36,8 +36,7 @@ export default function Others({ others, onSave }: OthersProps) {
 
     const save = () => {
         if (inputVal.length > 0) {
-            othersWords.unshift(inputVal);
-            onSave([...othersWords]);
+            onSave([inputVal, ...othersWords]);
         }
         setInputVal('');
     }

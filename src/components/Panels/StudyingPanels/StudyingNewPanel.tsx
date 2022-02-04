@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Repeated, StudyingPanelProps, Word } from '../../Types';
 import ChoosePanel from './ChoosePanel/ChoosePanel';
 import WritingPanel from './WritingPanel/WritingPanel';
@@ -8,6 +8,8 @@ import { maxNumberDefiningNew } from '../../../utils/determinant';
 import MessagePanel from '../MessagePanel/MessagePanel';
 import { Preloader } from '../../../helpers/ComponentHelpers';
 import { StudyingPanel } from './StudyingPanel';
+import { useAppDispatch } from '../../../hooks/redux';
+import { changeCheer } from '../../../store/reducers/cheerSlice';
 
 type WordState = {
     id: number;
@@ -29,6 +31,7 @@ const mockWord = {
 
 export default function StudyingNewPanel(props: StudyingPanelProps) {
 
+    const dispatch = useAppDispatch();
     const [dataSet, setDataSet] = useState<Word[]>([]);
     const [studiedOrder, setStudiedOrder] = useState(1000);
     const [studiedWord, setStudiedWord] = useState<Word>();
@@ -84,7 +87,7 @@ export default function StudyingNewPanel(props: StudyingPanelProps) {
     }
 
     const defineWords = () => {
-        hideCongrats();
+        dispatch(changeCheer(hideCongrats()));
         let order = defineOrder();
         if (order !== studiedOrder) {
             setStudiedOrder(order);

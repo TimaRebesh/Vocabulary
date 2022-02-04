@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuButton } from "../../../helpers/ComponentHelpers";
 import s from './StudyingPanel.module.css';
 

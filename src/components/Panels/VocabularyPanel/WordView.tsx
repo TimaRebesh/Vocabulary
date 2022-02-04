@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import EditView from "./EditView";
 import s from './VocabularyPanel.module.css';
-import { Word } from '../../Types';
+import { Theme, Word } from '../../Types';
 import { maxNumberDefiningNew } from '../../../utils/determinant';
-import { ThemeContext } from '../../Main';
 import { Tooltip } from '../../../helpers/ComponentHelpers';
 
 type WordViewProps = {
@@ -15,12 +13,13 @@ type WordViewProps = {
     isNew: boolean;
     passFocus: () => void;
     order: number;
+    theme: Theme;
 }
 
 export default function WordView(props: WordViewProps) {
     return (
         <div className={s.item}>
-            <ProgressBar progress={props.word} />
+            <ProgressBar progress={props.word} theme={props.theme}/>
             <EditView
                 word={props.word}
                 onSave={props.onSave}
@@ -28,14 +27,16 @@ export default function WordView(props: WordViewProps) {
                 remove={() => props.remove(props.word)}
                 focus={props.isNew && props.index === 0}
                 passFocus={props.passFocus}
+                theme={props.theme}
             />
-            <RemoveButton onClick={() => props.remove(props.word)} />
+            <RemoveButton onClick={() => props.remove(props.word)} theme={props.theme}/>
         </div>
     )
 }
 
 type ProgressBarProps = {
     progress: Word;
+    theme: Theme;
 }
 
 function ProgressBar(props: ProgressBarProps) {
@@ -46,18 +47,17 @@ function ProgressBar(props: ProgressBarProps) {
                 <div key={el} className={`${s.progress_item} ${progressStatus >= el + 1 ? s.progress_positive : ''}`}>
                 </div>
             ).reverse()}
-            <Tooltip text={`progress: ${progressStatus}`} />
+            <Tooltip text={`progress: ${progressStatus}`} theme={props.theme}/>
         </div>
     )
 }
 
-function RemoveButton(props: { onClick: () => void }) {
-    const theme = useContext(ThemeContext);
+function RemoveButton(props: { onClick: () => void; theme: Theme }) {
     return (
-        <div className={s.remove_control + ' ' + s['remove_control_' + theme]} >
+        <div className={s.remove_control + ' ' + s['remove_control_' + props.theme]} >
             <div className={s.remove_button} onClick={props.onClick}>
                 <div>&times;</div>
-                <Tooltip text='remove' />
+                <Tooltip text='remove' theme={props.theme}/>
             </div>
         </div>
     )

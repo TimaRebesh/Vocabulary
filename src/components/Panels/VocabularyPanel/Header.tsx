@@ -1,42 +1,38 @@
-import React, { useContext, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import arrowdown from '../../../assets/images/arrowdown.png';
 import arrowup from '../../../assets/images/arrowup.png';
-import { Configurations, VocMutation, Word } from '../../Types';
+import { Configurations, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import { MenuButton, Spacer } from '../../../helpers/ComponentHelpers';
-import VocabularySelectors from './VocabularySelectors/VocabularySelectors';
-import { ThemeContext } from '../../Main';
+import VocabularySelector from './VocabularySelectors/VocabularySelector';
 import VocabularyEditor from './VocabularyEditor';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { setSearch, setSort } from '../../../store/reducers/vocPanelSlice';
+import { useGetConfigQuery } from '../../../API/configApi';
 
 type HeaderProps = {
     coutWords: number;
-    searchTerm: string;
-    setSearchTerm: (v: string) => void;
-    isASC: null | boolean;
-    setIsASC: (v: boolean) => void;
     focus: Object | undefined;
     setNew: (v: boolean) => void;
     save: () => void;
     voc: Word[];
-    config: Configurations;
-    saveConfig: (configuration: Configurations, removed: number[]) => void;
-    saveConfigAndVoc: (val: VocMutation) => void;
 }
 
 export default function Header(props: HeaderProps) {
 
-    const theme = useContext(ThemeContext);
+    const config = useGetConfigQuery().data as Configurations;
+    const theme = config.theme;
 
     return (
         <div className={s.header + ' ' + s[theme]}>
             <MenuButton executor={props.save} />
             <Counter count={props.coutWords} />
-            <Search value={props.searchTerm} onChange={(v) => props.setSearchTerm(v)} />
-            <Sort isASC={props.isASC} onChange={() => props.setIsASC(!props.isASC)} />
+            <Search />
+            <Sort />
             <AddNewWord focus={props.focus} onChange={() => props.setNew(true)} />
             <Spacer />
-            <VocabularyEditor config={props.config} voc={props.voc} saveConfigAndVoc={props.saveConfigAndVoc} />
-            <VocabularySelectors config={props.config} saveConfig={props.saveConfig} />
+            <VocabularyEditor voc={props.voc}/>
+            <VocabularySelector />
         </div>
     )
 }
@@ -46,25 +42,34 @@ const Counter = ({ count }: { count: number }) =>
         <div className={s.counter_value}>{count}</div>
     </div>
 
-const Search = ({ value, onChange }: { value: string; onChange: (v: string) => void }) =>
-    <input type='text' placeholder='Search...' className={s.search}
-        value={value} onChange={e => onChange(e.target.value)} />
+const Search = () => {
 
-const Sort = (props: { isASC: null | boolean; onChange: () => void }) => {
+    const { search } = useAppSelector(state => state.vocPanel);
+    const dispatch = useAppDispatch();
 
-    const getSortLabel = () => {
-        if (props.isASC === null)
-            return 'SORT'
-        if (props.isASC)
-            return 'ASC'
-        else
-            return 'DESC'
-    }
+    return <input type='text' placeholder='Search...' className={s.search}
+        value={search} onChange={e => dispatch(setSearch(e.target.value))} />
+}
+
+
+const Sort = () => {
+
+    const { sort } = useAppSelector(state => state.vocPanel);
+    const dispatch = useAppDispatch();
+
+    const getSortLabel = () => sort === 'off' ? 'SORT' : (sort === 'asc' ? 'ASC' : 'DESC')
+
+    const chageSort = () => dispatch(setSort(sort === 'off' ? 'asc' : (sort === 'asc' ? 'desc' : 'off')))
+
+    const getLegendClass = () => sort !== 'off' ? s.sort_legend : '';
 
     return (
         <div className={s.sort}>
-            <div>{getSortLabel()}</div>
-            <img src={props.isASC ? arrowdown : arrowup} alt='ASC' onClick={props.onChange} />
+            <div className={getLegendClass()}>{getSortLabel()}</div>
+            <img
+                src={(sort === 'off' || sort === 'asc') ? arrowup : arrowdown}
+                alt='ASC'
+                onClick={chageSort} />
         </div>
     )
 }

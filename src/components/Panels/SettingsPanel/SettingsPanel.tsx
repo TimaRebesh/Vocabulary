@@ -1,22 +1,25 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Configurations, NewConfig, PanelName, Topic } from '../../Types';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
-import arrowdown from '../../../../src/assets/images/arrowdown.png';
-import remove from '../../../../src/assets/images/close-icon.png';
-import { ThemeContext } from '../../Main';
-import { checkSimilarityOfValues } from '../../../helpers/fucntionsHelp';
-import { MenuButton } from '../../../helpers/ComponentHelpers';
+import { MenuButton, SaveButton } from '../../../helpers/ComponentHelpers';
+import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
+import { useAppDispatch } from '../../../hooks/redux';
+import { changePanel } from '../../../store/reducers/panelsSlice';
+import { setErrorMessage } from '../../../helpers/fucntionsHelp';
 
-type SettingsProps = {
-    configuration: Configurations;
-    onSave: (configuration: Configurations, removed: number[], local?: boolean) => void;
-    setPanel: (v: PanelName) => void;
-}
 
-export default function SettingsPanel({ configuration, onSave, setPanel }: SettingsProps) {
+export default function SettingsPanel() {
 
-    const [config, setConfig] = useState<Configurations>(configuration);
-    const removed = useRef<number[]>([]);
+    const { data } = useGetConfigQuery();
+    const [config, setConfig] = useState<Configurations>(data as Configurations);
+    const dispatch = useAppDispatch();
+    const [changeTheme, { error: themeError }] = useChangeThemeMutation();
+    const [changeConfiguration] = useUpdateConfigMutation();
+    const [isChanged, setIsChanged] = useState(false);
+
+    useEffect(() => {
+        dispatch(setErrorMessage(themeError, 'changeTheme'))
+    }, [themeError])
 
     const changeConfig = (newConfig: NewConfig[]) => {
         let changedConfig = { ...config } as Configurations;
@@ -24,164 +27,35 @@ export default function SettingsPanel({ configuration, onSave, setPanel }: Setti
             changedConfig = { ...changedConfig, [nc.name]: nc.value }
         })
         setConfig({ ...changedConfig });
+        setIsChanged(true);
     }
 
-    const save = () => {
-        if (!checkSimilarityOfValues(configuration, config))
-            onSave(config, removed.current);
-        setPanel('menu');
+    const goToMenu = () => dispatch(changePanel('menu'));
+
+    const save = async () => {
+        setIsChanged(false);
+        await changeConfiguration(config);
+    }
+
+    const switchTheme = (value: boolean) => {
+        const theme = value ? 'dark' : 'white';
+        changeConfig([{ name: 'theme', value: theme }]);
+        changeTheme(theme);
     }
 
     return (
         <div className={`${s.block} ${s[config.theme]}`}>
-            <MenuButton executor={save} />
+            <MenuButton executor={goToMenu} />
+            {isChanged && <SaveButton executor={save} />}
             <div className={s.settings}>
-                <LanguageSelector shosen={config.studyLang}
-                    onChange={value => changeConfig([
-                        { name: 'studyLang', value },
-                        { name: 'studyTopic', value: config.vocabularies[value][0]?.id }
-                    ])} />
-                <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={value => changeConfig([{ name: 'theme', value: value ? 'dark' : 'white' }])} />
+                <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
                 <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
                 <Switcher label='Show hints' value={config.hints} onChange={value => changeConfig([{ name: 'hints', value }])} />
-                <RangeSlider label='Learn all words' value={configuration.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
-                <RangeSlider label='Learn new words' value={configuration.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
+                <RangeSlider label='Learn all words' value={config.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
+                <RangeSlider label='Learn new words' value={config.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
             </div>
         </div >
     )
-}
-
-type VocabularySelectorProps = {
-    topics: Topic[];
-    studyingTopic: Topic;
-    cnangeTopic: (value: number) => void;
-    changeAllVoc: (value: Topic, remove?: boolean) => void;
-}
-
-function VocabularySelector(props: VocabularySelectorProps) {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const [isNew, setIsNew] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const blockRef = useRef<HTMLDivElement>(null);
-
-    useLayoutEffect(() => {
-        inputRef.current?.focus();
-    }, [isNew])
-
-    useEffect(() => {
-        const callback = (e: MouseEvent) => {
-            if (!blockRef.current?.contains(e.target as HTMLDivElement))
-                setIsOpen(false)
-        }
-        window.addEventListener('click', callback);
-        return () => {
-            window.removeEventListener('click', callback);
-        }
-    }, [])
-
-    const switchStudy = (id: number) => {
-        props.cnangeTopic(id)
-        setIsOpen(false);
-    }
-
-    const createNew = () => {
-        setIsNew(true);
-        setIsOpen(false);
-    }
-
-    const saveNew = () => {
-        if (inputRef.current && inputRef.current.value) {
-            const newTopic = { id: new Date().getTime(), name: inputRef.current.value }
-            props.changeAllVoc(newTopic);
-        }
-    }
-
-    const removeNew = (e: React.FocusEvent<HTMLInputElement>) => setIsNew(false);
-
-    const removeItem = (topic: Topic) => props.changeAllVoc(topic, true);
-
-    const getStadyingName = () => props.studyingTopic?.name || 'you have no one';
-
-    if (isNew)
-        return <div className={s.creator_block} onBlur={removeNew}>
-            <input ref={inputRef} type='text' className={s.creator_input}></input>
-            <div className={s.creator_save} onMouseDown={saveNew} >save</div>
-        </div>
-
-    return <div ref={blockRef} className={s.vocabulary_selector}>
-        <div className={s.selector}>
-            <div className={s.chosen} onClick={() => setIsOpen(!isOpen)}>
-                {getStadyingName()}
-            </div>
-            <div className={s.open_button} onClick={() => setIsOpen(!isOpen)}>
-                <img src={arrowdown} alt='open' />
-            </div>
-        </div>
-        {isOpen &&
-            <div className={s.list_popup}>
-                <div className={s.list_item_create} onClick={createNew}>+ create new</div>
-                <div className={s.list_items_block}>
-                    {props.topics.map(topic =>
-                        <div key={topic.id} className={s.list_item}>
-                            <div className={s.list_name}
-                                onClick={_ => switchStudy(topic.id)}>{topic.name}
-                            </div>
-                            <img src={remove} alt='remove' className={s.remove} onClick={_ => removeItem(topic)} />
-                        </div>
-                    )}
-                </div>
-            </div>
-        }
-    </div>
-}
-
-type LanguageSelectorProps = {
-    shosen: string;
-    onChange: (value: string) => void;
-}
-
-function LanguageSelector(props: LanguageSelectorProps) {
-
-    const [shosenLang, setChosenLang] = useState(props.shosen);
-    const [isOpen, setIsOpen] = useState(false);
-    const blockRef = useRef<HTMLDivElement>(null);
-    const languageNames = ['English', 'Polish', 'Russian'];
-
-    useEffect(() => {
-        const callback = (e: MouseEvent) => {
-            if (!blockRef.current?.contains(e.target as HTMLDivElement))
-                setIsOpen(false)
-        }
-        window.addEventListener('click', callback);
-        return () => {
-            window.removeEventListener('click', callback);
-        }
-    }, [])
-
-    const switchLang = (index: number) => {
-        props.onChange(languageNames[index]);
-        setChosenLang(languageNames[index]);
-        setIsOpen(false);
-    }
-
-    return <SplitPanel label='Learning Language'>
-        <div ref={blockRef} className={s.language_selector}>
-            <div className={s.selector} onClick={() => setIsOpen(!isOpen)}>
-                <div className={s.chosen} onClick={() => setIsOpen(!isOpen)}>{shosenLang}</div>
-                <div className={s.open_button} onClick={() => setIsOpen(!isOpen)}>
-                    <img src={arrowdown} alt='open' />
-                </div>
-            </div>
-            {isOpen &&
-                <div className={s.list_popup}>
-                    {languageNames.map((name, index) =>
-                        <div key={name + index} className={s.list_item} onClick={_ => switchLang(index)}>{name}</div>
-                    )}
-                </div>
-            }
-        </div>
-    </SplitPanel>
 }
 
 type LeftRightProsp = {
@@ -212,7 +86,6 @@ type SwitcherProps = {
 }
 
 function Switcher(props: SwitcherProps) {
-    const theme = useContext(ThemeContext);
     return <SplitPanel label={props.label}>
         <label className={s.switch}>
             <input
@@ -271,3 +144,7 @@ function RangeSlider({ value, limit, onChange, label }: RangeSliderProps) {
     </SplitPanel>
 
 }
+function updateConfig(config: Configurations) {
+    throw new Error('Function not implemented.');
+}
+

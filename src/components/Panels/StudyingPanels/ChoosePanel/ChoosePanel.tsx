@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
-import { ThemeContext } from '../../../Main';
-import { Word } from '../../../Types';
+import React, { useEffect, useRef, useState } from 'react';
+import { useGetConfigQuery } from '../../../../API/configApi';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { changeCheer } from '../../../../store/reducers/cheerSlice';
+import { Configurations, Word } from '../../../Types';
 import { setCheer, StudyingWord } from '../StudyingHelpers';
 import s from '../StudyingPanel.module.css';
 
@@ -14,10 +16,11 @@ type ChooseProps = {
 
 export default function ChoosePanel(props: ChooseProps) {
 
+    const dispatch = useAppDispatch();
     const [chosenID, setChosenID] = useState(0);
     const buttonsGroupRef = useRef<HTMLDivElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
-    const theme = useContext(ThemeContext);
+    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     useEffect(() => {
         const callback = (e: any) => {
@@ -52,10 +55,13 @@ export default function ChoosePanel(props: ChooseProps) {
         return s.button
     }
 
+    const applyCheer = (key:string) => {
+        dispatch(changeCheer(key))
+    }
+
     const check = (id: number) => {
         setChosenID(id);
-        if (id === props.studyWord.id)
-            setCheer(props.studyWord);
+        (id === props.studyWord.id) && applyCheer(setCheer(props.studyWord));
     }
 
     const next = () => {

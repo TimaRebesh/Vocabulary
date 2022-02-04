@@ -49,6 +49,10 @@
   min-width: 50px;
 }
 
+.sort_legend {
+  color: #008cba;
+}
+
 .sort img {
   width: 18px;
   cursor: pointer;
@@ -438,3 +442,4 @@
   padding: 5px 20px;
   font-size: 14px;
 }
+

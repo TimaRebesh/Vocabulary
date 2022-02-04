@@ -1,4 +1,7 @@
+import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { Configurations, Topic, Word } from "../components/Types";
+import { setError } from "../store/reducers/errorSlice";
 
 export const shuffle = (data: Word[]) => {
     const arr = [...data];
@@ -15,8 +18,8 @@ export const getWordProgress = (word: Word) =>
     word.repeated.original + word.repeated.translated + word.repeated.writed;
 
 export const getVocabularyName = (config: Configurations) => {
-    const topic = config.vocabularies[config.studyLang].find(voc => voc.id === config.studyTopic) as Topic;
-    return topic?.name ?? '<empty>'
+    const topic = config.vocabularies.find(voc => voc.id === config.studyID) as Topic;
+    return topic.name ?? '<empty>'
 }
 
 export const defineClass = (...names: string[]) => names.reduce((aggr: any, n) => n ? [...aggr, n] : [...aggr], []).join(' ');
@@ -25,3 +28,12 @@ export const checkSimilarityOfValues = (firstElement: any, secondElement: any) =
     JSON.stringify(firstElement) === JSON.stringify(secondElement);
 
 export const deepCopy = (value: any) => JSON.parse(JSON.stringify(value));
+
+export const setErrorMessage = (error: FetchBaseQueryError | SerializedError | undefined | null, requestName?: string) => {
+    if (error) {
+        const err = error as { data: any, status: number };
+        const message = `Error by ${requestName ?? 'request'} (${err.status})`
+        return setError(message)
+    }
+    return setError(null)
+}

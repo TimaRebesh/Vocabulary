@@ -1,80 +1,56 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Header from './Header/Header';
 import MenuPanel from './Panels/MenuPanel/MenuPanel';
 import SettingsPanel from './Panels/SettingsPanel/SettingsPanel';
-import { Configurations, PanelName, Vocabulary, VocMutation, Word } from './Types';
+import { Configurations, PanelName, Vocabulary, Word } from './Types';
 import s from './Main.module.css';
-import { Api } from '../utils/Api';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
-import { EventBus } from '../utils/EentBus';
-import { deepCopy, getVocabularyName } from '../helpers/fucntionsHelp';
-import { Preloader } from '../helpers/ComponentHelpers';
+import { MenuButton, Preloader } from '../helpers/ComponentHelpers';
+import { useGetConfigQuery } from '../API/configApi';
+import { useGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { changePanel } from '../store/reducers/panelsSlice';
+import { setErrorMessage } from '../helpers/fucntionsHelp';
 const VocabularyPanel = React.lazy(() => import('./Panels/VocabularyPanel/VocabularyPanel'));
-export const ThemeContext = React.createContext('white');
 
-
-declare global {
-    interface Window { eventBus: EventBus; }
-}
 
 export default function Main() {
 
-    const [config, setConfig] = useState<Configurations>();
-    const [vocabulary, setVocabulary] = useState<Word[]>();
-    const [activePanelName, setActivePanelName] = useState<PanelName>('menu');
+    const { data: config, isFetching: configLoading, error: configError } = useGetConfigQuery();
+    const { data: vocabulary, isFetching: vocLoading, error: vocError } = useGetVocabularyQuery(config?.studyID, {
+        skip: config === undefined
+    });
+    const [updateVocabulary] = useUpdateVocabularyMutation();
+    const { activePanelName } = useAppSelector(state => state.panels);
+    const { error } = useAppSelector(state => state.error);
+    const dispatch = useAppDispatch();
+    const [isPreloader, setIsPreloader] = useState(false);
 
     useEffect(() => {
-        window.eventBus = new EventBus();
-        setTimeout(() => {
-            Api.getConfig()
-                .then(r => setConfig(r as Configurations))
-                .catch(e => console.log(e))
-
-        }, 500)
-    }, [])
-
+        setIsPreloader(configLoading);
+    }, [configLoading])
 
     useEffect(() => {
-        if (config) {
-            Api.getVocabulary(config.studyTopic)
-                .then(r => setVocabulary(r as Word[]))
-                .catch(e => console.log(e))
-        }
-    }, [config])
+        setIsPreloader(vocLoading);
+    }, [vocLoading])
+
+    useEffect(() => {
+        configError && dispatch(setErrorMessage(configError, 'getConfig'))
+        vocError && dispatch(setErrorMessage(vocError, 'getVocabulary'))
+    }, [vocError, configError])
 
     const setPanel = (panelName: PanelName) => {
-        setActivePanelName(panelName);
+        dispatch(changePanel(panelName));
     }
 
-    const saveConfig = (config: Configurations, removed: number[]) =>
-        Api.saveConfig(config, removed)
-            .then(r => setConfig(r as Configurations))
-            .catch(e => console.log(e))
-
-
-    const saveVocabulary = (value: Word[]) =>
-        Api.saveVocabulary(value, config?.studyTopic as number)
-            .then(r => setVocabulary(r as Word[]))
-            .catch(e => console.log(e))
-
-    const saveConfigAndVoc = async (value: VocMutation) => {
-        let updatedConf: Configurations | null = null;
-        let updatedVoc:Word[] | null = null;
-        if (value.name && config) {
-            const newConf = deepCopy(config) as Configurations;
-            const newVocTopics = newConf.vocabularies[newConf.studyLang].map((topic) =>
-                topic.id === newConf.studyTopic ? { ...topic, name: value.name } : topic);
-            newConf.vocabularies[newConf.studyLang] = newVocTopics;
-            updatedConf = await Api.saveConfig(newConf, []) as Configurations;
-        }
-        if (value.vocWords) 
-            updatedVoc = await Api.saveVocabulary(value.vocWords, config?.studyTopic as number) as Word[];
-        if (updatedConf)
-            setConfig(updatedConf);
-        if (updatedVoc)
-            setVocabulary(updatedVoc);
+    const saveVocabulary = (data: Word[]) => {
+        const voc = vocabulary as Vocabulary;
+        updateVocabulary({
+            id: voc.id,
+            data: { ...voc, vocabulary: data }
+        })
     }
 
     const shooseClass = () => {
@@ -89,16 +65,15 @@ export default function Main() {
                 case 'menu':
                     return <MenuPanel setPanel={setPanel} />;
                 case 'repeat':
-                    return <RepeatPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
+                    return <RepeatPanel config={config} vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'studyNew':
-                    return <StudyingNewPanel config={config} vocabulary={vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
+                    return <StudyingNewPanel config={config} vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'vocabulary':
                     return <Suspense fallback={<Preloader />}>
-                        <VocabularyPanel configuration={config} vocabulary={vocabulary} onSave={saveVocabulary}
-                            saveConfig={saveConfig} setPanel={setPanel} saveConfigAndVoc={saveConfigAndVoc} />
+                        <VocabularyPanel vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} theme={config.theme}/>
                     </Suspense>
                 case 'settings':
-                    return <SettingsPanel configuration={config} onSave={saveConfig} setPanel={setPanel} />
+                    return <SettingsPanel />
                 case 'addNew':
                     return <AddNewPanel />
                 default: return null;
@@ -106,20 +81,28 @@ export default function Main() {
         }
     }
 
+    const getPanel = () => {
+        if (error) {
+            return <>
+                <h4 className={s.error}>{error}</h4>
+                <MenuButton executor={() => { dispatch(setErrorMessage(null)); dispatch(changePanel('menu')) }} />
+            </>
+        }
+        if (config && vocabulary)
+            return <>
+                <div className={s.panel}>
+                    <div className={shooseClass()}>{shoosePanel()}</div>
+                    {isPreloader && <Preloader />}
+                </div>
+                <div className={s.footer}></div>
+            </>
+        return <Preloader />
+    }
+
     return (
         <div className={`${s.main} ${config && config.theme}`}>
-            {config && vocabulary
-                ? 
-                <ThemeContext.Provider value={config.theme}>
-                    <Header activePanel={activePanelName} setPanel={setPanel} vocabularyName={getVocabularyName(config)} />
-                    <div className={s.panel}>
-                        <div className={shooseClass()}>{shoosePanel()}</div>
-                    </div>
-                    <div className={s.footer}></div>
-                </ThemeContext.Provider>
-                : 
-                <Preloader />
-            }
+            <Header theme={config?.theme ?? 'white'} vocabularyName={vocabulary?.name ?? '- - -'} />
+            {getPanel()}
         </div>
     )
 }
