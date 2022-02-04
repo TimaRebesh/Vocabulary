@@ -46,7 +46,7 @@ export function StudyingWord(props: { mode: string, studyWord: Word }) {
         </div>
         <div className={`${s.other_block} ${s['other_block_' + theme]}`}>
             {props.studyWord.anothers.length > 0 && config.hints &&
-                <div className={s.other}>no:
+                <div className={s.other}>hint:
                     {props.studyWord.anothers.map((a, ind, ar) => <span key={a + ind}>{a}{ind !== ar.length - 1 ? ',' : ''}</span>)}
                 </div>}
         </div>

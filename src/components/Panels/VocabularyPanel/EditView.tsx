@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useGetConfigQuery } from '../../../API/configApi';
-import { Configurations, Word } from '../../Types';
+import { Theme, Word } from '../../Types';
 import Others from './Others';
 import s from './VocabularyPanel.module.css';
 
@@ -16,6 +15,7 @@ type EditViewProps = {
     focus: boolean;
     passFocus: () => void;
     remove: () => void;
+    theme: Theme;
 }
 
 const mockValue = [{ value: '', focus: false }, { value: '', focus: false }];
@@ -81,6 +81,7 @@ export default function EditView(props: EditViewProps) {
                     keyDown={(key, value) => keyDown(index, key, value)}
                     spacer={!index}
                     placeholder={!index ? 'enter original' : 'enter translate'}
+                    theme={props.theme}
                 />
             )}
         </div>
@@ -97,7 +98,8 @@ type EditorProps = {
     blur: (value: string) => void;
     class: string;
     spacer: boolean;
-    placeholder: string
+    placeholder: string;
+    theme: Theme;
 }
 
 function Editor(props: EditorProps) {
@@ -109,7 +111,6 @@ function Editor(props: EditorProps) {
     const [notification, setNotification] = useState<null | string>(null);
     const existFrase = 'this word has already exist';
     const emptyFrase = 'value can not be empty';
-    const theme = (useGetConfigQuery().data as Configurations).theme;
 
     useLayoutEffect(() => {
         if (props.focus)
@@ -136,7 +137,7 @@ function Editor(props: EditorProps) {
     const onBlur = () => props.blur(value);
 
     return <>
-        <div className={s.editor + ' ' + s['editor_' + theme]}>
+        <div className={s.editor + ' ' + s['editor_' + props.theme]}>
             {props.focus
                 ? <input
                     ref={inputRef}

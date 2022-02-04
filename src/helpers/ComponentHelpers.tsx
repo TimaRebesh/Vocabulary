@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import preloader from '../assets/images/preloader.gif';
 import s from './Helpers.module.css';
 import { useGetConfigQuery } from '../API/configApi';
-import { Configurations } from '../components/Types';
+import { Configurations, Theme } from '../components/Types';
 
 export function Preloader({ info }: { info?: string }) {
     return <div className={s.preloader_block}>
@@ -28,13 +28,13 @@ export function SaveButton({ executor }: { executor: () => void }) {
 
 type TooltipProps = {
     text: string | number;
+    theme: Theme;
 }
 
-export function Tooltip({ text }: TooltipProps) {
+export function Tooltip({ text, theme }: TooltipProps) {
 
     const [isFocus, setIsFocus] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
-    const theme = (useGetConfigQuery().data as Configurations).theme;
     const timeout = useRef<number>(0);
 
     useEffect(() => {

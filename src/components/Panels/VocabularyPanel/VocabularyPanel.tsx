@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { PanelName, Word } from '../../Types';
+import { PanelName, Theme, Word } from '../../Types';
 import s from './VocabularyPanel.module.css';
 import Header from './Header';
 import WordView from './WordView';
@@ -10,6 +10,7 @@ type VocabularyProps = {
     vocabulary: Word[];
     onSave: (v: Word[]) => void;
     setPanel: (panelName: PanelName) => void;
+    theme: Theme;
 }
 
 export default function VocabularyPanel(props: VocabularyProps) {
@@ -107,6 +108,7 @@ export default function VocabularyPanel(props: VocabularyProps) {
                         passFocus={() => setFocus({})}
                         remove={remove}
                         order={words.length - index}
+                        theme={props.theme}
                     />
                 )}
         </div>

@@ -70,7 +70,7 @@ export default function Main() {
                     return <StudyingNewPanel config={config} vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />;
                 case 'vocabulary':
                     return <Suspense fallback={<Preloader />}>
-                        <VocabularyPanel vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} />
+                        <VocabularyPanel vocabulary={vocabulary.vocabulary} onSave={saveVocabulary} setPanel={setPanel} theme={config.theme}/>
                     </Suspense>
                 case 'settings':
                     return <SettingsPanel />
