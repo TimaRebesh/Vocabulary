@@ -1,0 +1,216 @@
+{
+  "vocabularies": [
+    {
+      "name": "IT",
+      "vocabulary": [
+        {
+          "id": 1643976338390,
+          "original": "bind",
+          "translated": "связывать",
+          "anothers": [
+            "байнд"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976344071,
+          "original": "apply",
+          "translated": "применять",
+          "anothers": [
+            "эплай"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976347187,
+          "original": "call",
+          "translated": "вызывать",
+          "anothers": [
+            "кол"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976194456,
+          "original": "false",
+          "translated": "ложь",
+          "anothers": [
+            "фолз"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976189846,
+          "original": "true",
+          "translated": "истина",
+          "anothers": [
+            "тру"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976065784,
+          "original": "splice",
+          "translated": "соединять",
+          "anothers": [
+            "сплайз"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643976070498,
+          "original": "slice",
+          "translated": "нарезать, делить на части",
+          "anothers": [
+            "слайз"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975903469,
+          "original": "length",
+          "translated": "длина",
+          "anothers": [
+            "лэнс"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975835981,
+          "original": "number",
+          "translated": "число",
+          "anothers": [
+            "намбэр"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975813081,
+          "original": "string",
+          "translated": "строка",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975776707,
+          "original": "else",
+          "translated": "еще",
+          "anothers": [
+            "элз"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975701431,
+          "original": "object",
+          "translated": "объект",
+          "anothers": [
+            "обджэкт"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975627294,
+          "original": "array",
+          "translated": "массив",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1643975714431,
+          "original": "function",
+          "translated": "функция",
+          "anothers": [
+            "фанкшн"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        }
+      ],
+      "id": 100
+    }
+  ],
+  "configuration": {
+    "vocabularies": [
+      {
+        "id": 100,
+        "name": "IT"
+      }
+    ],
+    "studyID": 100,
+    "hints": true,
+    "modeWrite": true,
+    "limitAll": 30,
+    "limitNew": 8,
+    "theme": "white"
+  }
+}

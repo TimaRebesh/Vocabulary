@@ -51,8 +51,8 @@ export default function SettingsPanel() {
                 <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
                 <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
                 <Switcher label='Show hints' value={config.hints} onChange={value => changeConfig([{ name: 'hints', value }])} />
-                <RangeSlider label='Learn all words' value={config.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
-                <RangeSlider label='Learn new words' value={config.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
+                <RangeSlider label='Repeat words' value={config.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
+                <RangeSlider label='Study new words' value={config.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
             </div>
         </div >
     )
