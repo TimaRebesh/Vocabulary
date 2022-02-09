@@ -106,3 +106,14 @@
   background-color: #414339;
   color: #d6d6d6;
 }
+
+.error_popup {
+  position: absolute;
+  background-color: #f1d29b;
+  color: #cd4b4b;
+  padding: 5px;
+  right: 0px;
+  top: 6px;
+  border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+}

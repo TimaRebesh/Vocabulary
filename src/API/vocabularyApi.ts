@@ -19,7 +19,18 @@ const vocabularyApi = createApi({
                     body: data
                 })
             },
-            invalidatesTags: result => ['vocabulary']
+            async onQueryStarted({ id, data }, { dispatch, queryFulfilled }) {              //  Optimistic Updates
+                const putResult = dispatch(
+                    vocabularyApi.util.updateQueryData('getVocabulary', id, (draft) => {
+                        Object.assign(draft, data)
+                    })
+                )
+                try {
+                    await queryFulfilled
+                } catch {
+                    putResult.undo()
+                }
+            },
         }),
         createVocabulary: builder.mutation({
             query: (name: string) =>
@@ -57,7 +68,7 @@ export const {
     useCreateVocabularyMutation,
     useRemoveVocabularyMutation,
     useUpdateVocabularyNameMutation,
-    
+
 } = vocabularyApi;
 
 export default vocabularyApi;

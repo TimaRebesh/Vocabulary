@@ -115,3 +115,10 @@ export function QuestionControl(props: QuestionControlProps) {
         </div>
     </Modal>
 }
+
+
+export const ErrorMessagePopup = (props: { text: string, onClick: () => void }) => {
+    return <div onClick={props.onClick} className={s.error_popup}>
+        <p>{props.text}</p>
+    </div>
+}

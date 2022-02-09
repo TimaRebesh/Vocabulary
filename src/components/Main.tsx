@@ -7,7 +7,7 @@ import s from './Main.module.css';
 import AddNewPanel from './Panels/AddNewPanel/AddNewPanel';
 import StudyingNewPanel from './Panels/StudyingPanels/StudyingNewPanel';
 import RepeatPanel from './Panels/StudyingPanels/RepeatPanel';
-import { MenuButton, Preloader } from '../helpers/ComponentHelpers';
+import { ErrorMessagePopup, MenuButton, Preloader } from '../helpers/ComponentHelpers';
 import { useGetConfigQuery } from '../API/configApi';
 import { useGetVocabularyQuery, useUpdateVocabularyMutation } from '../API/vocabularyApi';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
@@ -22,11 +22,12 @@ export default function Main() {
     const { data: vocabulary, isFetching: vocLoading, error: vocError } = useGetVocabularyQuery(config?.studyID, {
         skip: config === undefined
     });
-    const [updateVocabulary] = useUpdateVocabularyMutation();
+    const [updateVocabulary, { error: updateVocError }] = useUpdateVocabularyMutation();
     const { activePanelName } = useAppSelector(state => state.panels);
     const { error } = useAppSelector(state => state.error);
     const dispatch = useAppDispatch();
     const [isPreloader, setIsPreloader] = useState(false);
+    const [errorPopup, setErrorPopup] = useState<null | string>(null);
 
     useEffect(() => {
         setIsPreloader(configLoading);
@@ -40,6 +41,13 @@ export default function Main() {
         configError && dispatch(setErrorMessage(configError, 'getConfig'))
         vocError && dispatch(setErrorMessage(vocError, 'getVocabulary'))
     }, [vocError, configError])
+
+    useEffect(() => {
+        if (updateVocError) {
+            const err = updateVocError as { data: any, status: number }
+            setErrorPopup(`Error: ${err.status}, data is not save`)
+        }
+    }, [updateVocError])
 
     const setPanel = (panelName: PanelName) => {
         dispatch(changePanel(panelName));
@@ -103,6 +111,7 @@ export default function Main() {
         <div className={`${s.main} ${config && config.theme}`}>
             <Header theme={config?.theme ?? 'white'} vocabularyName={vocabulary?.name ?? '- - -'} />
             {getPanel()}
+            {errorPopup && <ErrorMessagePopup text={errorPopup} onClick={() => setErrorPopup(null)}/>}
         </div>
     )
 }
