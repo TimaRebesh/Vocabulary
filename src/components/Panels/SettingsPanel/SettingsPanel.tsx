@@ -1,58 +1,59 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Configurations, NewConfig } from '../../Types';
 import s from './SettingsPanel.module.css';
-import { MenuButton, SaveButton } from '../../../helpers/ComponentHelpers';
-import { useChangeThemeMutation, useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
+import { MenuButton } from '../../../helpers/ComponentHelpers';
+import configApi, { useGetConfigQuery, useUpdateConfigMutation } from '../../../API/configApi';
 import { useAppDispatch } from '../../../hooks/redux';
 import { changePanel } from '../../../store/reducers/panelsSlice';
-import { setErrorMessage } from '../../../helpers/fucntionsHelp';
-
 
 export default function SettingsPanel() {
 
-    const { data } = useGetConfigQuery();
-    const [config, setConfig] = useState<Configurations>(data as Configurations);
-    const dispatch = useAppDispatch();
-    const [changeTheme, { error: themeError }] = useChangeThemeMutation();
+    const config = useGetConfigQuery().data as Configurations;
+    const [localConfig, setLocalConfig] = useState(config);
     const [changeConfiguration] = useUpdateConfigMutation();
-    const [isChanged, setIsChanged] = useState(false);
+    const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(setErrorMessage(themeError, 'changeTheme'))
-    }, [themeError])
-
-    const changeConfig = (newConfig: NewConfig[]) => {
-        let changedConfig = { ...config } as Configurations;
-        newConfig.forEach(nc => {
-            changedConfig = { ...changedConfig, [nc.name]: nc.value }
-        })
-        setConfig({ ...changedConfig });
-        setIsChanged(true);
+    const changeConfig = (newConfig: NewConfig) => {
+        const changedConfig = { ...localConfig, [newConfig.name]: newConfig.value }
+        setLocalConfig({ ...changedConfig });
     }
 
-    const goToMenu = () => dispatch(changePanel('menu'));
-
-    const save = async () => {
-        setIsChanged(false);
-        await changeConfiguration(config);
+    const checkIsConfigChanged = () => {
+        let isSame = true;
+        for (let k in localConfig) {
+            const key = k as keyof Configurations;
+            if (localConfig[key] !== config[key]) {
+                isSame = false
+            }
+        }
+        return isSame
     }
 
-    const switchTheme = (value: boolean) => {
+    const goToMenu = async () => {
+        dispatch(changePanel('menu'));
+        const isSame = checkIsConfigChanged();
+        if (!isSame)
+            await changeConfiguration({ ...localConfig, theme: config.theme })
+    }
+
+    const switchTheme = async (value: boolean) => {
         const theme = value ? 'dark' : 'white';
-        changeConfig([{ name: 'theme', value: theme }]);
-        changeTheme(theme);
+        dispatch(
+            configApi.util.updateQueryData('getConfig', undefined, (draft) => {
+                Object.assign(draft, { theme })
+            })
+        )
     }
 
     return (
         <div className={`${s.block} ${s[config.theme]}`}>
             <MenuButton executor={goToMenu} />
-            {isChanged && <SaveButton executor={save} />}
             <div className={s.settings}>
                 <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
-                <Switcher label='Writing mode' value={config.modeWrite} onChange={value => changeConfig([{ name: 'modeWrite', value }])} />
-                <Switcher label='Show hints' value={config.hints} onChange={value => changeConfig([{ name: 'hints', value }])} />
-                <RangeSlider label='Repeat words' value={config.limitAll} limit={50} onChange={(value) => changeConfig([{ name: 'limitAll', value }])} />
-                <RangeSlider label='Study new words' value={config.limitNew} limit={20} onChange={(value) => changeConfig([{ name: 'limitNew', value }])} />
+                <Switcher label='Writing mode' value={localConfig.modeWrite} onChange={value => changeConfig({ name: 'modeWrite', value })} />
+                <Switcher label='Show hints' value={localConfig.hints} onChange={value => changeConfig({ name: 'hints', value })} />
+                <RangeSlider label='Repeat words' value={localConfig.limitAll} limit={50} onChange={(value) => changeConfig({ name: 'limitAll', value })} />
+                <RangeSlider label='Study new words' value={localConfig.limitNew} limit={20} onChange={(value) => changeConfig({ name: 'limitNew', value })} />
             </div>
         </div >
     )
@@ -67,9 +68,7 @@ function SplitPanel(props: LeftRightProsp) {
     return (
         <div className={s.block}>
             <div className={s.left_side}>
-                <p
-                // style={getTheme().forText(theme)}
-                >{props.label}</p>
+                <p>{props.label}</p>
             </div>
             <div className={s.space}></div>
             <div className={s.right_side}>
@@ -144,7 +143,5 @@ function RangeSlider({ value, limit, onChange, label }: RangeSliderProps) {
     </SplitPanel>
 
 }
-function updateConfig(config: Configurations) {
-    throw new Error('Function not implemented.');
-}
+
 

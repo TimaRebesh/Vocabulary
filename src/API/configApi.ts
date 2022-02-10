@@ -1,23 +1,36 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Configurations, Topic } from '../components/Types';
+import { setErrorMessage } from '../helpers/fucntionsHelp';
 
 const configApi = createApi({
     reducerPath: 'configApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
     tagTypes: ['config'],
     endpoints: (builer) => ({
-        getConfig: builer.query<Configurations, void>({
-            query: (value) => 'configuration',
+        getConfig: builer.query<Configurations, void | undefined>({
+            query: () => 'configuration',
             providesTags: ['config']
         }),
-        updateConfig: builer.mutation({
+        updateConfig: builer.mutation<Configurations, Configurations>({
             query: (config) =>
             ({
                 url: 'configuration',
                 method: 'PUT',
                 body: config
             }),
-            invalidatesTags: ['config']
+            async onQueryStarted(config, { dispatch, queryFulfilled }) {        // Optimistic Updates:
+                const patchResult = dispatch(
+                    configApi.util.updateQueryData('getConfig', undefined, (draft) => {
+                        Object.assign(draft, config)
+                    })
+                )
+                try {
+                    await queryFulfilled
+                } catch (e: any) {
+                    patchResult.undo();
+                    dispatch(setErrorMessage(e.error, 'changeConfig'))
+                }
+            },
         }),
         changeTopic: builer.mutation({
             query: (id: number) =>
@@ -31,11 +44,23 @@ const configApi = createApi({
         changeTheme: builer.mutation({
             query: (color: string) =>
             ({
-                url: 'configuration ',
+                url: 'configuration',
                 method: 'PATCH',
                 body: { theme: color }
             }),
-            invalidatesTags: ['config']
+            // Optimistic Updates:
+            async onQueryStarted(color, { dispatch, queryFulfilled }) {
+                const patchResult = dispatch(
+                    configApi.util.updateQueryData('getConfig', undefined, (draft) => {
+                        Object.assign(draft, { theme: color })
+                    })
+                )
+                try {
+                    await queryFulfilled
+                } catch {
+                    patchResult.undo()
+                }
+            },
         }),
         updateVocsInConfig: builer.mutation({
             query: (vocabularies: Topic[]) =>
