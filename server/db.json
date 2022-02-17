@@ -5,11 +5,23 @@
       "name": "IT",
       "vocabulary": [
         {
-          "id": 1644322088538,
-          "original": "tuple",
-          "translated": "кортедж",
+          "id": 1645093399731,
+          "original": "top preference",
+          "translated": "главное предпочтение",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645093046577,
+          "original": "your test should resemble",
+          "translated": "твой тест должен максимально походить",
           "anothers": [
-            "ц"
+            "рэзЭмбл"
           ],
           "lastRepeat": 1,
           "repeated": {
@@ -19,16 +31,184 @@
           }
         },
         {
+          "id": 1645092441078,
+          "original": "retry",
+          "translated": "повторить попытку",
+          "anothers": [
+            "рытрай"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645092014107,
+          "original": "duration",
+          "translated": "продолжительность",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645091998404,
+          "original": "transition",
+          "translated": "переход",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645091730081,
+          "original": "overview",
+          "translated": "беглый обзор",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645089762993,
+          "original": "assurance",
+          "translated": "гарантия",
+          "anothers": [
+            "эшурэнс"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1645025826455,
+          "original": "downstream application",
+          "translated": "программа принимающая и обрабатывающая данные",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1645025740351,
+          "original": "valid",
+          "translated": "действительный",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1644916021977,
+          "original": "a potential pitfall",
+          "translated": "потенциальная ловушка",
+          "anothers": [],
+          "lastRepeat": 1645088535025,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644915499691,
+          "original": "common",
+          "translated": "общий",
+          "anothers": [
+            "general, кАмэн"
+          ],
+          "lastRepeat": 1645088284549,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644858821835,
+          "original": "polling",
+          "translated": "голосование",
+          "anothers": [],
+          "lastRepeat": 1645002381105,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644846589768,
+          "original": "more granular control",
+          "translated": "более детальный контроль",
+          "anothers": [
+            "граньюла"
+          ],
+          "lastRepeat": 1645002485681,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644916051852,
+          "original": "contribute",
+          "translated": "делать вклад, отдавать",
+          "anothers": [
+            "кантрЫбют"
+          ],
+          "lastRepeat": 1645002392689,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644322088538,
+          "original": "tuple",
+          "translated": "кортедж",
+          "anothers": [
+            "ц"
+          ],
+          "lastRepeat": 1644833260574,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
           "id": 1632312680379,
           "original": "wizard",
           "translated": "гид по установке",
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396205022
+          "lastRepeat": 1645002324203
         },
         {
           "id": 1633334940625,
@@ -37,10 +217,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309698074
+          "lastRepeat": 1644915043931
         },
         {
           "id": 1634213977677,
@@ -50,9 +230,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309772744
+          "lastRepeat": 1644915331618
         },
         {
           "id": 1634631467986,
@@ -64,9 +244,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309726626
+          "lastRepeat": 1644915112358
         },
         {
           "id": 1631694090042,
@@ -75,10 +255,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309764481
+          "lastRepeat": 1644915303783
         },
         {
           "id": 1634216615990,
@@ -88,9 +268,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309599987
+          "lastRepeat": 1644833219149
         },
         {
           "id": 1631698193691,
@@ -99,10 +279,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309783586
+          "lastRepeat": 1644915265320
         },
         {
           "id": 1634216746500,
@@ -112,9 +292,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309760725
+          "lastRepeat": 1644915101375
         },
         {
           "id": 1633940058683,
@@ -123,10 +303,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967314643
+          "lastRepeat": 1644570360364
         },
         {
           "id": 1634216857900,
@@ -136,9 +316,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309721587
+          "lastRepeat": 1644915309804
         },
         {
           "id": 1633940450949,
@@ -147,10 +327,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224496766
+          "lastRepeat": 1644570340165
         },
         {
           "id": 1634126033362,
@@ -163,9 +343,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1644224671258
+          "lastRepeat": 1644833060686
         },
         {
           "id": 1634546294453,
@@ -175,9 +355,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1644224678749
+          "lastRepeat": 1644833239135
         },
         {
           "id": 1631611930606,
@@ -186,10 +366,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309749160
+          "lastRepeat": 1644915288443
         },
         {
           "id": 1634214222578,
@@ -199,9 +379,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644224691682
+          "lastRepeat": 1644833149745
         },
         {
           "id": 1631697832814,
@@ -211,11 +391,11 @@
             "change, replace"
           ],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644224622529
+          "lastRepeat": 1644570280847
         },
         {
           "id": 1634631751825,
@@ -225,9 +405,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396191795
+          "lastRepeat": 1645002664068
         },
         {
           "id": 1631697936310,
@@ -236,10 +416,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967165462
+          "lastRepeat": 1645088679240
         },
         {
           "id": 1631697917019,
@@ -248,10 +428,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224801775
+          "lastRepeat": 1644833226620
         },
         {
           "id": 1634547271781,
@@ -259,11 +439,11 @@
           "translated": "указывать",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1644224491845
+          "lastRepeat": 1645088560686
         },
         {
           "id": 1633939939090,
@@ -272,10 +452,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309586871
+          "lastRepeat": 1644833258126
         },
         {
           "id": 214,
@@ -284,10 +464,10 @@
           "translated": "перемешивать",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224811631
+          "lastRepeat": 1644833141533
         },
         {
           "id": 1633334971657,
@@ -296,10 +476,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224799573
+          "lastRepeat": 1644833055039
         },
         {
           "id": 1632312690498,
@@ -308,10 +488,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224699910
+          "lastRepeat": 1644833191207
         },
         {
           "id": 1633335084199,
@@ -322,10 +502,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224749454
+          "lastRepeat": 1644833084415
         },
         {
           "id": 1631611860359,
@@ -334,10 +514,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224503191
+          "lastRepeat": 1644570325518
         },
         {
           "id": 1631698001644,
@@ -348,10 +528,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224695517
+          "lastRepeat": 1644833264966
         },
         {
           "id": 1634305313069,
@@ -361,11 +541,11 @@
             "open"
           ],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 1644224746197
+          "lastRepeat": 1644833247458
         },
         {
           "id": 213,
@@ -374,10 +554,10 @@
           "translated": "возвращать",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224806449
+          "lastRepeat": 1644833244380
         },
         {
           "id": 1631698047389,
@@ -388,10 +568,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224668702
+          "lastRepeat": 1644833281016
         },
         {
           "id": 1631694779797,
@@ -400,10 +580,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224722744
+          "lastRepeat": 1644833130246
         },
         {
           "id": 1634294819606,
@@ -411,11 +591,11 @@
           "translated": "вопроизвести",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
             "writed": 3
           },
-          "lastRepeat": 1644224589236
+          "lastRepeat": 1644570237642
         },
         {
           "id": 1631611991533,
@@ -426,10 +606,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309793840
+          "lastRepeat": 1644915236234
         },
         {
           "id": 202,
@@ -438,10 +618,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224783308
+          "lastRepeat": 1644833079788
         },
         {
           "id": 1633940083913,
@@ -450,10 +630,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224708173
+          "lastRepeat": 1644833186126
         },
         {
           "id": 1634216681886,
@@ -465,9 +645,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644309708082
+          "lastRepeat": 1644915227070
         },
         {
           "id": 1634217165752,
@@ -479,9 +659,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396088984
+          "lastRepeat": 1644915061968
         },
         {
           "id": 1634216502887,
@@ -491,9 +671,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396142371
+          "lastRepeat": 1644915231748
         },
         {
           "id": 209,
@@ -502,10 +682,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644224673659
+          "lastRepeat": 1644833134562
         },
         {
           "id": 1634216839693,
@@ -515,9 +695,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396359780
+          "lastRepeat": 1645002440176
         },
         {
           "id": 1631697748071,
@@ -527,11 +707,11 @@
             "save"
           ],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644224779106
+          "lastRepeat": 1644833207777
         },
         {
           "id": 109,
@@ -541,11 +721,11 @@
           ],
           "translated": "передавать",
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1643967353106
+          "lastRepeat": 1644570369611
         },
         {
           "id": 1634631656354,
@@ -554,10 +734,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643794108704
+          "lastRepeat": 1645088325040
         },
         {
           "id": 1631698227386,
@@ -565,11 +745,11 @@
           "translated": "повторение, дублирование",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644224788838
+          "lastRepeat": 1644833200832
         },
         {
           "id": 1634546593463,
@@ -581,10 +761,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643793817541
+          "lastRepeat": 1645002271397
         },
         {
           "id": 1631698207939,
@@ -592,11 +772,11 @@
           "translated": "свыше",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644224791623
+          "lastRepeat": 1644833255769
         },
         {
           "id": 105,
@@ -605,10 +785,10 @@
           "translated": "происходить",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967318948
+          "lastRepeat": 1644570378128
         },
         {
           "id": 201,
@@ -616,11 +796,11 @@
           "translated": "наблюдать",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643794134189
+          "lastRepeat": 1645002589930
         },
         {
           "id": 107,
@@ -628,11 +808,11 @@
           "anothers": [],
           "translated": "вложенный",
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1643967332007
+          "lastRepeat": 1644570331042
         },
         {
           "id": 1634217279303,
@@ -643,10 +823,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643967148623
+          "lastRepeat": 1645002570154
         },
         {
           "id": 1634216590390,
@@ -656,9 +836,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396368501
+          "lastRepeat": 1645002680807
         },
         {
           "id": 1633334917305,
@@ -667,10 +847,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967236914
+          "lastRepeat": 1645088594105
         },
         {
           "id": 1631698139138,
@@ -678,11 +858,11 @@
           "translated": "запоминание",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643794146646
+          "lastRepeat": 1645002595401
         },
         {
           "id": 1634217456964,
@@ -692,9 +872,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396176491
+          "lastRepeat": 1645002377178
         },
         {
           "id": 212,
@@ -702,11 +882,11 @@
           "translated": "запас",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967180543
+          "lastRepeat": 1645088481550
         },
         {
           "id": 1633334835938,
@@ -717,10 +897,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967338888
+          "lastRepeat": 1644570366049
         },
         {
           "id": 1634713326218,
@@ -731,10 +911,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1643967298784
+          "lastRepeat": 1644570285334
         },
         {
           "id": 1634217066089,
@@ -743,10 +923,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643967171618
+          "lastRepeat": 1645088609454
         },
         {
           "id": 1634216648214,
@@ -755,10 +935,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1643967361617
+          "lastRepeat": 1644570251780
         },
         {
           "id": 1631694829060,
@@ -767,10 +947,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967284797
+          "lastRepeat": 1644570311567
         },
         {
           "id": 1633335036688,
@@ -780,9 +960,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396146464
+          "lastRepeat": 1644915313597
         },
         {
           "id": 1634217198487,
@@ -791,10 +971,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643967161949
+          "lastRepeat": 1645088529083
         },
         {
           "id": 1631701341068,
@@ -803,10 +983,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967301459
+          "lastRepeat": 1644570328530
         },
         {
           "id": 1634217546028,
@@ -817,10 +997,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1643967258335
+          "lastRepeat": 1644570259522
         },
         {
           "id": 1634126192080,
@@ -828,11 +1008,11 @@
           "translated": "это запустить ошибку",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 72
+          "lastRepeat": 1644833065104
         },
         {
           "id": 1634217094321,
@@ -840,11 +1020,11 @@
           "translated": "это зависит от вас",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 71
+          "lastRepeat": 1644833277225
         },
         {
           "id": 1633939922041,
@@ -855,10 +1035,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967316691
+          "lastRepeat": 1645088397836
         },
         {
           "id": 206,
@@ -867,10 +1047,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396232379
+          "lastRepeat": 1645002314831
         },
         {
           "id": 1634214631541,
@@ -878,11 +1058,11 @@
           "translated": "промежуточный, средний",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 68
+          "lastRepeat": 1644570296323
         },
         {
           "id": 205,
@@ -891,10 +1071,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967241448
+          "lastRepeat": 1645088599053
         },
         {
           "id": 1634215782568,
@@ -902,11 +1082,11 @@
           "translated": "наследование",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 66
+          "lastRepeat": 1644570373582
         },
         {
           "id": 1634217115968,
@@ -914,11 +1094,11 @@
           "translated": "влияние, воздействие",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           },
-          "lastRepeat": 65
+          "lastRepeat": 1645088590154
         },
         {
           "id": 1633334799778,
@@ -927,10 +1107,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967303993
+          "lastRepeat": 1644570321202
         },
         {
           "id": 1634377990856,
@@ -940,9 +1120,9 @@
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1643967356923
+          "lastRepeat": 1644570351823
         },
         {
           "id": 1633940003641,
@@ -952,9 +1132,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396158981
+          "lastRepeat": 1645002451606
         },
         {
           "id": 1634216795380,
@@ -962,11 +1142,11 @@
           "translated": "обработка событий",
           "anothers": [],
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 2,
+            "writed": 2
           },
-          "lastRepeat": 61
+          "lastRepeat": 1644570232755
         },
         {
           "id": 104,
@@ -974,23 +1154,25 @@
           "anothers": [],
           "translated": "решетка",
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1643967334661
+          "lastRepeat": 1644570229349
         },
         {
-          "id": 1634216053469,
+          "id": 1645088745643,
           "original": "generic",
           "translated": "общий",
-          "anothers": [],
+          "anothers": [
+            "common"
+          ],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           },
-          "lastRepeat": 59
+          "lastRepeat": 1645088730237
         },
         {
           "id": 1634125599319,
@@ -998,11 +1180,11 @@
           "translated": "резерв",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1643794118812
+          "lastRepeat": 1645088573372
         },
         {
           "id": 1634214323697,
@@ -1010,11 +1192,11 @@
           "translated": "явно",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           },
-          "lastRepeat": 57
+          "lastRepeat": 1645088471709
         },
         {
           "id": 1634217496756,
@@ -1022,11 +1204,11 @@
           "translated": "преуспеть",
           "anothers": [],
           "repeated": {
-            "translated": 1,
-            "original": 1,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           },
-          "lastRepeat": 56
+          "lastRepeat": 1645088461452
         },
         {
           "id": 1634126018640,
@@ -1034,11 +1216,11 @@
           "translated": "предохранители",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1643794156827
+          "lastRepeat": 1645088408976
         },
         {
           "id": 1634198084148,
@@ -1048,11 +1230,11 @@
             "экуолати"
           ],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1643967346551
+          "lastRepeat": 1644570344946
         },
         {
           "id": 1633334902305,
@@ -1061,10 +1243,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967155733
+          "lastRepeat": 1645002500160
         },
         {
           "id": 1634216535799,
@@ -1073,10 +1255,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644396343780
+          "lastRepeat": 1645002490709
         },
         {
           "id": 1633940406102,
@@ -1086,11 +1268,11 @@
             "fired"
           ],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643793955352
+          "lastRepeat": 1645088624093
         },
         {
           "id": 1633335049544,
@@ -1099,10 +1281,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967271745
+          "lastRepeat": 1644570226350
         },
         {
           "id": 1634217034850,
@@ -1111,10 +1293,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644396339874
+          "lastRepeat": 1645002600815
         },
         {
           "id": 1633940423957,
@@ -1122,11 +1304,11 @@
           "translated": "затмение",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643967233019
+          "lastRepeat": 1645088329582
         },
         {
           "id": 1634119090220,
@@ -1134,11 +1316,11 @@
           "translated": "динамический импорт",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1643794151679
+          "lastRepeat": 1645088486984
         },
         {
           "id": 1634217334142,
@@ -1149,10 +1331,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644396371948
+          "lastRepeat": 1645002331862
         },
         {
           "id": 1634118631112,
@@ -1160,11 +1342,11 @@
           "translated": "резко улучшать",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
-            "writed": 3
+            "writed": 4
           },
-          "lastRepeat": 1643967144403
+          "lastRepeat": 1645088552495
         },
         {
           "id": 1634215449596,
@@ -1172,11 +1354,11 @@
           "translated": "время простоя",
           "anothers": [],
           "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 1
+            "translated": 3,
+            "original": 3,
+            "writed": 2
           },
-          "lastRepeat": 44
+          "lastRepeat": 1645088281140
         },
         {
           "id": 1633939958962,
@@ -1185,10 +1367,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643967364997
+          "lastRepeat": 1645088497923
         },
         {
           "id": 1634216961835,
@@ -1199,10 +1381,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644396389769
+          "lastRepeat": 1645002495676
         },
         {
           "id": 200,
@@ -1212,9 +1394,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396350932
+          "lastRepeat": 1645002428125
         },
         {
           "id": 108,
@@ -1222,11 +1404,11 @@
           "anothers": [],
           "translated": "потомок",
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643794169388
+          "lastRepeat": 1645088565480
         },
         {
           "id": 1633939973954,
@@ -1235,10 +1417,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643794128889
+          "lastRepeat": 1645088712856
         },
         {
           "id": 110,
@@ -1247,10 +1429,10 @@
           "translated": "разъединять",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309593932
+          "lastRepeat": 1644833222580
         },
         {
           "id": 204,
@@ -1259,10 +1441,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309768368
+          "lastRepeat": 1644915104354
         },
         {
           "id": 1634216767860,
@@ -1271,10 +1453,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644309590094
+          "lastRepeat": 1644833251485
         },
         {
           "id": 1631698087860,
@@ -1283,10 +1465,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396392876
+          "lastRepeat": 1645002385202
         },
         {
           "id": 1634214233029,
@@ -1295,10 +1477,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644309797494
+          "lastRepeat": 1644915258681
         },
         {
           "id": 1634216572503,
@@ -1307,10 +1489,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644309737797
+          "lastRepeat": 1644915279229
         },
         {
           "id": 1631697958187,
@@ -1319,10 +1501,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309893651
+          "lastRepeat": 1644915339224
         },
         {
           "id": 1631694243289,
@@ -1334,10 +1516,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309788776
+          "lastRepeat": 1644915049437
         },
         {
           "id": 1634545170508,
@@ -1345,11 +1527,11 @@
           "translated": "уравляемый компонент",
           "anothers": [],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644396282981
+          "lastRepeat": 1645002280853
         },
         {
           "id": 1634217021528,
@@ -1358,10 +1540,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644224627113
+          "lastRepeat": 1644570382404
         },
         {
           "id": 1634292736862,
@@ -1370,10 +1552,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1644396336610
+          "lastRepeat": 1645002554519
         },
         {
           "id": 1634198069968,
@@ -1382,20 +1564,20 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644224796277
+          "lastRepeat": 1644833267441
         },
         {
           "id": 1643812815136,
           "original": "commit",
           "translated": "фиксировать",
           "anothers": [],
-          "lastRepeat": 1644224808224,
+          "lastRepeat": 1644833043677,
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           }
         },
@@ -1407,9 +1589,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309693481
+          "lastRepeat": 1644915156769
         },
         {
           "id": 211,
@@ -1418,10 +1600,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309700873
+          "lastRepeat": 1644915284340
         },
         {
           "id": 1631694807196,
@@ -1430,10 +1612,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396333450
+          "lastRepeat": 1645002550325
         },
         {
           "id": 1633335005592,
@@ -1445,9 +1627,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309776807
+          "lastRepeat": 1644915035768
         },
         {
           "id": 1633334859330,
@@ -1459,9 +1641,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309802154
+          "lastRepeat": 1644915327401
         },
         {
           "id": 1634117881402,
@@ -1470,10 +1652,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396095605
+          "lastRepeat": 1644915297288
         },
         {
           "id": 1631694121586,
@@ -1484,10 +1666,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309731372
+          "lastRepeat": 1644915322712
         },
         {
           "id": 1643706070157,
@@ -1497,11 +1679,11 @@
             "блард"
           ],
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           },
-          "lastRepeat": 1644309888805
+          "lastRepeat": 1644915205155
         },
         {
           "id": 203,
@@ -1510,10 +1692,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643794111457
+          "lastRepeat": 1645088332791
         },
         {
           "id": 102,
@@ -1522,10 +1704,10 @@
           "translated": "вне",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396196418
+          "lastRepeat": 1645002577536
         },
         {
           "id": 1634216720884,
@@ -1534,10 +1716,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1644224711931
+          "lastRepeat": 1644833272381
         },
         {
           "id": 1634030309028,
@@ -1548,10 +1730,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396183490
+          "lastRepeat": 1645002685983
         },
         {
           "id": 1634197817621,
@@ -1560,10 +1742,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644224632267
+          "lastRepeat": 1645088466594
         },
         {
           "id": 1631694840876,
@@ -1573,9 +1755,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309822375
+          "lastRepeat": 1644915197938
         },
         {
           "id": 106,
@@ -1584,10 +1766,10 @@
           "translated": "организовать",
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396363960
+          "lastRepeat": 1645002514427
         },
         {
           "id": 1634292709215,
@@ -1596,10 +1778,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1644396384244
+          "lastRepeat": 1645002456586
         },
         {
           "id": 1634029478509,
@@ -1607,11 +1789,11 @@
           "translated": "подходящий",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643793824360
+          "lastRepeat": 1645088477976
         },
         {
           "id": 1631697793582,
@@ -1620,10 +1802,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309604237
+          "lastRepeat": 1644915246424
         },
         {
           "id": 297,
@@ -1632,10 +1814,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396354580
+          "lastRepeat": 1645002259287
         },
         {
           "id": 1634217428444,
@@ -1646,10 +1828,10 @@
           ],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1643967308115
+          "lastRepeat": 1644570244701
         },
         {
           "id": 1631611870247,
@@ -1658,10 +1840,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644396146417
+          "lastRepeat": 1644915240949
         },
         {
           "id": 1633939987713,
@@ -1671,9 +1853,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309780420
+          "lastRepeat": 1644915335483
         },
         {
           "id": 1633334777219,
@@ -1681,11 +1863,11 @@
           "translated": "объединение элементов в одну систему",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643794198639
+          "lastRepeat": 1645088721521
         },
         {
           "id": 1631698024405,
@@ -1697,20 +1879,20 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644309714492
+          "lastRepeat": 1644915117130
         },
         {
           "id": 1643815243171,
           "original": "accomplish",
           "translated": "завершить, выполнить",
           "anothers": [],
-          "lastRepeat": 1643967137459,
+          "lastRepeat": 1645088369945,
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -1720,10 +1902,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1644309569448
+          "lastRepeat": 1644833204739
         },
         {
           "id": 1634117869277,
@@ -1731,11 +1913,11 @@
           "translated": "рассеянный",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643793900590
+          "lastRepeat": 1645002344026
         },
         {
           "id": 1634126559396,
@@ -1744,10 +1926,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
+            "original": 3,
             "writed": 2
           },
-          "lastRepeat": 1643967277967
+          "lastRepeat": 1644570301740
         }
       ]
     },
@@ -1762,10 +1944,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644225268968
+          "lastRepeat": 1644923172217
         },
         {
           "id": 1634549846630,
@@ -1774,10 +1956,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644396678614
+          "lastRepeat": 1644923012168
         },
         {
           "id": 1634549369772,
@@ -1786,10 +1968,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644225475821
+          "lastRepeat": 1644923068955
         },
         {
           "id": 1634548704323,
@@ -1798,10 +1980,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644225447472
+          "lastRepeat": 1645002789019
         },
         {
           "id": 1634548592689,
@@ -1810,10 +1992,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644225396452
+          "lastRepeat": 1645002844271
         },
         {
           "id": 1634548310383,
@@ -1821,11 +2003,11 @@
           "translated": "время покажет",
           "anothers": [],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396702803
+          "lastRepeat": 1645002722425
         },
         {
           "id": 1634548220905,
@@ -1833,11 +2015,11 @@
           "translated": "самое время, уже пора",
           "anothers": [],
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643707386027
+          "lastRepeat": 1645002853005
         },
         {
           "id": 1634544755830,
@@ -1847,11 +2029,11 @@
             "поз"
           ],
           "repeated": {
-            "translated": 3,
+            "translated": 4,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396808415
+          "lastRepeat": 1645002757712
         },
         {
           "id": 1634210740590,
@@ -1860,10 +2042,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643707132146
+          "lastRepeat": 1644859110355
         },
         {
           "id": 1634210619750,
@@ -1872,10 +2054,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643707246877
+          "lastRepeat": 1644923085818
         },
         {
           "id": 1634210173121,
@@ -1885,9 +2067,9 @@
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           },
-          "lastRepeat": 1644396894329
+          "lastRepeat": 1644859190266
         },
         {
           "id": 1634209933438,
@@ -1896,10 +2078,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1643707288555
+          "lastRepeat": 1644923368228
         },
         {
           "id": 1634209534402,
@@ -1908,10 +2090,10 @@
           "anothers": [],
           "repeated": {
             "translated": 3,
-            "original": 2,
-            "writed": 2
+            "original": 3,
+            "writed": 3
           },
-          "lastRepeat": 1644225276292
+          "lastRepeat": 1644859288769
         },
         {
           "id": 1634208581070,
@@ -1920,10 +2102,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
-            "writed": 3
+            "original": 4,
+            "writed": 4
           },
-          "lastRepeat": 1644396644836
+          "lastRepeat": 1644923236850
         },
         {
           "id": 1634206650457,
@@ -1931,11 +2113,11 @@
           "translated": "моментально",
           "anothers": [],
           "repeated": {
-            "translated": 3,
-            "original": 3,
+            "translated": 4,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1643707379069
+          "lastRepeat": 1644923379403
         },
         {
           "id": 1634206439983,
@@ -1944,10 +2126,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
-            "writed": 3
+            "original": 4,
+            "writed": 4
           },
-          "lastRepeat": 1644396666781
+          "lastRepeat": 1644923281360
         },
         {
           "id": 1634209112601,
@@ -1955,11 +2137,11 @@
           "translated": "в последний мометн",
           "anothers": [],
           "repeated": {
-            "translated": 3,
-            "original": 3,
+            "translated": 4,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1643707281841
+          "lastRepeat": 1644859197917
         },
         {
           "id": 1634206381368,
@@ -1968,10 +2150,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1644396830699
+          "lastRepeat": 1644859094052
         },
         {
           "id": 1634206336033,
@@ -1979,11 +2161,11 @@
           "translated": "если повезет",
           "anothers": [],
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 4,
+            "original": 4,
+            "writed": 4
           },
-          "lastRepeat": 1643707353540
+          "lastRepeat": 1645002883984
         },
         {
           "id": 1634201103246,
@@ -1993,11 +2175,11 @@
             "FOBO"
           ],
           "repeated": {
-            "translated": 3,
-            "original": 3,
+            "translated": 4,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1643707232647
+          "lastRepeat": 1644923029940
         },
         {
           "id": 1634200574604,
@@ -2007,11 +2189,11 @@
             "FOMO"
           ],
           "repeated": {
-            "translated": 3,
-            "original": 3,
+            "translated": 4,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1643707197546
+          "lastRepeat": 1644859072624
         },
         {
           "id": 1634113968287,
@@ -2022,10 +2204,10 @@
           ],
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           },
-          "lastRepeat": 1644396849986
+          "lastRepeat": 1644859213180
         },
         {
           "id": 1634113582284,
@@ -2034,10 +2216,10 @@
           "anothers": [],
           "repeated": {
             "translated": 4,
-            "original": 3,
-            "writed": 3
+            "original": 4,
+            "writed": 4
           },
-          "lastRepeat": 1644396869560
+          "lastRepeat": 1645002731930
         },
         {
           "id": 1634027178551,
@@ -2045,11 +2227,11 @@
           "translated": "скромный",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643707137542
+          "lastRepeat": 1644923285252
         },
         {
           "id": 1634026662933,
@@ -2058,10 +2240,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644396920152
+          "lastRepeat": 1645002864391
         },
         {
           "id": 1633335302493,
@@ -2069,11 +2251,11 @@
           "translated": "у меня есть время",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643707365607
+          "lastRepeat": 1644923242431
         },
         {
           "id": 1633335336513,
@@ -2081,11 +2263,11 @@
           "translated": "что случилось?",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643707221753
+          "lastRepeat": 1644923108608
         },
         {
           "id": 1633335390804,
@@ -2093,11 +2275,11 @@
           "translated": "я пропустил",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643707261821
+          "lastRepeat": 1644923376562
         },
         {
           "id": 1633335454687,
@@ -2105,11 +2287,11 @@
           "translated": "сделать предложение",
           "anothers": [],
           "repeated": {
-            "translated": 4,
-            "original": 4,
+            "translated": 5,
+            "original": 5,
             "writed": 4
           },
-          "lastRepeat": 1643707317268
+          "lastRepeat": 1644923122055
         },
         {
           "id": 1632989685010,
@@ -2117,11 +2299,11 @@
           "translated": "взаимно",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396758576
+          "lastRepeat": 1645002711111
         },
         {
           "id": 1632989807815,
@@ -2132,10 +2314,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643707239211
+          "lastRepeat": 1644923001515
         },
         {
           "id": 1632390126574,
@@ -2144,10 +2326,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643707309342
+          "lastRepeat": 1644923327102
         },
         {
           "id": 1632988625108,
@@ -2156,10 +2338,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643707320962
+          "lastRepeat": 1644859155475
         },
         {
           "id": 1631785723307,
@@ -2168,10 +2350,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643707153345
+          "lastRepeat": 1644923304583
         },
         {
           "id": 1632212073923,
@@ -2180,10 +2362,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1643707269237
+          "lastRepeat": 1644922977030
         },
         {
           "id": 1632128241953,
@@ -2191,11 +2373,11 @@
           "translated": "большой объем работы",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396930215
+          "lastRepeat": 1645002868459
         },
         {
           "id": 1632128022118,
@@ -2206,10 +2388,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225464326
+          "lastRepeat": 1645002891294
         },
         {
           "id": 1632127348902,
@@ -2218,10 +2400,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225293791
+          "lastRepeat": 1644923373345
         },
         {
           "id": 1632126932113,
@@ -2230,10 +2412,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225210615
+          "lastRepeat": 1644923102809
         },
         {
           "id": 1632126687240,
@@ -2242,10 +2424,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225355409
+          "lastRepeat": 1645002899344
         },
         {
           "id": 1632126310344,
@@ -2254,10 +2436,10 @@
           "anothers": [],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225340054
+          "lastRepeat": 1644923160613
         },
         {
           "id": 1644225535718,
@@ -2269,10 +2451,10 @@
           ],
           "repeated": {
             "translated": 5,
-            "original": 4,
-            "writed": 4
+            "original": 5,
+            "writed": 5
           },
-          "lastRepeat": 1644225496858
+          "lastRepeat": 1645002816778
         },
         {
           "id": 1632125529040,
@@ -2280,11 +2462,11 @@
           "translated": "испытательный срок",
           "anothers": [],
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           },
-          "lastRepeat": 1644225306112
+          "lastRepeat": 1645002916666
         },
         {
           "id": 1632124779770,
@@ -2292,11 +2474,11 @@
           "translated": "моя область знаний",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225284324
+          "lastRepeat": 1644923114786
         },
         {
           "id": 1632124605239,
@@ -2306,11 +2488,11 @@
             "чем вы зарабатываете на жизнь?"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225453456
+          "lastRepeat": 1644923330934
         },
         {
           "id": 1631786010200,
@@ -2318,11 +2500,11 @@
           "translated": "исполнительный директор",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225404733
+          "lastRepeat": 1645002716061
         },
         {
           "id": 1631786038080,
@@ -2330,11 +2512,11 @@
           "translated": "предвидеть, ожидать",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225263288
+          "lastRepeat": 1644859229423
         },
         {
           "id": 1631785766706,
@@ -2342,11 +2524,11 @@
           "translated": "предполагая",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225408228
+          "lastRepeat": 1645002834297
         },
         {
           "id": 1631786492821,
@@ -2354,11 +2536,11 @@
           "translated": "поддерживать тебя",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225218143
+          "lastRepeat": 1644923151530
         },
         {
           "id": 1632123563135,
@@ -2368,11 +2550,11 @@
             "момэнтэм"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225335523
+          "lastRepeat": 1645002799114
         },
         {
           "id": 1631786350374,
@@ -2380,11 +2562,11 @@
           "translated": "распозновать",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225346272
+          "lastRepeat": 1645002837414
         },
         {
           "id": 1632123760005,
@@ -2392,11 +2574,11 @@
           "translated": "подлиза, подлизываться",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225298771
+          "lastRepeat": 1644859087279
         },
         {
           "id": 1632123297242,
@@ -2407,11 +2589,11 @@
             "вэйдж"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225434447
+          "lastRepeat": 1645002903925
         },
         {
           "id": 1632212500041,
@@ -2419,11 +2601,11 @@
           "translated": "гибкий график",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225350745
+          "lastRepeat": 1645002911042
         },
         {
           "id": 1632211730206,
@@ -2431,11 +2613,11 @@
           "translated": "период уведомления",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225401341
+          "lastRepeat": 1644923184722
         },
         {
           "id": 1632127873911,
@@ -2443,11 +2625,11 @@
           "translated": "чистая зарплата",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225438388
+          "lastRepeat": 1645002795536
         },
         {
           "id": 1632127840820,
@@ -2455,11 +2637,11 @@
           "translated": "брутто-зарплата",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225200740
+          "lastRepeat": 1644923164597
         },
         {
           "id": 1632126063444,
@@ -2467,11 +2649,11 @@
           "translated": "надбавки, доп. льготы",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225467769
+          "lastRepeat": 1644923180591
         },
         {
           "id": 1632125967866,
@@ -2479,11 +2661,11 @@
           "translated": "социальный пакет",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644225413282
+          "lastRepeat": 1644923176724
         },
         {
           "id": 1631786251248,
@@ -2493,11 +2675,11 @@
             "бакстабин"
           ],
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           },
-          "lastRepeat": 1644225193946
+          "lastRepeat": 1645002856275
         },
         {
           "id": 1631786387093,
@@ -2505,11 +2687,11 @@
           "translated": "устанавливать, учреждать",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396879094
+          "lastRepeat": 1645002925708
         },
         {
           "id": 1631785987967,
@@ -2519,11 +2701,11 @@
             "хабэт"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396738326
+          "lastRepeat": 1645002920053
         },
         {
           "id": 1631786051512,
@@ -2531,11 +2713,11 @@
           "translated": "термин",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396748717
+          "lastRepeat": 1645002824870
         },
         {
           "id": 1632212830822,
@@ -2547,9 +2729,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396913925
+          "lastRepeat": 1644859258223
         },
         {
           "id": 1631785829202,
@@ -2561,9 +2743,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396924666
+          "lastRepeat": 1644859061889
         },
         {
           "id": 1631786090608,
@@ -2571,11 +2753,11 @@
           "translated": "бросить бомбу",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396622387
+          "lastRepeat": 1644923004696
         },
         {
           "id": 1631786412022,
@@ -2586,11 +2768,11 @@
             "all"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396697048
+          "lastRepeat": 1644923309902
         },
         {
           "id": 1632123302327,
@@ -2598,11 +2780,11 @@
           "translated": "глубокий",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396653391
+          "lastRepeat": 1645002821293
         },
         {
           "id": 1631786364784,
@@ -2610,11 +2792,11 @@
           "translated": "выборочно",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396837401
+          "lastRepeat": 1645002803139
         },
         {
           "id": 1632212306210,
@@ -2624,11 +2806,11 @@
             "рат"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396719246
+          "lastRepeat": 1645002754798
         },
         {
           "id": 1632211788141,
@@ -2638,9 +2820,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396804342
+          "lastRepeat": 1644859130832
         },
         {
           "id": 1631785891441,
@@ -2650,11 +2832,11 @@
             "use"
           ],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396688134
+          "lastRepeat": 1645002810297
         },
         {
           "id": 1631786423541,
@@ -2664,9 +2846,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396764767
+          "lastRepeat": 1644859207160
         },
         {
           "id": 1631786125304,
@@ -2678,9 +2860,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396771904
+          "lastRepeat": 1644859078954
         },
         {
           "id": 1631785752939,
@@ -2690,9 +2872,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396844397
+          "lastRepeat": 1644859043981
         },
         {
           "id": 1631785870641,
@@ -2702,9 +2884,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396881863
+          "lastRepeat": 1644859193488
         },
         {
           "id": 1631785927529,
@@ -2716,9 +2898,9 @@
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396874692
+          "lastRepeat": 1644859050814
         },
         {
           "id": 1632212720075,
@@ -2726,11 +2908,11 @@
           "translated": "уложиться в срок",
           "anothers": [],
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
-            "writed": 4
+            "writed": 5
           },
-          "lastRepeat": 1644396906893
+          "lastRepeat": 1645002705606
         }
       ]
     },
@@ -2739,15 +2921,220 @@
       "name": "CEM",
       "vocabulary": [
         {
+          "id": 1645089718052,
+          "original": "authentication",
+          "translated": "идентификация",
+          "anothers": [
+            "оуфентикейшн"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1645011576300,
+          "original": "quality assurance",
+          "translated": "обеспечение качества (QA)",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1645009320168,
+          "original": "external",
+          "translated": "посторонний, наружный",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1645005967363,
+          "original": "caution",
+          "translated": "предупреждение, предостережение",
+          "anothers": [
+            "кошн"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1645005438599,
+          "original": "unlike",
+          "translated": "в отличие",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 1,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1644942400218,
+          "original": "server side rendering",
+          "translated": "рендеринг на стороне сервера (SSR)",
+          "anothers": [],
+          "lastRepeat": 1645090102159,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644941954135,
+          "original": "streaming updates",
+          "translated": "постоянное обновление",
+          "anothers": [
+            "websocets"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1644941651371,
+          "original": "receive",
+          "translated": "получать",
+          "anothers": [
+            "get",
+            "fetch"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1644941461967,
+          "original": "polling",
+          "translated": "запросы на сервер спустя интервал",
+          "anothers": [],
+          "lastRepeat": 1645089909622,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644925954347,
+          "original": "prefetching",
+          "translated": "предварительная загрузка",
+          "anothers": [],
+          "lastRepeat": 1645089987305,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644574304427,
+          "original": "re-fetch",
+          "translated": "переполучить",
+          "anothers": [],
+          "lastRepeat": 1645001601569,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644573298785,
+          "original": "dedup",
+          "translated": "дублировать",
+          "anothers": [
+            "дэдАп"
+          ],
+          "lastRepeat": 1645090076299,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644573087755,
+          "original": "i.e.",
+          "translated": "то есть",
+          "anothers": [],
+          "lastRepeat": 1645090088604,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644572501601,
+          "original": "serialize",
+          "translated": "делить на серии, части",
+          "anothers": [],
+          "lastRepeat": 1645090026204,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644571898886,
+          "original": "a key feature",
+          "translated": "ключевая особенность",
+          "anothers": [],
+          "lastRepeat": 1645001658103,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1644420404050,
+          "original": "undo",
+          "translated": "отменять",
+          "anothers": [
+            "андУ(ю)"
+          ],
+          "lastRepeat": 1645001708073,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
           "id": 1644412142162,
           "original": "invalidate",
           "translated": "анулировать",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645090033335,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 3,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2755,11 +3142,11 @@
           "original": "perform",
           "translated": "выполнять",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645089943599,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2767,11 +3154,11 @@
           "original": "invalid",
           "translated": "недействительный",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645001635048,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2779,11 +3166,11 @@
           "original": "offtop",
           "translated": "не по теме",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645001718631,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2791,11 +3178,11 @@
           "original": "blank",
           "translated": "пустой",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645001642439,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2803,11 +3190,11 @@
           "original": "perform the following actions",
           "translated": "выполни следующие действия",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645001620405,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2815,23 +3202,23 @@
           "original": "sprint burndown",
           "translated": "сгорание работ спринта",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645089832891,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
-          "id": 1644235233447,
+          "id": 1645093978963,
           "original": "blocker",
-          "translated": "трудность невыполнения задачи",
+          "translated": "задача блокирующая текущую задачу",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645090098347,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2839,11 +3226,11 @@
           "original": "grooming",
           "translated": "что и refinement",
           "anothers": [],
-          "lastRepeat": 1,
+          "lastRepeat": 1645001316873,
           "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2851,11 +3238,11 @@
           "original": "retrospective",
           "translated": "оценка пройденного спринта",
           "anothers": [],
-          "lastRepeat": 1644395677921,
+          "lastRepeat": 1645001561168,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2863,11 +3250,11 @@
           "original": "story point",
           "translated": "величина оценки задачи",
           "anothers": [],
-          "lastRepeat": 1644395572178,
+          "lastRepeat": 1645001324018,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2875,11 +3262,11 @@
           "original": "user story",
           "translated": "задача",
           "anothers": [],
-          "lastRepeat": 1644395480838,
+          "lastRepeat": 1645090046952,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2887,25 +3274,25 @@
           "original": "tasks scope",
           "translated": "объем задач",
           "anothers": [],
-          "lastRepeat": 1644395612044,
+          "lastRepeat": 1645090040834,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
-          "id": 1644234064291,
+          "id": 1644832443503,
           "original": "refinement",
-          "translated": "усовершенствование, уточнение",
+          "translated": "усовершенствование, палировка",
           "anothers": [
             "ры"
           ],
-          "lastRepeat": 1644395487000,
+          "lastRepeat": 1645089786681,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2913,11 +3300,11 @@
           "original": "mockup",
           "translated": "макет",
           "anothers": [],
-          "lastRepeat": 1644395454643,
+          "lastRepeat": 1645001341105,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 4,
+            "writed": 3
           }
         },
         {
@@ -2927,11 +3314,11 @@
           "anothers": [
             "О"
           ],
-          "lastRepeat": 1644395777705,
+          "lastRepeat": 1645089891166,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2941,11 +3328,11 @@
           "anothers": [
             "роста"
           ],
-          "lastRepeat": 1644395720797,
+          "lastRepeat": 1645090016331,
           "repeated": {
-            "translated": 3,
-            "original": 2,
-            "writed": 2
+            "translated": 4,
+            "original": 3,
+            "writed": 3
           }
         },
         {
@@ -2953,11 +3340,11 @@
           "original": "implement",
           "translated": "воплощать в жизнь",
           "anothers": [],
-          "lastRepeat": 1644395662048,
+          "lastRepeat": 1645089993981,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 5,
+            "original": 4,
+            "writed": 4
           }
         },
         {
@@ -2965,11 +3352,11 @@
           "original": "fetch",
           "translated": "приносить, получать",
           "anothers": [],
-          "lastRepeat": 1644395746438,
+          "lastRepeat": 1645089980312,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 4,
+            "original": 4,
+            "writed": 4
           }
         },
         {
@@ -2977,11 +3364,11 @@
           "original": "deliver",
           "translated": "доставлять, поставлять",
           "anothers": [],
-          "lastRepeat": 1644395606908,
+          "lastRepeat": 1645001299938,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 4,
+            "original": 4,
+            "writed": 4
           }
         },
         {
@@ -2989,11 +3376,11 @@
           "original": "capacity",
           "translated": "длительность выполнения задачи",
           "anothers": [],
-          "lastRepeat": 1644395597616,
+          "lastRepeat": 1645090067512,
           "repeated": {
-            "translated": 3,
-            "original": 3,
-            "writed": 3
+            "translated": 5,
+            "original": 4,
+            "writed": 4
           }
         },
         {
@@ -3003,11 +3390,11 @@
           "anothers": [
             "каш"
           ],
-          "lastRepeat": 1644395492370,
+          "lastRepeat": 1645001331262,
           "repeated": {
-            "translated": 4,
-            "original": 4,
-            "writed": 3
+            "translated": 5,
+            "original": 5,
+            "writed": 4
           }
         },
         {
@@ -3017,11 +3404,11 @@
           "anothers": [
             "Импакт"
           ],
-          "lastRepeat": 1644395705237,
+          "lastRepeat": 1645089905906,
           "repeated": {
-            "translated": 4,
-            "original": 4,
-            "writed": 3
+            "translated": 5,
+            "original": 5,
+            "writed": 4
           }
         },
         {
@@ -3029,11 +3416,11 @@
           "original": "do not disturb",
           "translated": "не беспокоить",
           "anothers": [],
-          "lastRepeat": 1644395474254,
+          "lastRepeat": 1645001677419,
           "repeated": {
-            "translated": 4,
-            "original": 4,
-            "writed": 4
+            "translated": 5,
+            "original": 5,
+            "writed": 5
           }
         },
         {
@@ -3041,11 +3428,11 @@
           "original": "globally unique identifier",
           "translated": "глобально уникальный идентификатор",
           "anothers": [],
-          "lastRepeat": 1644310688856,
+          "lastRepeat": 1645001627256,
           "repeated": {
-            "translated": 5,
-            "original": 4,
-            "writed": 4
+            "translated": 6,
+            "original": 5,
+            "writed": 5
           }
         },
         {
@@ -3055,11 +3442,11 @@
           "anothers": [
             "эдженда"
           ],
-          "lastRepeat": 1644395735528,
+          "lastRepeat": 1645001606938,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3067,23 +3454,23 @@
           "original": "kick-off",
           "translated": "старт",
           "anothers": [],
-          "lastRepeat": 1644395755427,
+          "lastRepeat": 1645001637901,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
-          "id": 1643028641650,
+          "id": 1644942431611,
           "original": "virtual desktop infrastructure",
-          "translated": "инфраструктура виртуальных рабочих столов",
+          "translated": "инфраструктура виртуальных рабочих столов (VDI)",
           "anothers": [],
-          "lastRepeat": 1644395731352,
+          "lastRepeat": 1645090006845,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3091,11 +3478,11 @@
           "original": "prospective",
           "translated": "ожидаемый",
           "anothers": [],
-          "lastRepeat": 1644395770832,
+          "lastRepeat": 1645089973372,
           "repeated": {
-            "translated": 5,
-            "original": 4,
-            "writed": 4
+            "translated": 6,
+            "original": 5,
+            "writed": 5
           }
         },
         {
@@ -3105,11 +3492,11 @@
           "anothers": [
             "...ц"
           ],
-          "lastRepeat": 1644395615987,
+          "lastRepeat": 1645090050980,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3117,11 +3504,11 @@
           "original": "backlog",
           "translated": "невыполненные заказы",
           "anothers": [],
-          "lastRepeat": 1644310678091,
+          "lastRepeat": 1645001306210,
           "repeated": {
-            "translated": 5,
-            "original": 4,
-            "writed": 4
+            "translated": 6,
+            "original": 5,
+            "writed": 5
           }
         },
         {
@@ -3129,11 +3516,11 @@
           "original": "objective",
           "translated": "цель, стремление",
           "anothers": [],
-          "lastRepeat": 1644310682931,
+          "lastRepeat": 1645001727696,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3143,11 +3530,11 @@
           "anothers": [
             "этсэтура"
           ],
-          "lastRepeat": 1644395532970,
+          "lastRepeat": 1645001423962,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 5
+            "translated": 6,
+            "original": 6,
+            "writed": 6
           }
         },
         {
@@ -3155,11 +3542,11 @@
           "original": "time off",
           "translated": "нерабочее время, выходной",
           "anothers": [],
-          "lastRepeat": 1644310714608,
+          "lastRepeat": 1645001575718,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3167,11 +3554,11 @@
           "original": "draft",
           "translated": "черновик",
           "anothers": [],
-          "lastRepeat": 1644395750710,
+          "lastRepeat": 1645089895274,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 5
+            "translated": 6,
+            "original": 6,
+            "writed": 6
           }
         },
         {
@@ -3181,23 +3568,23 @@
           "anothers": [
             "ры"
           ],
-          "lastRepeat": 1644310706097,
+          "lastRepeat": 1645089957057,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 6
           }
         },
         {
-          "id": 1642683657991,
+          "id": 1644942419123,
           "original": "lightweight directory access protocol",
-          "translated": "Облегченный протокол доступа к каталогам",
+          "translated": "Облегченный протокол доступа к каталогам (LDAP)",
           "anothers": [],
-          "lastRepeat": 1644395520851,
+          "lastRepeat": 1645089858258,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3207,11 +3594,11 @@
           "anothers": [
             "Ажё"
           ],
-          "lastRepeat": 1644395715387,
+          "lastRepeat": 1645089947672,
           "repeated": {
-            "translated": 5,
-            "original": 5,
-            "writed": 4
+            "translated": 6,
+            "original": 6,
+            "writed": 5
           }
         },
         {
@@ -3219,11 +3606,11 @@
           "original": "credentials",
           "translated": "реквезиты для входа",
           "anothers": [],
-          "lastRepeat": 1644310672526,
+          "lastRepeat": 1645089838968,
           "repeated": {
-            "translated": 6,
-            "original": 5,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3233,11 +3620,11 @@
           "anothers": [
             "ньЮкома"
           ],
-          "lastRepeat": 1644395682706,
+          "lastRepeat": 1645001721758,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3245,11 +3632,11 @@
           "original": "rest",
           "translated": "остальное",
           "anothers": [],
-          "lastRepeat": 1644395709808,
+          "lastRepeat": 1645089843344,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3257,11 +3644,11 @@
           "original": "confluence",
           "translated": "слияние, пересечение",
           "anothers": [],
-          "lastRepeat": 1644310724143,
+          "lastRepeat": 1645001350446,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3269,11 +3656,11 @@
           "original": "appropriate",
           "translated": "соответствующий, подходящий",
           "anothers": [],
-          "lastRepeat": 1644395621546,
+          "lastRepeat": 1645001566685,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3281,11 +3668,11 @@
           "original": "virtual machine",
           "translated": "виртуальная машина",
           "anothers": [],
-          "lastRepeat": 1644395458831,
+          "lastRepeat": 1645001276402,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3293,11 +3680,11 @@
           "original": "vendor",
           "translated": "поставщик",
           "anothers": [],
-          "lastRepeat": 1644395525444,
+          "lastRepeat": 1645090000817,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3305,11 +3692,11 @@
           "original": "central engagement management",
           "translated": "цетрализованное уравление взаимодействием",
           "anothers": [],
-          "lastRepeat": 1644310698852,
+          "lastRepeat": 1645001650295,
           "repeated": {
-            "translated": 6,
-            "original": 5,
-            "writed": 5
+            "translated": 7,
+            "original": 6,
+            "writed": 6
           }
         },
         {
@@ -3317,11 +3704,11 @@
           "original": "onboarding",
           "translated": "адаптация",
           "anothers": [],
-          "lastRepeat": 1644395763159,
+          "lastRepeat": 1645090058055,
           "repeated": {
-            "translated": 6,
-            "original": 6,
-            "writed": 5
+            "translated": 7,
+            "original": 7,
+            "writed": 6
           }
         },
         {
@@ -3331,11 +3718,11 @@
           "anothers": [
             "экселэрэйт"
           ],
-          "lastRepeat": 1644310730961,
+          "lastRepeat": 1645001280163,
           "repeated": {
-            "translated": 6,
-            "original": 5,
-            "writed": 5
+            "translated": 7,
+            "original": 6,
+            "writed": 6
           }
         }
       ]
@@ -3344,80 +3731,6 @@
       "id": 301,
       "name": "test",
       "vocabulary": [
-        {
-          "id": 1643969533338,
-          "original": "aaa",
-          "translated": "aa",
-          "anothers": [],
-          "lastRepeat": 1,
-          "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
-          }
-        },
-        {
-          "id": 1643722916475,
-          "original": "fdfd",
-          "translated": "fdfd",
-          "anothers": [],
-          "lastRepeat": 1,
-          "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
-          }
-        },
-        {
-          "id": 1,
-          "original": "ab",
-          "translated": "ab",
-          "anothers": [],
-          "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
-          },
-          "lastRepeat": 1
-        },
-        {
-          "id": 1643969570808,
-          "original": "a",
-          "translated": "a",
-          "anothers": [
-            "sdsdsd"
-          ],
-          "repeated": {
-            "translated": 0,
-            "original": 0,
-            "writed": 0
-          },
-          "lastRepeat": 1
-        },
-        {
-          "id": 3,
-          "original": "16",
-          "translated": "61",
-          "anothers": [],
-          "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
-          },
-          "lastRepeat": 1
-        },
-        {
-          "id": 4,
-          "original": "15",
-          "translated": "51",
-          "anothers": [],
-          "repeated": {
-            "translated": 2,
-            "original": 2,
-            "writed": 2
-          },
-          "lastRepeat": 1
-        },
         {
           "id": 5,
           "original": "14",
@@ -3482,7 +3795,7 @@
     "hints": true,
     "modeWrite": true,
     "limitAll": 30,
-    "limitNew": 8,
+    "limitNew": 10,
     "theme": "white"
   }
 }
