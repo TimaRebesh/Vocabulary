@@ -6,15 +6,31 @@ import configApi, { useGetConfigQuery, useUpdateConfigMutation } from '../../../
 import { useAppDispatch } from '../../../hooks/redux';
 import { changePanel } from '../../../store/reducers/panelsSlice';
 
+const mockConfig: Configurations = {
+    studyID: 1,
+    vocabularies: [{
+        id: 1,
+        name: 'mocVoc1',
+    }, {
+        id: 2,
+        name: 'mocVoc2',
+    }],
+    modeWrite: true,
+    hints: true,
+    limitAll: 30,
+    limitNew: 10,
+    theme: 'white'
+}
+
 export default function SettingsPanel() {
 
-    const config = useGetConfigQuery().data as Configurations;
+    const config = useGetConfigQuery().data ?? mockConfig;
     const [localConfig, setLocalConfig] = useState(config);
     const [changeConfiguration] = useUpdateConfigMutation();
     const dispatch = useAppDispatch();
 
     const changeConfig = (newConfig: NewConfig) => {
-        const changedConfig = { ...localConfig, [newConfig.name]: newConfig.value }
+        const changedConfig = { ...localConfig, [newConfig.name]: newConfig.value } as Configurations;
         setLocalConfig({ ...changedConfig });
     }
 
@@ -45,18 +61,19 @@ export default function SettingsPanel() {
         )
     }
 
-    return (
-        <div className={`${s.block} ${s[config.theme]}`}>
-            <MenuButton executor={goToMenu} />
-            <div className={s.settings}>
-                <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
-                <Switcher label='Writing mode' value={localConfig.modeWrite} onChange={value => changeConfig({ name: 'modeWrite', value })} />
-                <Switcher label='Show hints' value={localConfig.hints} onChange={value => changeConfig({ name: 'hints', value })} />
-                <RangeSlider label='Repeat words' value={localConfig.limitAll} limit={50} onChange={(value) => changeConfig({ name: 'limitAll', value })} />
-                <RangeSlider label='Study new words' value={localConfig.limitNew} limit={20} onChange={(value) => changeConfig({ name: 'limitNew', value })} />
-            </div>
-        </div >
-    )
+    return <>
+        {config &&
+            <div className={`${s.block} ${s[config.theme]}`}>
+                <MenuButton executor={goToMenu} />
+                <div className={s.settings}>
+                    <Switcher label='Dark mode' value={config.theme === 'dark'} onChange={switchTheme} />
+                    <Switcher label='Writing mode' value={localConfig.modeWrite} onChange={value => changeConfig({ name: 'modeWrite', value })} />
+                    <Switcher label='Show hints' value={localConfig.hints} onChange={value => changeConfig({ name: 'hints', value })} />
+                    <RangeSlider label='Repeat words' value={localConfig.limitAll} limit={50} onChange={(value) => changeConfig({ name: 'limitAll', value })} />
+                    <RangeSlider label='Study new words' value={localConfig.limitNew} limit={20} onChange={(value) => changeConfig({ name: 'limitNew', value })} />
+                </div>
+            </div >}
+    </>
 }
 
 type LeftRightProsp = {
