@@ -2921,6 +2921,168 @@
       "name": "CEM",
       "vocabulary": [
         {
+          "id": 1676551693763,
+          "original": "continuous deployment",
+          "translated": "непрервыное развертывание",
+          "anothers": [
+            "CD"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676551652170,
+          "original": "continuous delivery",
+          "translated": "непрерывная доставка",
+          "anothers": [
+            "CD"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676551615643,
+          "original": "continuous integration",
+          "translated": "непрерывная интеграция",
+          "anothers": [
+            "CI"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676550183478,
+          "original": "landing",
+          "translated": "приземление",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676547528801,
+          "original": "polyrepo and monorepo",
+          "translated": "многорепо и однорепо",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676547462576,
+          "original": "sure thing",
+          "translated": "конечно, безусловно",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676542130108,
+          "original": "reach me out",
+          "translated": "свяжись со мной",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676540130995,
+          "original": "orchestrate",
+          "translated": "инструментировать",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676539988729,
+          "original": "designed to scale",
+          "translated": "разработан для маштабирования",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676539896263,
+          "original": "more advanced capabilities",
+          "translated": "более подвинутые возможности",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676539724518,
+          "original": "distributed caching",
+          "translated": "распределенное кэширование",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676305856861,
+          "original": "carbon",
+          "translated": "углерод",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 0,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
+          "id": 1676283724075,
+          "original": "shell application",
+          "translated": "приложение-оболочка",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 1,
+            "original": 0,
+            "writed": 0
+          }
+        },
+        {
           "id": 1645089718052,
           "original": "authentication",
           "translated": "идентификация",
@@ -2929,7 +3091,7 @@
           ],
           "lastRepeat": 1,
           "repeated": {
-            "translated": 1,
+            "translated": 2,
             "original": 1,
             "writed": 1
           }
@@ -2941,7 +3103,7 @@
           "anothers": [],
           "lastRepeat": 1,
           "repeated": {
-            "translated": 1,
+            "translated": 2,
             "original": 1,
             "writed": 1
           }
@@ -2953,7 +3115,7 @@
           "anothers": [],
           "lastRepeat": 1,
           "repeated": {
-            "translated": 1,
+            "translated": 2,
             "original": 1,
             "writed": 1
           }
@@ -2979,7 +3141,7 @@
           "anothers": [],
           "lastRepeat": 1,
           "repeated": {
-            "translated": 1,
+            "translated": 2,
             "original": 1,
             "writed": 1
           }
@@ -3054,11 +3216,11 @@
           "original": "re-fetch",
           "translated": "переполучить",
           "anothers": [],
-          "lastRepeat": 1645001601569,
+          "lastRepeat": 1676449669653,
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           }
         },
         {
@@ -3104,11 +3266,11 @@
           "original": "a key feature",
           "translated": "ключевая особенность",
           "anothers": [],
-          "lastRepeat": 1645001658103,
+          "lastRepeat": 1676449757475,
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           }
         },
         {
@@ -3118,11 +3280,11 @@
           "anothers": [
             "андУ(ю)"
           ],
-          "lastRepeat": 1645001708073,
+          "lastRepeat": 1676449809725,
           "repeated": {
             "translated": 3,
             "original": 3,
-            "writed": 2
+            "writed": 3
           }
         },
         {
@@ -3154,11 +3316,11 @@
           "original": "invalid",
           "translated": "недействительный",
           "anothers": [],
-          "lastRepeat": 1645001635048,
+          "lastRepeat": 1676449586518,
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           }
         },
         {
@@ -3166,10 +3328,10 @@
           "original": "offtop",
           "translated": "не по теме",
           "anothers": [],
-          "lastRepeat": 1645001718631,
+          "lastRepeat": 1676449802697,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3178,10 +3340,10 @@
           "original": "blank",
           "translated": "пустой",
           "anothers": [],
-          "lastRepeat": 1645001642439,
+          "lastRepeat": 1676449918335,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3190,10 +3352,10 @@
           "original": "perform the following actions",
           "translated": "выполни следующие действия",
           "anothers": [],
-          "lastRepeat": 1645001620405,
+          "lastRepeat": 1676449927832,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3202,10 +3364,10 @@
           "original": "sprint burndown",
           "translated": "сгорание работ спринта",
           "anothers": [],
-          "lastRepeat": 1645089832891,
+          "lastRepeat": 1676449909332,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3226,10 +3388,10 @@
           "original": "grooming",
           "translated": "что и refinement",
           "anothers": [],
-          "lastRepeat": 1645001316873,
+          "lastRepeat": 1676449539243,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3238,10 +3400,10 @@
           "original": "retrospective",
           "translated": "оценка пройденного спринта",
           "anothers": [],
-          "lastRepeat": 1645001561168,
+          "lastRepeat": 1676449944842,
           "repeated": {
             "translated": 4,
-            "original": 3,
+            "original": 4,
             "writed": 3
           }
         },
@@ -3250,11 +3412,11 @@
           "original": "story point",
           "translated": "величина оценки задачи",
           "anothers": [],
-          "lastRepeat": 1645001324018,
+          "lastRepeat": 1676449557811,
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           }
         },
         {
@@ -3288,11 +3450,11 @@
           "anothers": [
             "ры"
           ],
-          "lastRepeat": 1645089786681,
+          "lastRepeat": 1676449634602,
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           }
         },
         {
@@ -3300,11 +3462,11 @@
           "original": "mockup",
           "translated": "макет",
           "anothers": [],
-          "lastRepeat": 1645001341105,
+          "lastRepeat": 1676449518225,
           "repeated": {
             "translated": 4,
             "original": 4,
-            "writed": 3
+            "writed": 4
           }
         },
         {
@@ -3364,9 +3526,9 @@
           "original": "deliver",
           "translated": "доставлять, поставлять",
           "anothers": [],
-          "lastRepeat": 1645001299938,
+          "lastRepeat": 1676449799839,
           "repeated": {
-            "translated": 4,
+            "translated": 5,
             "original": 4,
             "writed": 4
           }
@@ -3390,11 +3552,11 @@
           "anothers": [
             "каш"
           ],
-          "lastRepeat": 1645001331262,
+          "lastRepeat": 1676449603862,
           "repeated": {
             "translated": 5,
             "original": 5,
-            "writed": 4
+            "writed": 5
           }
         },
         {
@@ -3416,9 +3578,9 @@
           "original": "do not disturb",
           "translated": "не беспокоить",
           "anothers": [],
-          "lastRepeat": 1645001677419,
+          "lastRepeat": 1676449608290,
           "repeated": {
-            "translated": 5,
+            "translated": 6,
             "original": 5,
             "writed": 5
           }
@@ -3428,10 +3590,10 @@
           "original": "globally unique identifier",
           "translated": "глобально уникальный идентификатор",
           "anothers": [],
-          "lastRepeat": 1645001627256,
+          "lastRepeat": 1676449955584,
           "repeated": {
             "translated": 6,
-            "original": 5,
+            "original": 6,
             "writed": 5
           }
         },
@@ -3442,11 +3604,11 @@
           "anothers": [
             "эдженда"
           ],
-          "lastRepeat": 1645001606938,
+          "lastRepeat": 1676449905618,
           "repeated": {
             "translated": 6,
             "original": 6,
-            "writed": 5
+            "writed": 6
           }
         },
         {
@@ -3454,11 +3616,11 @@
           "original": "kick-off",
           "translated": "старт",
           "anothers": [],
-          "lastRepeat": 1645001637901,
+          "lastRepeat": 1676449530986,
           "repeated": {
             "translated": 6,
             "original": 6,
-            "writed": 5
+            "writed": 6
           }
         },
         {
@@ -3504,10 +3666,10 @@
           "original": "backlog",
           "translated": "невыполненные заказы",
           "anothers": [],
-          "lastRepeat": 1645001306210,
+          "lastRepeat": 1676449509412,
           "repeated": {
             "translated": 6,
-            "original": 5,
+            "original": 6,
             "writed": 5
           }
         },
@@ -3516,11 +3678,11 @@
           "original": "objective",
           "translated": "цель, стремление",
           "anothers": [],
-          "lastRepeat": 1645001727696,
+          "lastRepeat": 1676449504799,
           "repeated": {
             "translated": 6,
             "original": 6,
-            "writed": 5
+            "writed": 6
           }
         },
         {
@@ -3530,9 +3692,9 @@
           "anothers": [
             "этсэтура"
           ],
-          "lastRepeat": 1645001423962,
+          "lastRepeat": 1676449613986,
           "repeated": {
-            "translated": 6,
+            "translated": 7,
             "original": 6,
             "writed": 6
           }
@@ -3542,11 +3704,11 @@
           "original": "time off",
           "translated": "нерабочее время, выходной",
           "anothers": [],
-          "lastRepeat": 1645001575718,
+          "lastRepeat": 1676449680063,
           "repeated": {
             "translated": 6,
             "original": 6,
-            "writed": 5
+            "writed": 6
           }
         },
         {
@@ -3606,11 +3768,11 @@
           "original": "credentials",
           "translated": "реквезиты для входа",
           "anothers": [],
-          "lastRepeat": 1645089838968,
+          "lastRepeat": 1676449786675,
           "repeated": {
             "translated": 7,
             "original": 7,
-            "writed": 6
+            "writed": 7
           }
         },
         {
@@ -3620,11 +3782,11 @@
           "anothers": [
             "ньЮкома"
           ],
-          "lastRepeat": 1645001721758,
+          "lastRepeat": 1676449658566,
           "repeated": {
             "translated": 7,
             "original": 7,
-            "writed": 6
+            "writed": 7
           }
         },
         {
@@ -3644,11 +3806,11 @@
           "original": "confluence",
           "translated": "слияние, пересечение",
           "anothers": [],
-          "lastRepeat": 1645001350446,
+          "lastRepeat": 1676449939550,
           "repeated": {
             "translated": 7,
             "original": 7,
-            "writed": 6
+            "writed": 7
           }
         },
         {
@@ -3656,11 +3818,11 @@
           "original": "appropriate",
           "translated": "соответствующий, подходящий",
           "anothers": [],
-          "lastRepeat": 1645001566685,
+          "lastRepeat": 1676449772844,
           "repeated": {
             "translated": 7,
             "original": 7,
-            "writed": 6
+            "writed": 7
           }
         },
         {
@@ -3668,11 +3830,11 @@
           "original": "virtual machine",
           "translated": "виртуальная машина",
           "anothers": [],
-          "lastRepeat": 1645001276402,
+          "lastRepeat": 1676449900822,
           "repeated": {
             "translated": 7,
             "original": 7,
-            "writed": 6
+            "writed": 7
           }
         },
         {
@@ -3692,10 +3854,10 @@
           "original": "central engagement management",
           "translated": "цетрализованное уравление взаимодействием",
           "anothers": [],
-          "lastRepeat": 1645001650295,
+          "lastRepeat": 1676449498233,
           "repeated": {
             "translated": 7,
-            "original": 6,
+            "original": 7,
             "writed": 6
           }
         },
@@ -3718,10 +3880,10 @@
           "anothers": [
             "экселэрэйт"
           ],
-          "lastRepeat": 1645001280163,
+          "lastRepeat": 1676449914890,
           "repeated": {
             "translated": 7,
-            "original": 6,
+            "original": 7,
             "writed": 6
           }
         }
@@ -3770,6 +3932,580 @@
           "lastRepeat": 1
         }
       ]
+    },
+    {
+      "name": "english class K2",
+      "vocabulary": [
+        {
+          "id": 1680006335749,
+          "original": "sure thing",
+          "translated": "конечно, безусловно, верняк",
+          "anothers": [
+            "of course"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1679916481631,
+          "original": "forecast",
+          "translated": "прогноз",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1679903174079,
+          "original": "if he were a better driver, he wouldn't have crashed the car",
+          "translated": "если бы он был лучшим водителем, он бы не разбил машину",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 1
+          }
+        },
+        {
+          "id": 1679902917606,
+          "original": "main clause",
+          "translated": "главное условие",
+          "anothers": [
+            "condition"
+          ],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1679902770823,
+          "original": "if the context permits it",
+          "translated": "если контекст это позволяет",
+          "anothers": [],
+          "lastRepeat": 1,
+          "repeated": {
+            "translated": 2,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1679391667145,
+          "original": "if she did not like your present, what would you do?",
+          "translated": "если бы ей не понравился твой подарок, что бы ты сделал?",
+          "anothers": [],
+          "lastRepeat": 1679902270202,
+          "repeated": {
+            "translated": 3,
+            "original": 2,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1679391503115,
+          "original": "I would do it if I had time",
+          "translated": "я бы сделал это если бы у меня было время",
+          "anothers": [],
+          "lastRepeat": 1680077162037,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1678960412913,
+          "original": "my habit",
+          "translated": "моя привычка",
+          "anothers": [],
+          "lastRepeat": 1679902312284,
+          "repeated": {
+            "translated": 3,
+            "original": 3,
+            "writed": 2
+          }
+        },
+        {
+          "id": 1678439574010,
+          "original": "omit",
+          "translated": "пропускать, не включать",
+          "anothers": [
+            "э"
+          ],
+          "lastRepeat": 1680077212010,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678181689881,
+          "original": "get rid of toothache",
+          "translated": "избавиться от зубной боли",
+          "anothers": [],
+          "lastRepeat": 1680077291554,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1679474092646,
+          "original": "the stomach is ache",
+          "translated": "болит желудок",
+          "anothers": [
+            "эйк"
+          ],
+          "lastRepeat": 1680077168532,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678181119752,
+          "original": "he was mocked for making such a stupid suggestion",
+          "translated": "его высмеяли за такое глупое предложение",
+          "anothers": [],
+          "lastRepeat": 1680077091070,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678180140716,
+          "original": "outrageous",
+          "translated": "возмутительно",
+          "anothers": [
+            "рэджыс"
+          ],
+          "lastRepeat": 1680077077266,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678179172421,
+          "original": "I am accustomed to typing",
+          "translated": "я привык печатать",
+          "anothers": [
+            "used to"
+          ],
+          "lastRepeat": 1680076335075,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1678178508472,
+          "original": "we took a stroll in the garden",
+          "translated": "мы прогулялись в саду",
+          "anothers": [],
+          "lastRepeat": 1680076375021,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678177930937,
+          "original": "make an excuse to",
+          "translated": "извиниться перед",
+          "anothers": [],
+          "lastRepeat": 1680076404273,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678350065791,
+          "original": "make the bed",
+          "translated": "застилать пастель",
+          "anothers": [],
+          "lastRepeat": 1680076380125,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678093317533,
+          "original": "he makes more money than I do",
+          "translated": "он зарабатывает больше денег, чем я",
+          "anothers": [],
+          "lastRepeat": 1680077207506,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678093221604,
+          "original": "he made a joke about her",
+          "translated": "он пошутил над ней",
+          "anothers": [],
+          "lastRepeat": 1680077062502,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678093056910,
+          "original": "I made an appointment to see the doctor",
+          "translated": "я записалась на прием к врачу",
+          "anothers": [],
+          "lastRepeat": 1680077277694,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1678092893087,
+          "original": "he is doing the ironing",
+          "translated": "он утюжит",
+          "anothers": [],
+          "lastRepeat": 1680077191409,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1678092847527,
+          "original": "I will do the shopping after work",
+          "translated": "я сделаю покупки после работы",
+          "anothers": [],
+          "lastRepeat": 1679902244267,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678092540030,
+          "original": "it refers to the result",
+          "translated": "это относится к результату",
+          "anothers": [],
+          "lastRepeat": 1679902308229,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1678092194892,
+          "original": "I have been better",
+          "translated": "бывало и лучше",
+          "anothers": [
+            "how are you"
+          ],
+          "lastRepeat": 1680077176094,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1678092096691,
+          "original": "can't complain",
+          "translated": "не на что жаловаться",
+          "anothers": [
+            "how are you"
+          ],
+          "lastRepeat": 1680076361968,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1677749488900,
+          "original": "intrinsic element",
+          "translated": "внутренний элемент",
+          "anothers": [
+            "интрынзик"
+          ],
+          "lastRepeat": 1679474065694,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1677744909961,
+          "original": "a fair answer",
+          "translated": "честный ответ",
+          "anothers": [],
+          "lastRepeat": 1679902289875,
+          "repeated": {
+            "translated": 4,
+            "original": 3,
+            "writed": 3
+          }
+        },
+        {
+          "id": 1677686306290,
+          "original": "further word",
+          "translated": "дальнейшее слово",
+          "anothers": [],
+          "lastRepeat": 1679902282995,
+          "repeated": {
+            "translated": 5,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677686200038,
+          "original": "fair enough",
+          "translated": "справедливо! хорошо!",
+          "anothers": [],
+          "lastRepeat": 1680077252450,
+          "repeated": {
+            "translated": 4,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677686088977,
+          "original": "her stories are nasty",
+          "translated": "ее истории противные",
+          "anothers": [
+            "на"
+          ],
+          "lastRepeat": 1680077067954,
+          "repeated": {
+            "translated": 5,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677146235590,
+          "original": "a humiliating defeat",
+          "translated": "унизительное поражение",
+          "anothers": [],
+          "lastRepeat": 1680076356192,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677146169132,
+          "original": "vast amount",
+          "translated": "огромное количество",
+          "anothers": [],
+          "lastRepeat": 1679902280327,
+          "repeated": {
+            "translated": 5,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677145774910,
+          "original": "neither of us have a key",
+          "translated": "ни у кого из нас нет ключа",
+          "anothers": [
+            "из нас двоих"
+          ],
+          "lastRepeat": 1679902302409,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677145665777,
+          "original": "you can choose either of two",
+          "translated": "ты можешь выбрать один из двух",
+          "anothers": [],
+          "lastRepeat": 1680077198870,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1676973341843,
+          "original": "this information seems excessive",
+          "translated": "эта информация выглядит лишней",
+          "anothers": [
+            "эксэ"
+          ],
+          "lastRepeat": 1680077120679,
+          "repeated": {
+            "translated": 5,
+            "original": 4,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677505945937,
+          "original": "there are a few people",
+          "translated": "это несколько человек",
+          "anothers": [
+            "достаточно"
+          ],
+          "lastRepeat": 1680076350321,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676972961527,
+          "original": "there are few people",
+          "translated": "это мало людей",
+          "anothers": [
+            "не достаточно"
+          ],
+          "lastRepeat": 1680077218088,
+          "repeated": {
+            "translated": 6,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676972548064,
+          "original": "drastic measures",
+          "translated": "радикальные меры",
+          "anothers": [],
+          "lastRepeat": 1680077222133,
+          "repeated": {
+            "translated": 6,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676972357560,
+          "original": "there is a distinct lack of respect for work",
+          "translated": "это явная нехватка уважения к труду",
+          "anothers": [],
+          "lastRepeat": 1679902296977,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677504655633,
+          "original": "up the budget",
+          "translated": "увеличить бюджет",
+          "anothers": [],
+          "lastRepeat": 1680077258983,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676971711657,
+          "original": "we should stick to agenda",
+          "translated": "мы должны придерживаться повестки дня",
+          "anothers": [],
+          "lastRepeat": 1680077229783,
+          "repeated": {
+            "translated": 6,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676968893188,
+          "original": "mount a campaign",
+          "translated": "развернуть (организовать) компанию",
+          "anothers": [],
+          "lastRepeat": 1679902276581,
+          "repeated": {
+            "translated": 6,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676968795390,
+          "original": "a former chairman",
+          "translated": "бывший председатель",
+          "anothers": [],
+          "lastRepeat": 1680077236406,
+          "repeated": {
+            "translated": 6,
+            "original": 5,
+            "writed": 5
+          }
+        },
+        {
+          "id": 1676968697646,
+          "original": "an imminent work",
+          "translated": "неизбежная (предстоящая) работа",
+          "anothers": [],
+          "lastRepeat": 1680076394844,
+          "repeated": {
+            "translated": 5,
+            "original": 5,
+            "writed": 4
+          }
+        },
+        {
+          "id": 1677504664208,
+          "original": "do not pass the buck to me",
+          "translated": "не сваливай ответственность на меня",
+          "anothers": [],
+          "lastRepeat": 1680077141029,
+          "repeated": {
+            "translated": 6,
+            "original": 6,
+            "writed": 5
+          }
+        }
+      ],
+      "id": 302
     }
   ],
   "configuration": {
@@ -3784,14 +4520,18 @@
       },
       {
         "id": 300,
-        "name": "CEM"
+        "name": "Work"
       },
       {
         "id": 301,
         "name": "test"
+      },
+      {
+        "id": 302,
+        "name": "english class K2"
       }
     ],
-    "studyID": 300,
+    "studyID": 302,
     "hints": true,
     "modeWrite": true,
     "limitAll": 30,
