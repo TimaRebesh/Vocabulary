@@ -22,7 +22,7 @@
     "xlsx": "^0.17.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=8888 && react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
     "server": "json-server -w server/db.json -p 8000",
     "build": "react-scripts build",
